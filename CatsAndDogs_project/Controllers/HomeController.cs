@@ -1,4 +1,5 @@
-﻿using CatsAndDogs_project.Models;
+﻿using CatsAndDogs.Models;
+using CatsAndDogs_project.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
@@ -7,7 +8,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace CatsAndDogs_project.Controllers
+namespace CatsAndDogs.Controllers
 {
     public class HomeController : Controller
     {

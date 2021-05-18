@@ -5,7 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 
 namespace CatsAndDogs.Models
-{ //yarin
+{ 
     public class User
     {
         public enum UserType{

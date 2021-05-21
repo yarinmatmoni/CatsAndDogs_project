@@ -35,6 +35,9 @@ namespace CatsAndDogs_project.Models
         public String Match { get; set; } // family / apartment / children .... 
 
         [Required]
+        public String Description { get; set; }
+
+        [Required]
         public String Image { get; set; }
     }
 }

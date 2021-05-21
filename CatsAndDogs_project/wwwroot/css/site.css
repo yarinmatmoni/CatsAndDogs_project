@@ -1,6 +1,8 @@
 ﻿body {
     background-color: aliceblue;
     font-family: 'Amatic SC', cursive;
+    text-align:center;
+    align-items:center;
 }
 
 .dropdownMenu {
@@ -210,13 +212,15 @@ h6 {
     display: inline-block;
 }
 
-    .bottommenu a:hover {
-        color: black;
-        transition: all 0.4s;
-    }
+ .bottommenu a:hover {
+    color: black;
+    transition: all 0.4s;
+ }
 
 
 .PageTitle {
     margin-top: 80px;
+    text-align:center;
 }
+
 

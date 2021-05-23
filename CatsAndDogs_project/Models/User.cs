@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 
 namespace CatsAndDogs.Models
 { 
-    //eden
     public class User
     {
         public enum UserType{

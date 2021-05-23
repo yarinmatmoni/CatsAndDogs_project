@@ -24,7 +24,7 @@ namespace CatsAndDogs_project.Models
 
         [Required]
         [Display(Name = "גודל")]
-        public String Size { get; set; } // big / medum / small
+        public String Size { get; set; } 
 
         [Required]
         [Display(Name = "מין")]
@@ -40,7 +40,7 @@ namespace CatsAndDogs_project.Models
 
         [Required]
         [Display(Name = "התאמה")]
-        public String Match { get; set; } // family / apartment / children .... 
+        public String Match { get; set; } 
 
         [Required]
         [Display(Name = "תיאור")]

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using CatsAndDogs_project.Models;
+using CatsAndDogs.Models;
 
 namespace CatsAndDogs_project.Data
 {
@@ -17,5 +18,7 @@ namespace CatsAndDogs_project.Data
         public DbSet<CatsAndDogs_project.Models.Dogs> Dogs { get; set; }
 
         public DbSet<CatsAndDogs_project.Models.Cats> Cats { get; set; }
+
+        public DbSet<CatsAndDogs.Models.Products> Products { get; set; }
     }
 }

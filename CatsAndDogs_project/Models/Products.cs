@@ -10,19 +10,25 @@ namespace CatsAndDogs.Models
     {
         public int Id { get; set; }
 
-        [StringLength(70, MinimumLength = 5)]
-        [Required(ErrorMessage = "You have to wrire the name of the product")]
+        [StringLength(70, MinimumLength = 2)]
+        [Display(Name = "שם המוצר")]
+        [Required(ErrorMessage = "זהו שדה חובה")]
         public string Name{ get; set; }
 
-        [StringLength(350,MinimumLength =10)] 
-        [Required(ErrorMessage = "You have to wrire description (10-350 Characters)")]
+        [StringLength(350,MinimumLength =2)]
+        [Display(Name = "תיאור")]
+        [Required(ErrorMessage = "זהו שדה חובה")]
         public string Description { get; set; }
 
         [Range(0,9999)]
         [DataType(DataType.Currency)]
-        [Required(ErrorMessage = "You have to type a price")]
+        [Display(Name = "מחיר")]
+        [Required(ErrorMessage ="זהו שדה חובה")]
         public float Price{ get; set; }
 
-        
+        [Required(ErrorMessage = "זהו שדה חובה")]
+        [Display(Name = "צרף קישור לתמונה")]
+        public String Image { get; set; }
+
     }
 }

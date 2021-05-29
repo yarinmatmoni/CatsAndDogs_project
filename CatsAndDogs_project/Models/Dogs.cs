@@ -52,5 +52,7 @@ namespace CatsAndDogs_project.Models
         [Display(Name = "צרף קישור לתמונה")]
         public String Image { get; set; }
 
+
+        public List<DogBreeds> Breeds { get; set; }
     }
 }

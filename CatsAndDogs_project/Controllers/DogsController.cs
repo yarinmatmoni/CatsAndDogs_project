@@ -46,6 +46,7 @@ namespace CatsAndDogs_project.Controllers
         // GET: Dogs/Create
         public IActionResult Create()
         {
+            ViewData["Breeds"] = new SelectList(_context.DogBreeds,nameof(DogBreeds.Id),nameof(DogBreeds.Name));
             return View();
         }
 

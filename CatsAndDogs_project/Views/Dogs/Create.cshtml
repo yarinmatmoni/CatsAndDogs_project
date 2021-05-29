@@ -63,6 +63,11 @@
                 <span asp-validation-for="Image" class="text-danger"></span>
             </div>
             <div class="form-group">
+                <label asp-for="Breeds" class="control-label"></label>
+                <select asp-for="Breeds" class="form-control" asp-items="ViewBag.Breeds"></select>
+                <span asp-validation-for="Breeds" class="text-danger"></span>
+            </div>
+            <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
             </div>
         </form>

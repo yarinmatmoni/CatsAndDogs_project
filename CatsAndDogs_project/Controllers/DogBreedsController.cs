@@ -22,7 +22,7 @@ namespace CatsAndDogs_project.Controllers
         // GET: DogBreeds
         public async Task<IActionResult> Index()
         {
-            return View(await _context.DogBreed.ToListAsync());
+            return View(await _context.DogBreeds.ToListAsync());
         }
 
         // GET: DogBreeds/Details/5
@@ -33,14 +33,14 @@ namespace CatsAndDogs_project.Controllers
                 return NotFound();
             }
 
-            var dogBreed = await _context.DogBreed
+            var dogBreeds = await _context.DogBreeds
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (dogBreed == null)
+            if (dogBreeds == null)
             {
                 return NotFound();
             }
 
-            return View(dogBreed);
+            return View(dogBreeds);
         }
 
         // GET: DogBreeds/Create
@@ -54,15 +54,15 @@ namespace CatsAndDogs_project.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Name")] DogBreed dogBreed)
+        public async Task<IActionResult> Create([Bind("Id,Name")] DogBreeds dogBreeds)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(dogBreed);
+                _context.Add(dogBreeds);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(dogBreed);
+            return View(dogBreeds);
         }
 
         // GET: DogBreeds/Edit/5
@@ -73,12 +73,12 @@ namespace CatsAndDogs_project.Controllers
                 return NotFound();
             }
 
-            var dogBreed = await _context.DogBreed.FindAsync(id);
-            if (dogBreed == null)
+            var dogBreeds = await _context.DogBreeds.FindAsync(id);
+            if (dogBreeds == null)
             {
                 return NotFound();
             }
-            return View(dogBreed);
+            return View(dogBreeds);
         }
 
         // POST: DogBreeds/Edit/5
@@ -86,9 +86,9 @@ namespace CatsAndDogs_project.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Name")] DogBreed dogBreed)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Name")] DogBreeds dogBreeds)
         {
-            if (id != dogBreed.Id)
+            if (id != dogBreeds.Id)
             {
                 return NotFound();
             }
@@ -97,12 +97,12 @@ namespace CatsAndDogs_project.Controllers
             {
                 try
                 {
-                    _context.Update(dogBreed);
+                    _context.Update(dogBreeds);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!DogBreedExists(dogBreed.Id))
+                    if (!DogBreedsExists(dogBreeds.Id))
                     {
                         return NotFound();
                     }
@@ -113,7 +113,7 @@ namespace CatsAndDogs_project.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(dogBreed);
+            return View(dogBreeds);
         }
 
         // GET: DogBreeds/Delete/5
@@ -124,14 +124,14 @@ namespace CatsAndDogs_project.Controllers
                 return NotFound();
             }
 
-            var dogBreed = await _context.DogBreed
+            var dogBreeds = await _context.DogBreeds
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (dogBreed == null)
+            if (dogBreeds == null)
             {
                 return NotFound();
             }
 
-            return View(dogBreed);
+            return View(dogBreeds);
         }
 
         // POST: DogBreeds/Delete/5
@@ -139,15 +139,15 @@ namespace CatsAndDogs_project.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var dogBreed = await _context.DogBreed.FindAsync(id);
-            _context.DogBreed.Remove(dogBreed);
+            var dogBreeds = await _context.DogBreeds.FindAsync(id);
+            _context.DogBreeds.Remove(dogBreeds);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool DogBreedExists(int id)
+        private bool DogBreedsExists(int id)
         {
-            return _context.DogBreed.Any(e => e.Id == id);
+            return _context.DogBreeds.Any(e => e.Id == id);
         }
     }
 }

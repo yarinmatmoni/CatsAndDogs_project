@@ -21,6 +21,6 @@ namespace CatsAndDogs_project.Data
 
         public DbSet<CatsAndDogs.Models.Products> Products { get; set; }
 
-        public DbSet<CatsAndDogs_project.Models.DogBreed> DogBreed { get; set; }
+        public DbSet<CatsAndDogs_project.Models.DogBreeds> DogBreeds { get; set; }
     }
 }

@@ -3,14 +3,16 @@ using CatsAndDogs_project.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace CatsAndDogs_project.Migrations
 {
     [DbContext(typeof(CatsAndDogs_projectContext))]
-    partial class CatsAndDogs_projectContextModelSnapshot : ModelSnapshot
+    [Migration("20210528133329_Table")]
+    partial class Table
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -92,23 +94,6 @@ namespace CatsAndDogs_project.Migrations
                     b.ToTable("Cats");
                 });
 
-            modelBuilder.Entity("CatsAndDogs_project.Models.DogBreeds", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("DogBreeds");
-                });
-
             modelBuilder.Entity("CatsAndDogs_project.Models.Dogs", b =>
                 {
                     b.Property<int>("Id")
@@ -160,36 +145,6 @@ namespace CatsAndDogs_project.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Dogs");
-                });
-
-            modelBuilder.Entity("DogBreedsDogs", b =>
-                {
-                    b.Property<int>("BreedsId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("DogsId")
-                        .HasColumnType("int");
-
-                    b.HasKey("BreedsId", "DogsId");
-
-                    b.HasIndex("DogsId");
-
-                    b.ToTable("DogBreedsDogs");
-                });
-
-            modelBuilder.Entity("DogBreedsDogs", b =>
-                {
-                    b.HasOne("CatsAndDogs_project.Models.DogBreeds", null)
-                        .WithMany()
-                        .HasForeignKey("BreedsId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("CatsAndDogs_project.Models.Dogs", null)
-                        .WithMany()
-                        .HasForeignKey("DogsId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }

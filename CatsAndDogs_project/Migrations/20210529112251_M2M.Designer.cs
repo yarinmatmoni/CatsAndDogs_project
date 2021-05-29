@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CatsAndDogs_project.Migrations
 {
     [DbContext(typeof(CatsAndDogs_projectContext))]
-    [Migration("20210527075814_M2M")]
+    [Migration("20210529112251_M2M")]
     partial class M2M
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -94,7 +94,7 @@ namespace CatsAndDogs_project.Migrations
                     b.ToTable("Cats");
                 });
 
-            modelBuilder.Entity("CatsAndDogs_project.Models.DogBreed", b =>
+            modelBuilder.Entity("CatsAndDogs_project.Models.DogBreeds", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -102,11 +102,13 @@ namespace CatsAndDogs_project.Migrations
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("Name")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
 
                     b.HasKey("Id");
 
-                    b.ToTable("DogBreed");
+                    b.ToTable("DogBreeds");
                 });
 
             modelBuilder.Entity("CatsAndDogs_project.Models.Dogs", b =>
@@ -162,26 +164,26 @@ namespace CatsAndDogs_project.Migrations
                     b.ToTable("Dogs");
                 });
 
-            modelBuilder.Entity("DogBreedDogs", b =>
+            modelBuilder.Entity("DogBreedsDogs", b =>
                 {
-                    b.Property<int>("BreedId")
+                    b.Property<int>("BreedsId")
                         .HasColumnType("int");
 
                     b.Property<int>("DogsId")
                         .HasColumnType("int");
 
-                    b.HasKey("BreedId", "DogsId");
+                    b.HasKey("BreedsId", "DogsId");
 
                     b.HasIndex("DogsId");
 
-                    b.ToTable("DogBreedDogs");
+                    b.ToTable("DogBreedsDogs");
                 });
 
-            modelBuilder.Entity("DogBreedDogs", b =>
+            modelBuilder.Entity("DogBreedsDogs", b =>
                 {
-                    b.HasOne("CatsAndDogs_project.Models.DogBreed", null)
+                    b.HasOne("CatsAndDogs_project.Models.DogBreeds", null)
                         .WithMany()
-                        .HasForeignKey("BreedId")
+                        .HasForeignKey("BreedsId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 

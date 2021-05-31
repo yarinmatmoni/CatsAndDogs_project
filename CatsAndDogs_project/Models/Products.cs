@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CatsAndDogs_project.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -29,6 +30,9 @@ namespace CatsAndDogs.Models
         [Required(ErrorMessage = "זהו שדה חובה")]
         [Display(Name = "צרף קישור לתמונה")]
         public String Image { get; set; }
+
+        public int CategoryId { get; set; }
+        public ProductsSubCategory Category { get; set; }
 
     }
 }

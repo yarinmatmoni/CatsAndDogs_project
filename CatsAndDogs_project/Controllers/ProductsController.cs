@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using CatsAndDogs.Models;
 using CatsAndDogs_project.Data;
+using CatsAndDogs_project.Models;
 
 namespace CatsAndDogs_project.Controllers
 {
@@ -46,6 +47,8 @@ namespace CatsAndDogs_project.Controllers
         // GET: Products/Create
         public IActionResult Create()
         {
+            ViewData["productssubcategories"] = new SelectList(_context.ProductsSubCategory, nameof(ProductsSubCategory.Id), nameof(ProductsSubCategory.Name));
+
             return View();
         }
 
@@ -54,7 +57,7 @@ namespace CatsAndDogs_project.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Name,Description,Price,Image")] Products products)
+        public async Task<IActionResult> Create([Bind("Id,Name,Description,Price,Image,CategoryId")] Products products)
         {
             if (ModelState.IsValid)
             {

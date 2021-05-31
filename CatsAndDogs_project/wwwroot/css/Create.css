@@ -1,0 +1,30 @@
+﻿body {
+    margin-top: 80px;
+}
+
+h1 {
+    color: #deb887bf;
+}
+
+h4 {
+    color: #deb887bf;
+    border-bottom: 2px solid;
+    border-color: #deb887bf;
+    padding-bottom: 12px;
+    margin-bottom: 20px;
+}
+
+.control-label {
+    font-size: 24px;
+    font-family: 'Amatic SC', cursive;
+    color: #deb887;
+    display: flex;
+    margin-right: 6px;
+    padding: 3px;
+}
+
+.form-control {
+    padding: 8px;
+    border-radius: 20px;
+    border-color: #deb887;
+}

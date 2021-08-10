@@ -13,56 +13,62 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">    
     <title>@ViewData["Title"] - Cats&Dogs</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
+    @*<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"*@
           integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
-    <link href="~/css/site.css" rel="stylesheet">
+    <link href="~/css/myStyle.css" rel="stylesheet" />
 </head>
 
 <body dir="rtl">
-    <nav>
-        <div class="dropdownMenu">
-            <a href="#"> <img id=logo src="~/images/logo.jpg" alt="logo"></a>
-            <div class="adoption">
-                <button><i id=icon class="bi bi-heart"></i>אימוץ</button>
-                <ul>
-                    <li><a href="#">ימי אימוץ קרובים</a></li>
-                    <li><a href="#">אימוץ כלבים</a></li>
-                    <li><a href="#">אימוץ חתולים</a></li>
-                </ul>
-            </div>
-            <div class="infoMenu">
-                <button><i id=icon class="bi bi-info-circle"></i> מידע</button>
-                <ul>
-                    <li><a href="#">מדריך כלבים</a></li>
-                    <li><a href="#">מדריך חתולים</a></li>
-                    <li><a href="#">כתבות</a></li>
-                    <li><a href="#">גור חדש במשפחה</a></li>
-                    <li><a href="#">בחר שם לכלב</a></li>
-                </ul>
-            </div>
-            <div class="shopMenu">
-                <button><i id=icon class="bi bi-shop"></i>חנות</button>
-                <ul>
-                    <li><a href="#">מזון</a></li>
-                    <li><a href="#">שינה וסביבה</a></li>
-                    <li><a href="#">אקססוריז</a></li>
-                    <li><a href="#">טיפוח </a></li>
-                    <li><a href="#">בריאות</a></li>
-                </ul>
-            </div>
-            <div class="search">
-                <input id="search_input" type="text" placeholder="הקלד לחיפוש">
-                <button id="search_btn" type="submit"><i class="material-icons">search</i></button>
-            </div>
-            <div class="details">
-                <button id="loca_btm"><i id=icon class="bi bi-geo"> </i>איפה אנחנו</button>
-                <button id="cont_btn"><i id=icon class="bi bi-chat"></i>צור קשר</button>
-            </div>
-            <div class="burgerMenu">
-                <h2 class="sec_title">Dogs & Cats</h2>
-                <button id="burger_btn"><i class="fa fa-bars"></i></button>
-            </div>
-        </div>
+    <nav class="nav_top">
+        <ul class="dropdown_ul">
+            
+            <li> <a class="logo" href="#"> <img id=logo src="~/images/logo.jpg" alt="logo"></a></li>
+
+            <li>
+                <div class="dropdown">
+                    <button class="dropbtn"><i id=icon class="bi bi-heart"></i>אימוץ</button>
+                    <div class="dropdown-content">
+                        <a href="#">ימי אימוץ קרובים</a>
+                        <a href="#">אימוץ כלבים</a>
+                        <a href="#">אימוץ חתולים</a>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="dropdown">
+                    <button class="dropbtn"><i id=icon class="bi bi-info-circle"></i>מידע</button>
+                    <div class="dropdown-content">
+                        <a href="#">מדריך כלבים</a>
+                        <a href="#">מדריך חתולים</a>
+                        <a href="#">כתובת</a>
+                        <a href="#">גור חדש במשפחה</a>
+                        <a href="#">בחר שם לכלב</a>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="dropdown">
+                    <button class="dropbtn"><i id=icon class="bi bi-shop"></i>חנות</button>
+                    <div class="dropdown-content">
+                        <a href="#">מזון</a>
+                        <a href="#">שינה וסביבה</a>
+                        <a href="#">אקססוריז</a>
+                        <a href="#">טיפוח </a>
+                        <a href="#">בריאות</a>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="dropdown">
+                    <button class="dropbtn"><i id=icon class="bi bi-geo"> </i>איפה אנחנו</button>
+                </div>
+            </li>
+            <li>
+                <div class="dropdown">
+                    <button class="dropbtn"><i id=icon class="bi bi-chat"></i>צור קשר</button>
+                </div>
+            </li>
+        </ul>
     </nav>
 
     <div class="container">

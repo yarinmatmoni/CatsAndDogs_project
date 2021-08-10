@@ -25,7 +25,7 @@ namespace CatsAndDogs_project.Models
 
         public string Img { get; set; }
 
-
+        //yarin
 
     }
 }

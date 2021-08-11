@@ -103,10 +103,10 @@
     display: inline-block;
 }
 
-    .bottommenu a:hover {
-        color: black;
-        transition: all 0.4s;
-    }
+.bottommenu a:hover {
+    color: black;
+    transition: all 0.4s;
+}
 
 
 .bottommenu {
@@ -156,11 +156,25 @@ h6 {
         margin-inline: 60px;
     }
 
+    #home_respon :hover {
+        color: rgb(206, 143, 50);
+    }
+
     #menu_respon {
         display: inline-block;
         margin-right: -122px;
         padding: 5px;
         margin-top: -4px;
+    }
+
+    .dropdown-content {
+        color: rgb(206, 143, 50);
+    }
+
+    .dropdown-content a:hover {
+        background-color: rgb(206, 143, 50);
+        color: white !important;
+        cursor:pointer;
     }
 
     .btn {

@@ -23,14 +23,20 @@
     <nav class="nav_top">
         <ul class="dropdown_ul">
 
-            <li> <a class="logo" href="#"> <img id=logo src="~/images/logo.jpg" alt="logo"></a></li>
+            <li> <a class="logo" asp-action="index" asp-controller="Home"> <img id=logo src="~/images/logo.jpg" alt="logo"></a></li>
             
             <li id="menu_respon">
-                <a class="btn" href="#"><i class="fa fa-bars"></i></a>
+                <div class="dropdown">
+                    <a class="btn"><i class="fa fa-bars"></i></a>
+                    <div class="dropdown-content">
+                        <a>איפה אנחנו</a>
+                        <a>צור קשר</a>
+                    </div>
+                </div>
             </li>
 
             <li id="home_respon">
-                <a class="btn" href="#"><i class="fa fa-home"></i></a>
+                <a class="btn" asp-action="index" asp-controller="Home"><i class="fa fa-home"></i></a>
             </li>
 
             <li>

@@ -22,6 +22,14 @@
     margin-right: -195px;
 }
 
+#menu_respon {
+    display: none;
+}
+
+#home_respon {
+    display: none;
+}
+
 .dropbtn {
     text-align: center;
     background: none;
@@ -133,4 +141,74 @@ h6 {
 
 .dogfood ul, .catfood ul, .guides ul, .professionals ul, .information ul {
     list-style-type: none;
+}
+
+
+@media only screen and (max-width: 1200px) {
+    .logo {
+        display: none;
+    }
+
+    #home_respon {
+        display: inline-block;
+        padding: 5px;
+        margin-top: -4px;
+        margin-inline: 60px;
+    }
+
+    #menu_respon {
+        display: inline-block;
+        margin-right: -122px;
+        padding: 5px;
+        margin-top: -4px;
+    }
+
+    .btn {
+        text-align: center;
+        background: none;
+        border: none;
+        color: burlywood !important;
+        cursor: pointer;
+        font-family: 'Amatic SC', cursive;
+        font-size: 28px !important;
+        margin-top: -10px !important;
+    }
+
+    .dropdown_ul {
+        display: flex;
+        direction: rtl;
+        justify-content: space-between;
+        width: 82%;
+        margin-inline: auto;
+    }
+
+    #contect {
+        display: none;
+    }
+
+    #location {
+        display: none;
+    }
+
+}
+
+@media only screen and (max-width: 1160px) {
+    .dropdown_ul {
+        width: 65%;
+    }
+
+    #home_respon {
+        margin-inline: auto;
+    }
+
+    .dogfood, .catfood, .guides, .professionals {
+        border-left:none;
+    }
+
+}
+
+@media only screen and (max-width: 900px) {
+    .dropbtn > i {
+        display: none;
+    }
 }

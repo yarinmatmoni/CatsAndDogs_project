@@ -1,10 +1,14 @@
-﻿.nav_top {
+﻿ body{
+    background-color: aliceblue !important;
+ }
+
+.nav_top {
     background: rgb(247, 238, 226);
     position: fixed;
     top: 0;
     width: 100%;
     margin-left: -8px;
-    height: 68px;
+    height: 60px;
 }
 
 #logo {
@@ -30,9 +34,9 @@
     margin-top: -5px;
 }
 
-    .dropbtn > i {
-        padding: 6px;
-    }
+.dropbtn > i {
+    padding: 6px;
+}
 
 .dropdown {
     position: relative;
@@ -44,11 +48,12 @@
     justify-content: space-between;
     width: 80%;
     margin-right: 295px;
+    margin-top: 12px;
 }
 
-    .dropdown_ul > li {
-        list-style: none;
-    }
+.dropdown_ul > li {
+    list-style: none;
+}
 
 
 .dropdown-content {
@@ -60,19 +65,19 @@
     z-index: 1;
 }
 
-    .dropdown-content a {
-        padding: 12px 16px;
-        text-decoration: none;
-        display: block;
-        background: rgb(247, 238, 226);
-        border-bottom: 1px solid lightgray;
-        color: rgb(206, 143, 50);
-    }
+.dropdown-content a {
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    background: rgb(247, 238, 226);
+    border-bottom: 1px solid lightgray;
+    color: rgb(206, 143, 50);
+}
 
-        .dropdown-content a:hover {
-            background-color: rgb(206, 143, 50);
-            color: white;
-        }
+.dropdown-content a:hover {
+    background-color: rgb(206, 143, 50);
+    color: white;
+}
 
 .dropdown:hover .dropdown-content {
     display: block;

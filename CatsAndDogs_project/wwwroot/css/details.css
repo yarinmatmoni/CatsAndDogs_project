@@ -27,8 +27,9 @@ h1 {
     justify-content: space-between;
 }
 
-.card-img-top {
+.card-img {
     width: 400px;
+    height: 270px;
     border: 2px solid;
     border-color: darkgray;
     padding: 2px;
@@ -39,4 +40,53 @@ h1 {
     font-size: 58px;
     color: dimgray;
     font-family: 'Amatic SC', cursive;
+    margin-bottom: 20px;
+}
+
+.card-title {
+    font-size: 30px;
+    color: dimgray;
+    font-family: 'Amatic SC', cursive;
+    text-decoration: underline;
+    -webkit-text-stroke: thin;
+}
+
+.feture {
+    display: flex;
+    flex-direction: row;
+}
+
+.feture-description {
+    display: flex;
+    margin-top: 30px;
+}
+
+span {
+    padding-right: 25px;
+    font-size: 24px;
+    font-family: 'Amatic SC', cursive;
+}
+
+.options {
+    margin-top: 170px;
+    text-align-last: center;
+    justify-content: space-between;
+    display: flex;
+}
+
+.far, .material-icons {
+    background-color: aqua;
+    padding: 12px;
+    font-size: 30px;
+    font-size: 25px;
+    background-color: #ffe4c1;
+    border: 2px solid;
+    border-radius: 8px;
+    color: dimgray;
+}
+
+.far:hover ,.material-icons:hover {
+    background-color: #696969ab;
+    color: white;
+    border-color: #696969ab;
 }

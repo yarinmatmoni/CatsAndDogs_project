@@ -56,7 +56,7 @@ namespace CatsAndDogs_project.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Name")] ProductsSubCategory productsSubCategory)
+        public async Task<IActionResult> Create([Bind("Id,Name,CategoryId")] ProductsSubCategory productsSubCategory)
         {
             if (ModelState.IsValid)
             {

@@ -1,0 +1,42 @@
+﻿body {
+    margin-top: 100px;
+}
+
+
+h1 {
+    text-align: center;
+    font-size: 50px;
+    margin-bottom: 35px;
+    color: burlywood;
+    font-family: 'Amatic SC', cursive;
+    text-decoration-line: underline;
+}
+
+.card {
+    width: 86rem !important;
+    position: inherit;
+    height: 35rem;
+    border: 2px solid;
+    border-radius: 10px;
+    border-color: dimgrey;
+    box-shadow: 0px 8px 16px 0px rgb(0 0 0 / 20%);
+}
+
+.card-body {
+    display: flex;
+    justify-content: space-between;
+}
+
+.card-img-top {
+    width: 400px;
+    border: 2px solid;
+    border-color: darkgray;
+    padding: 2px;
+    border-radius: 10px;
+}
+
+.card-title-name {
+    font-size: 58px;
+    color: dimgray;
+    font-family: 'Amatic SC', cursive;
+}

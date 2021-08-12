@@ -4,75 +4,103 @@
     ViewData["Title"] = "Details";
 }
 
-<h1>Details</h1>
+<h1>פרטים נוספים על - @Html.DisplayFor(model => model.Name)</h1>
 
 <div>
-    <h4>Dogs</h4>
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Name)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Name)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Type)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Type)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Age)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Age)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Size)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Size)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Gender)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Gender)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Color)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Color)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.LifeExpectancy)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.LifeExpectancy)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Match)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Match)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Description)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Description)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Image)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Image)
-        </dd>
-    </dl>
-</div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
-    <a asp-action="Index">Back to List</a>
-</div>
+    @*<dl class="row">
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Name)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Name)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Type)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Type)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Age)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Age)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Size)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Size)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Gender)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Gender)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Color)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Color)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.LifeExpectancy)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.LifeExpectancy)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Match)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Match)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Description)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Description)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Image)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Image)
+            </dd>
+        </dl>
+        </div>*@
+    <div class="card col-3" style="width: 18rem; position:inherit">
+        <div class="card-body">
+            <div class="details">
+                <h5 class="card-title-name">שם הכלב :  @Html.DisplayFor(model => model.Name)</h5>
+                <h5 class="card-title">סוג :</h5><span>@Html.DisplayFor(modle => modle.Type)</span>
+                <h5 class="card-title">גיל :</h5><span>@Html.DisplayFor(modle => modle.Age)</span>
+                <h5 class="card-title">גודל :</h5><span>@Html.DisplayFor(modle => modle.Size)</span>
+                <h5 class="card-title">מין :</h5><span>@Html.DisplayFor(modle => modle.Gender)</span>
+                <h5 class="card-title">צבע :</h5><span>@Html.DisplayFor(modle => modle.Color)</span>
+                <h5 class="card-title">תוחלת חיים :</h5><span>@Html.DisplayFor(modle => modle.LifeExpectancy)</span>
+                <h5 class="card-title">תיאור :</h5><span>@Html.DisplayFor(modle => modle.Description)</span>
+            </div>
+            <div class="img">
+                <img src=@Html.DisplayFor(model => model.Image) class="card-img-top">
+            </div>
+        </div>
+        @*<div class="option">
+            <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-primary">לפרטים נוספים</a>
+            <a class="editOption" asp-action="Edit" asp-route-id="@item.Id">עריכה</a>
+            <a class="removeOption" asp-action="Delete" asp-route-id="@item.Id">מחיקה</a>
+        </div>*@
+    </div>
+
+
+    @*<div>
+        <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+        <a asp-action="Index">Back to List</a>
+    </div>*@
+
+
+    @section Scripts {
+        @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+        <link href="~/css/details.css" rel="stylesheet" />
+    }

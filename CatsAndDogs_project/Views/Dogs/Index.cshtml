@@ -18,13 +18,14 @@
             <div class="card col-3" style="width: 18rem; position:inherit">
                 <img src="@item.Image" class="card-img-top" alt="@item.Name">
                 <div class="card-body">
-                    <h5 class="card-title">@item.Name</h5>
+                    <h5 class="card-title">שם הכלב: @item.Name</h5>
                     <p class="card-text">@item.Description</p>
-                    <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-primary">לפרטים נוספים</a>
                 </div>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a>
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a>
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                <div class="option">
+                    <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-primary">לפרטים נוספים</a>
+                    <a class="editOption" asp-action="Edit" asp-route-id="@item.Id">עריכה</a>
+                    <a class="removeOption" asp-action="Delete" asp-route-id="@item.Id">מחיקה</a>
+                </div>
             </div>
 
         }

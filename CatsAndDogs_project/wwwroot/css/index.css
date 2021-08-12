@@ -2,6 +2,15 @@
     margin-top:120px;
 }
 
+.card {
+    width: 18rem;
+    position: inherit;
+    border: 2px solid;
+    border-radius: 10px;
+    border-color: lightgray;
+    box-shadow: 0px 8px 16px 0px rgb(0 0 0 / 20%);
+}
+
 .card-img-top {
     padding-top: 10px;
 }
@@ -26,13 +35,71 @@ h1 {
     color: dimgray;
 }
 
+
 p {
     margin-bottom: 35px;
 }
 
-a:hover {
+P > a:hover {
     background-color: #696969ab;
     color: white;
     border-color: #696969ab;
 }
 
+.card-title {
+    font-size: 30px;
+    color: #696969ab;
+    font-family: 'Amatic SC', cursive;
+}
+
+.card-text {
+    font-size: 15px;
+    margin-bottom: 25px;
+}
+
+.btn-primary {
+    display: block;
+    position: inherit !important;
+    color: white !important;
+    font-family: 'Amatic SC', cursive !important;
+    font-size: 20px !important;
+}
+
+.option {
+    display: inline-flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+
+.editOption {
+    color: blueviolet;
+    text-align: end;
+    text-decoration: none;
+    font-size: 16px;
+    padding-top: 10px;
+}
+
+.removeOption {
+    color: tomato;
+    text-align: start;
+    font-size: 16px;
+    text-decoration: none;
+    padding-top: 10px;
+}
+
+.row {
+    justify-content: space-between;
+    grid-row-gap: 1em;
+}
+
+
+@media only screen and (max-width: 760px) {
+    .row {
+        justify-content: center;
+    }
+    .btn-primary {
+        display: block;
+        position: inherit !important;
+        color:white !important;
+    }
+}

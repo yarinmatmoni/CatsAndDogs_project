@@ -7,78 +7,6 @@
 <h1>מחיקת כלב מרשימת האימוץ</h1>
 <h3>האם אתה בטוח שתרצה למחוק את <span>@Html.DisplayFor(model => model.Name)</span> מרשימת האימוץ ?</h3>
 
-@*<div>
-        <dl class="row">
-            <dt class="col-sm-2">
-                @Html.DisplayNameFor(model => model.Name)
-            </dt>
-            <dd class="col-sm-10">
-                @Html.DisplayFor(model => model.Name)
-            </dd>
-            <dt class="col-sm-2">
-                @Html.DisplayNameFor(model => model.Type)
-            </dt>
-            <dd class="col-sm-10">
-                @Html.DisplayFor(model => model.Type)
-            </dd>
-            <dt class="col-sm-2">
-                @Html.DisplayNameFor(model => model.Age)
-            </dt>
-            <dd class="col-sm-10">
-                @Html.DisplayFor(model => model.Age)
-            </dd>
-            <dt class="col-sm-2">
-                @Html.DisplayNameFor(model => model.Size)
-            </dt>
-            <dd class="col-sm-10">
-                @Html.DisplayFor(model => model.Size)
-            </dd>
-            <dt class="col-sm-2">
-                @Html.DisplayNameFor(model => model.Gender)
-            </dt>
-            <dd class="col-sm-10">
-                @Html.DisplayFor(model => model.Gender)
-            </dd>
-            <dt class="col-sm-2">
-                @Html.DisplayNameFor(model => model.Color)
-            </dt>
-            <dd class="col-sm-10">
-                @Html.DisplayFor(model => model.Color)
-            </dd>
-            <dt class="col-sm-2">
-                @Html.DisplayNameFor(model => model.LifeExpectancy)
-            </dt>
-            <dd class="col-sm-10">
-                @Html.DisplayFor(model => model.LifeExpectancy)
-            </dd>
-            <dt class="col-sm-2">
-                @Html.DisplayNameFor(model => model.Match)
-            </dt>
-            <dd class="col-sm-10">
-                @Html.DisplayFor(model => model.Match)
-            </dd>
-            <dt class="col-sm-2">
-                @Html.DisplayNameFor(model => model.Description)
-            </dt>
-            <dd class="col-sm-10">
-                @Html.DisplayFor(model => model.Description)
-            </dd>
-            <dt class="col-sm-2">
-                @Html.DisplayNameFor(model => model.Image)
-            </dt>
-            <dd class="col-sm-10">
-                @Html.DisplayFor(model => model.Image)
-            </dd>
-        </dl>
-
-        <form asp-action="Delete">
-            <input type="hidden" asp-for="Id" />
-            <input type="submit" value="Delete" class="btn btn-danger" /> |
-            <a asp-action="Index">Back to List</a>
-        </form>
-    </div>*@
-
-
 <div class="card col-3" style="width: 18rem; position:inherit">
     <div class="card-body">
         <div class="details">
@@ -111,7 +39,7 @@
                 <form asp-action="Delete">
                     <input type="hidden" asp-for="Id" />
                     <input type="submit" value="מחיקה" class="btn btn-danger" />
-                    <a asp-action="Index">Back to List</a>
+                    <a asp-action="Index"><i class="material-icons">keyboard_backspace</i></a>
                 </form>
             </div>
         </div>

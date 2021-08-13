@@ -85,7 +85,7 @@ h3 > span {
     font-family: 'Amatic SC', cursive;
 }
 
-.far, .material-icons {
+.material-icons {
     background-color: aqua;
     padding: 12px;
     font-size: 30px;
@@ -94,9 +94,10 @@ h3 > span {
     border: 2px solid;
     border-radius: 8px;
     color: dimgray;
+    margin-right: 24rem;
 }
 
-.far:hover, .material-icons:hover {
+.material-icons:hover {
     background-color: #696969ab;
     color: white;
     border-color: #696969ab;
@@ -105,7 +106,9 @@ h3 > span {
 .btn {
     display: block;
     width: 100%;
-    padding: 15px;
+    font-size: 30px;
+    font-family: 'Amatic SC', cursive;
+    margin-bottom: 72px;
 }
 
 @media only screen and (max-width: 1400px) {
@@ -133,5 +136,14 @@ h3 > span {
         width: 325px;
         margin-bottom: 10px;
         height: auto;
+    }
+
+    .btn {
+        color: white !important;
+        margin-bottom: 30px;
+    }
+
+    .material-icons {
+        margin-right: 23rem;
     }
 }

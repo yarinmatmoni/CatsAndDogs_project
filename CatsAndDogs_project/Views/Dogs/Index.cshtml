@@ -19,7 +19,7 @@
                 <img src="@item.Image" class="card-img-top" alt="@item.Name">
                 <div class="card-body">
                     <h5 class="card-title">שם הכלב: @item.Name</h5>
-                    <p class="card-text">@item.Description</p>
+                    <p class="card-text" style="overflow: hidden;text-overflow: ellipsis;white-space: nowrap;">@item.Description</p>
                 </div>
                 <div class="option">
                     <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-primary">לפרטים נוספים</a>

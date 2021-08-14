@@ -12,7 +12,7 @@ namespace CatsAndDogs_project.Models
 
         [Required(ErrorMessage = "זהו שדה חובה")]
         [Display(Name ="שם ")]
-        [StringLength(50,MinimumLength =3 , ErrorMessage ="אורך השם חייב להחיל בין 3-50 תווים")]
+        [StringLength(50,MinimumLength =3 , ErrorMessage ="אורך השם חייב להכיל בין 3-50 תווים")]
         public String Name { get; set; }
 
         [Required(ErrorMessage = "זהו שדה חובה")]
@@ -45,7 +45,7 @@ namespace CatsAndDogs_project.Models
 
         [Required(ErrorMessage = "זהו שדה חובה")]
         [Display(Name = "תיאור")]
-        [StringLength(200, MinimumLength = 10 , ErrorMessage ="התיאור חייב להחיל בין 20-200 תווים")]
+        [StringLength(200, MinimumLength = 10 , ErrorMessage ="התיאור חייב להכיל בין 20-200 תווים")]
         public String Description { get; set; }
 
         [Required(ErrorMessage = "זהו שדה חובה")]

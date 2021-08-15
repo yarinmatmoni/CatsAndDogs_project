@@ -120,3 +120,14 @@ p {
         right: -400%
     }
 }
+
+
+@media only screen and (max-width: 1200px) {
+    .small-tiitles {
+        display:inline;
+    }
+
+    span{
+        display:none;
+    }
+}

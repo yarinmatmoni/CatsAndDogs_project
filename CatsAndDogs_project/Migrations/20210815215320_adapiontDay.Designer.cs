@@ -4,14 +4,16 @@ using CatsAndDogs_project.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace CatsAndDogs_project.Migrations
 {
     [DbContext(typeof(CatsAndDogs_projectContext))]
-    partial class CatsAndDogs_projectContextModelSnapshot : ModelSnapshot
+    [Migration("20210815215320_adapiontDay")]
+    partial class adapiontDay
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

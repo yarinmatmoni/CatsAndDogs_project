@@ -113,9 +113,10 @@
     background-color: #f8e2cf;
     justify-content: space-around;
     align-items: center;
-    margin-top: 100%;
+    margin-top: 100px;
     position: absolute;
     width: 100%;
+    margin-top: 100px;
 }
 
 .dogfood, .catfood, .guides, .professionals {

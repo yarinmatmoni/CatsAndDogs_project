@@ -24,5 +24,17 @@ namespace CatsAndDogs_project.Data
 
 
         public DbSet<CatsAndDogs_project.Models.AdoptionDays> AdoptionDays { get; set; }
+
+
+        public DbSet<CatsAndDogs_project.Models.Food> Food { get; set; }
+
+
+        public DbSet<CatsAndDogs_project.Models.FoodCategory> FoodCategory { get; set; }
+
+
+       
+
+
+        
     }
 }

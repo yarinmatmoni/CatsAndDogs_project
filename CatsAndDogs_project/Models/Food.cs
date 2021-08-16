@@ -40,9 +40,14 @@ namespace CatsAndDogs_project.Models
         [Display(Name = "בחר את סוג החיה")]
         public string TypeAnimal { get; set; }
 
+
+        public int CategoryId { get; set; }
+
         [Required(ErrorMessage = "זהו שדה חובה")]
         [Display(Name = "בחר את קטגוריית המזון")]
         public FoodCategory Category { get; set; }
+
+        
 
     }
 }

@@ -4,33 +4,36 @@
     ViewData["Title"] = "Details";
 }
 
-<h1>Details</h1>
 
-<div>
-    <h4>AdoptionDays</h4>
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.DateandTime)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.DateandTime)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Location)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Location)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Discription)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Discription)
-        </dd>
-    </dl>
+<h1>פרטים נוספים</h1>
+
+<div class="card col-3" style="width: 18rem; position:inherit">
+    <div class="card-body">
+        <div class="details">
+            <div class="feture">
+                <h5 class="card-title">  @Html.DisplayNameFor(model => model.DateandTime)</h5><span>@Html.DisplayFor(modle => modle.DateandTime)</span>
+            </div>
+            <div class="feture">
+                <h5 class="card-title"> @Html.DisplayNameFor(model => model.Location)</h5><span>@Html.DisplayFor(modle => modle.Location)</span>
+            </div>
+            <div class="feture">
+                <h5 class="card-title"> @Html.DisplayNameFor(model => model.Discription)</h5><span>@Html.DisplayFor(modle => modle.Discription)</span>
+            </div>
+        </div>
+        <div class="img">
+
+            <div class="options">
+                <a asp-action="Edit" asp-route-id="@Model.Id"><i class='far fa-edit'></i></a>
+                <a asp-action="Index"><i class="material-icons">keyboard_backspace</i></a>
+            </div>
+        </div>
+    </div>
 </div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
-    <a asp-action="Index">Back to List</a>
-</div>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    <link href="~/css/details_info.css" rel="stylesheet"/>
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+}
+

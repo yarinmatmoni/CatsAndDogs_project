@@ -27,7 +27,7 @@ h3 > span {
 .card {
     width: 86rem !important;
     position: inherit;
-    height: 35rem;
+    height:auto;
     border: 2px solid;
     border-radius: 10px;
     border-color: dimgrey;
@@ -111,6 +111,10 @@ h3 > span {
     margin-bottom: 72px;
 }
 
+#delete_btn {
+    margin-top: 15px;
+}
+
 @media only screen and (max-width: 1400px) {
     .card {
         width: 77rem !important;
@@ -145,5 +149,9 @@ h3 > span {
 
     .material-icons {
         margin-right: 23rem;
+    }
+
+    .details_adopt{
+        margin-bottom:30px;
     }
 }

@@ -15,7 +15,7 @@ h1 {
 .card {
     width: 86rem !important;
     position: inherit;
-    height: 35rem;
+    height:auto;
     border: 2px solid;
     border-radius: 10px;
     border-color: dimgrey;

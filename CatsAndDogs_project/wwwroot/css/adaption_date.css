@@ -63,3 +63,25 @@ tr {
     font-size: 22px;
     color: #4b4949e6;
 }
+
+.options {
+    display: flex;
+}
+
+.options > a {
+    padding: 5px;
+    margin-top: 15px;
+    color: #4b4949e6;
+}
+
+#edit_btn :hover {
+    color: #9b2bd3;
+}
+
+#info_btn :hover {
+    color: dodgerblue;
+}
+
+#delete_btn :hover {
+    color: tomato;
+}

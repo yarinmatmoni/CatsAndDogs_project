@@ -30,6 +30,12 @@ namespace CatsAndDogs_project.Data
 
 
         public DbSet<CatsAndDogs_project.Models.HealthCategory> HealthCategory { get; set; }
+
+
+        public DbSet<CatsAndDogs_project.Models.Care> Care { get; set; }
+
+
+        public DbSet<CatsAndDogs_project.Models.CareCategory> CareCategory { get; set; }
         
     }
 }

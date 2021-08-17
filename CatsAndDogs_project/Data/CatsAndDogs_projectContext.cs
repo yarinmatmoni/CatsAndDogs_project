@@ -42,6 +42,12 @@ namespace CatsAndDogs_project.Data
 
 
         public DbSet<CatsAndDogs_project.Models.AccessoriesCategory> AccessoriesCategory { get; set; }
+
+
+        public DbSet<CatsAndDogs_project.Models.SleepAndEnvironment> SleepAndEnvironment { get; set; }
+
+
+        public DbSet<CatsAndDogs_project.Models.SleepAndEnvironmentCategory> SleepAndEnvironmentCategory { get; set; }
         
     }
 }

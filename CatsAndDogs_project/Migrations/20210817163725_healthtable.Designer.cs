@@ -4,14 +4,16 @@ using CatsAndDogs_project.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace CatsAndDogs_project.Migrations
 {
     [DbContext(typeof(CatsAndDogs_projectContext))]
-    partial class CatsAndDogs_projectContextModelSnapshot : ModelSnapshot
+    [Migration("20210817163725_healthtable")]
+    partial class healthtable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -166,9 +168,6 @@ namespace CatsAndDogs_project.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("CategoryId")
-                        .HasColumnType("int");
-
                     b.Property<string>("Description")
                         .IsRequired()
                         .HasMaxLength(500)
@@ -192,26 +191,7 @@ namespace CatsAndDogs_project.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("CategoryId");
-
                     b.ToTable("Health");
-                });
-
-            modelBuilder.Entity("CatsAndDogs_project.Models.HealthCategory", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("HealthCategory");
                 });
 
             modelBuilder.Entity("DogBreedsDogs", b =>
@@ -229,17 +209,6 @@ namespace CatsAndDogs_project.Migrations
                     b.ToTable("DogBreedsDogs");
                 });
 
-            modelBuilder.Entity("CatsAndDogs_project.Models.Health", b =>
-                {
-                    b.HasOne("CatsAndDogs_project.Models.HealthCategory", "Category")
-                        .WithMany("HealthList")
-                        .HasForeignKey("CategoryId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Category");
-                });
-
             modelBuilder.Entity("DogBreedsDogs", b =>
                 {
                     b.HasOne("CatsAndDogs_project.Models.DogBreeds", null)
@@ -253,11 +222,6 @@ namespace CatsAndDogs_project.Migrations
                         .HasForeignKey("DogsId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-                });
-
-            modelBuilder.Entity("CatsAndDogs_project.Models.HealthCategory", b =>
-                {
-                    b.Navigation("HealthList");
                 });
 #pragma warning restore 612, 618
         }

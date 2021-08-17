@@ -92,6 +92,15 @@ P > a:hover {
     grid-row-gap: 1em;
 }
 
+#price {
+    color: #16c634 !important;
+    font-size: 27px;
+    font-weight: 600;
+    font-family: 'Amatic SC', cursive;
+    margin-top: -25px;
+    margin-bottom: auto;
+}
+
 
 @media only screen and (max-width: 760px) {
     .row {

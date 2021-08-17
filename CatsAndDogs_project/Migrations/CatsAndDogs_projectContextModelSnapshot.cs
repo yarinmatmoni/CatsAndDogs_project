@@ -159,66 +159,6 @@ namespace CatsAndDogs_project.Migrations
                     b.ToTable("Dogs");
                 });
 
-            modelBuilder.Entity("CatsAndDogs_project.Models.Food", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<int>("CategoryId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Description")
-                        .IsRequired()
-                        .HasMaxLength(300)
-                        .HasColumnType("nvarchar(300)");
-
-                    b.Property<string>("Image")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
-
-                    b.Property<float>("Price")
-                        .HasColumnType("real");
-
-                    b.Property<string>("Tips")
-                        .IsRequired()
-                        .HasMaxLength(300)
-                        .HasColumnType("nvarchar(300)");
-
-                    b.Property<string>("TypeAnimal")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("CategoryId");
-
-                    b.ToTable("Food");
-                });
-
-            modelBuilder.Entity("CatsAndDogs_project.Models.FoodCategory", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("FoodCategory");
-                });
-
             modelBuilder.Entity("DogBreedsDogs", b =>
                 {
                     b.Property<int>("BreedsId")
@@ -234,17 +174,6 @@ namespace CatsAndDogs_project.Migrations
                     b.ToTable("DogBreedsDogs");
                 });
 
-            modelBuilder.Entity("CatsAndDogs_project.Models.Food", b =>
-                {
-                    b.HasOne("CatsAndDogs_project.Models.FoodCategory", "Category")
-                        .WithMany("FoodList")
-                        .HasForeignKey("CategoryId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Category");
-                });
-
             modelBuilder.Entity("DogBreedsDogs", b =>
                 {
                     b.HasOne("CatsAndDogs_project.Models.DogBreeds", null)
@@ -258,11 +187,6 @@ namespace CatsAndDogs_project.Migrations
                         .HasForeignKey("DogsId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-                });
-
-            modelBuilder.Entity("CatsAndDogs_project.Models.FoodCategory", b =>
-                {
-                    b.Navigation("FoodList");
                 });
 #pragma warning restore 612, 618
         }

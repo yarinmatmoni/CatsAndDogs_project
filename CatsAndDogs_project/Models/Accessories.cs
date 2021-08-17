@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CatsAndDogs_project.Models
 {
-    public class Care
+    public class Accessories
     {
         public int Id { get; set; }
 
@@ -23,9 +23,9 @@ namespace CatsAndDogs_project.Models
 
 
         [Required(ErrorMessage = "זהו שדה חובה")]
-        [Display(Name = "חשוב לנו שתדעו!")]
+        [Display(Name = "מומלץ ל:")]
         [StringLength(500, MinimumLength = 3, ErrorMessage = "אורך הטיפ חייב להכיל בין 3-500 תווים")]
-        public string Tip { get; set; }
+        public string Recommendation { get; set; }
 
         [Required(ErrorMessage = "זהו שדה חובה")]
         [Display(Name = "מחיר")]
@@ -44,6 +44,9 @@ namespace CatsAndDogs_project.Models
         [Display(Name = "בחר קטגוריה")]
         public int CategoryId { get; set; }
 
-        public CareCategory Category { get; set; }
+        public AccessoriesCategory Category { get; set; }
+
+
+
     }
 }

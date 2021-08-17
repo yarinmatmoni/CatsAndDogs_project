@@ -36,6 +36,12 @@ namespace CatsAndDogs_project.Data
 
 
         public DbSet<CatsAndDogs_project.Models.CareCategory> CareCategory { get; set; }
+
+
+        public DbSet<CatsAndDogs_project.Models.Accessories> Accessories { get; set; }
+
+
+        public DbSet<CatsAndDogs_project.Models.AccessoriesCategory> AccessoriesCategory { get; set; }
         
     }
 }

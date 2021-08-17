@@ -73,7 +73,7 @@ p {
 #slider > figure {
     position:relative;
     width:500%;
-    animation: 30s slider ease-out infinite;
+    animation: 30s slider cubic-bezier(0.4, 0, 1, 1) infinite;
     z-index: -1;
 }
 

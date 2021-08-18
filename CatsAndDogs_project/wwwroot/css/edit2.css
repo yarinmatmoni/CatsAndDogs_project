@@ -42,7 +42,8 @@ h1 {
 .feture {
     display: grid;
     flex-direction: row;
-    justify-content: flex-end;
+    /*justify-content: flex-end;*/
+    justify-content: flex-start;
 }
 
 .feture-description {
@@ -72,7 +73,6 @@ span > input {
     background-clip: padding-box;
     font-size: 20px !important;
 }
-
 
 .options {
     margin-top: 218px;

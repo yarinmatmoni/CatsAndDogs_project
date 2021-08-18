@@ -4,66 +4,61 @@
     ViewData["Title"] = "Edit";
 }
 
-<h1>Edit</h1>
+<h1>עריכת הפרטים של : @Html.DisplayFor(modle => modle.Name)</h1>
 
-<h4>Cats</h4>
-<hr />
 <div class="row">
-    <div class="col-md-4">
-        <form asp-action="Edit">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="Id" />
-            <div class="form-group">
-                <label asp-for="Name" class="control-label"></label>
-                <input asp-for="Name" class="form-control" />
-                <span asp-validation-for="Name" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Type" class="control-label"></label>
-                <input asp-for="Type" class="form-control" />
-                <span asp-validation-for="Type" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Age" class="control-label"></label>
-                <input asp-for="Age" class="form-control" />
-                <span asp-validation-for="Age" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Gender" class="control-label"></label>
-                <input asp-for="Gender" class="form-control" />
-                <span asp-validation-for="Gender" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Color" class="control-label"></label>
-                <input asp-for="Color" class="form-control" />
-                <span asp-validation-for="Color" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="LifeExpectancy" class="control-label"></label>
-                <input asp-for="LifeExpectancy" class="form-control" />
-                <span asp-validation-for="LifeExpectancy" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Description" class="control-label"></label>
-                <input asp-for="Description" class="form-control" />
-                <span asp-validation-for="Description" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Image" class="control-label"></label>
-                <input asp-for="Image" class="form-control" />
-                <span asp-validation-for="Image" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
-            </div>
-        </form>
+    <div class="card col-3" style="width: 18rem; position:inherit">
+        <div class="card-body">
+            <form asp-action="Edit">
+                <div class="Edit">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <input type="hidden" asp-for="Id" />
+                    <div class="feture">
+                        <h5 class="card-title"><label>שם החתול :</label></h5><span><input asp-for="Name" class="form-control" /></span>
+                        <span asp-validation-for="Name" class="text-danger"></span>
+                    </div>
+                    <div class="feture">
+                        <h5 class="card-title"><label asp-for="Type" class="control-label"></label> :</h5><span><input asp-for="Type" class="form-control" /></span>
+                        <span asp-validation-for="Type" class="text-danger"></span>
+                    </div>
+                    <div class="feture">
+                        <h5 class="card-title"><label asp-for="Age" class="control-label"></label> :</h5><span><input asp-for="Age" class="form-control" /></span>
+                        <span asp-validation-for="Age" class="text-danger"></span>
+                    </div>
+                    <div class="feture">
+                        <h5 class="card-title"> <label asp-for="Gender" class="control-label"></label> :</h5><span> <input asp-for="Gender" class="form-control" /></span>
+                        <span asp-validation-for="Gender" class="text-danger"></span>
+                    </div>
+                    <div class="feture">
+                        <h5 class="card-title"><label asp-for="Color" class="control-label"></label> :</h5><span><input asp-for="Color" class="form-control" /></span>
+                        <span asp-validation-for="Color" class="text-danger"></span>
+                    </div>
+                    <div class="feture">
+                        <h5 class="card-title"><label asp-for="LifeExpectancy" class="control-label"></label> :</h5><span><input asp-for="LifeExpectancy" class="form-control" /></span>
+                        <span asp-validation-for="LifeExpectancy" class="text-danger"></span>
+                    </div>
+                    <div class="feture">
+                        <h5 class="card-title"> <label asp-for="Description" class="control-label"></label> :</h5><span><textarea asp-for="Description" id="text_descripton" class="form-control" rows="4" cols="50" style="font-size:18px"></textarea></span>
+                        <span asp-validation-for="Description" class="text-danger"></span>
+                    </div>
+                    <div class="feture">
+                        <h5 class="card-title"><label asp-for="Image" class="control-label"></label> :</h5><span><input asp-for="Image" class="form-control" /></span>
+                        <span asp-validation-for="Image" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="img">
+                    <div class="options">
+                        <a asp-action="Index"><i class="material-icons">keyboard_backspace</i></a>
+                        <input type="submit" value="שמור" class="btn btn-primary" />
+                    </div>
+                </div>
+            </form>
+        </div>
     </div>
-</div>
-
-<div>
-    <a asp-action="Index">Back to List</a>
 </div>
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    <link href="~/css/edit2.css" rel="stylesheet" />
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
 }

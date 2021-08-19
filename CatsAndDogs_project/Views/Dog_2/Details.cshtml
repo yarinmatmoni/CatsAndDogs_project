@@ -1,0 +1,57 @@
+﻿@model CatsAndDogs_project.Models.Dog_2
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+
+<h1>פרטים נוספים על - @Html.DisplayFor(model => model.Name)</h1>
+
+<div class="card col-3" style="width: 18rem; position:inherit">
+    <div class="card-body">
+        <div class="details">
+            <h5 class="card-title-name">שם הכלב :  @Html.DisplayFor(model => model.Name)</h5>
+            <div class="feture">
+                <h5 class="card-title">גזע :</h5>
+                <span>
+                    @foreach(var modle in Model.ListBreed)
+                    {
+                        @Html.DisplayFor(modelItem => modle.Name) <label> ,</label>
+                    }
+                </span>
+            </div>
+            <div class="feture">
+                <h5 class="card-title">גיל :</h5><span>@Html.DisplayFor(modle => modle.Age)</span>
+            </div>
+            <div class="feture">
+                <h5 class="card-title">גודל :</h5><span>@Html.DisplayFor(modle => modle.Size)</span>
+            </div>
+            <div class="feture">
+                <h5 class="card-title">מין :</h5><span>@Html.DisplayFor(modle => modle.Gender)</span>
+            </div>
+            <div class="feture">
+                <h5 class="card-title">צבע :</h5><span>@Html.DisplayFor(modle => modle.Color)</span>
+            </div>
+            <div class="feture">
+                <h5 class="card-title">תוחלת חיים :</h5><span>@Html.DisplayFor(modle => modle.LifeExpectancy)</span>
+            </div>
+            <div class="feture-description">
+                <h5 class="card-title">תיאור:</h5><span>@Html.DisplayFor(modle => modle.Description)</span>
+            </div>
+        </div>
+        <div class="img">
+            <img src=@Html.DisplayFor(model => model.Image) class="card-img">
+            <div class="options">
+                <a asp-action="Edit" asp-route-id="@Model.Id"><i class='far fa-edit'></i></a>
+                <a asp-action="Index"><i class="material-icons">keyboard_backspace</i></a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    <link href="~/css/details_info.css" rel="stylesheet" />
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+}

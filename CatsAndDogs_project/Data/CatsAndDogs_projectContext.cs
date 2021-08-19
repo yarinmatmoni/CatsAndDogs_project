@@ -54,6 +54,12 @@ namespace CatsAndDogs_project.Data
 
 
         public DbSet<CatsAndDogs_project.Models.NutritionCategory> NutritionCategory { get; set; }
+
+
+        public DbSet<CatsAndDogs_project.Models.Dog_2> Dog_2 { get; set; }
+
+
+        public DbSet<CatsAndDogs_project.Models.Breed_2> Breed_2 { get; set; }
         
     }
 }

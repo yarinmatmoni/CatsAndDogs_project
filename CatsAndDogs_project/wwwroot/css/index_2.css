@@ -13,6 +13,7 @@
 
 .card-img-top {
     padding-top: 10px;
+    height: 185px;
 }
 
 h1 {
@@ -26,8 +27,8 @@ h1 {
 
 h5 {
     font-family: 'Amatic SC', cursive;
-    color: dimgray;
-    font-size: 25px;
+    color: #b58235;
+    font-size: 22px;
 }
 
 .create_btn {
@@ -61,6 +62,10 @@ P > a:hover {
 .card-text {
     font-size: 15px;
     margin-bottom: 25px;
+}
+
+.card-body > p {
+    margin-bottom:10px;
 }
 
 .btn-primary {

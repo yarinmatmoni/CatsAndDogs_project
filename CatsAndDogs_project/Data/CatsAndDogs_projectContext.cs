@@ -15,10 +15,6 @@ namespace CatsAndDogs_project.Data
         {
         }
 
-
-        public DbSet<CatsAndDogs_project.Models.Cats> Cats { get; set; }
-
-
         public DbSet<CatsAndDogs_project.Models.AdoptionDays> AdoptionDays { get; set; }
 
 
@@ -56,6 +52,12 @@ namespace CatsAndDogs_project.Data
 
 
         public DbSet<CatsAndDogs_project.Models.Breed_2> Breed_2 { get; set; }
+
+
+        public DbSet<CatsAndDogs_project.Models.Cat_2> Cat_2 { get; set; }
+
+
+        public DbSet<CatsAndDogs_project.Models.BreedCat_2> BreedCat_2 { get; set; }
         
     }
 }

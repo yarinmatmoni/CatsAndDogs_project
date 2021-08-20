@@ -57,6 +57,5 @@ namespace CatsAndDogs_project.Models
         [RegularExpression(@"(https?:\/\/)?(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#()?&//=]*)", ErrorMessage = "ניתן לשים אך ורק קישור")]
         [Display(Name = "צרף קישור לתמונה")]
         public string Image { get; set; }
-
     }
 }

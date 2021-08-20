@@ -26,11 +26,26 @@
                         <span asp-validation-for="Age" class="text-danger"></span>
                     </div>
                     <div class="feture">
-                        <h5 class="card-title"><label asp-for="Size" class="control-label"></label> :</h5><span><input asp-for="Size" class="form-control" /></span>
+                        <h5 class="card-title"><label asp-for="Size" class="control-label"></label> :</h5>
+                        <span>
+                            <select asp-for="Size" class="form-control">
+                                <option value="" selected disabled hidden>בחר</option>
+                                <option value="קטן">קטן</option>
+                                <option value="בינוני">בינוני</option>
+                                <option value="גדול">גדול</option>
+                            </select>
+                        </span>
                         <span asp-validation-for="Size" class="text-danger"></span>
                     </div>
                     <div class="feture">
-                        <h5 class="card-title"> <label asp-for="Gender" class="control-label"></label> :</h5><span> <input asp-for="Gender" class="form-control" /></span>
+                        <h5 class="card-title"> <label asp-for="Gender" class="control-label"></label> :</h5>
+                        <span>
+                            <select asp-for="Gender" class="form-control">
+                                <option value="" selected disabled hidden>בחר</option>
+                                <option value="זכר">זכר</option>
+                                <option value="נקבה">נקבה</option>
+                            </select>
+                        </span>
                         <span asp-validation-for="Gender" class="text-danger"></span>
                     </div>
                     <div class="feture">
@@ -42,7 +57,15 @@
                         <span asp-validation-for="LifeExpectancy" class="text-danger"></span>
                     </div>
                     <div class="feture">
-                        <h5 class="card-title"><label asp-for="Match" class="control-label"></label> :</h5><span><input asp-for="Match" class="form-control" /></span>
+                        <h5 class="card-title"><label asp-for="Match" class="control-label"></label> :</h5>
+                        <span>
+                            <select asp-for="Match" class="form-control">
+                                <option value="" selected disabled hidden>בחר</option>
+                                <option value="משפחה עם ילדים">משפחה עם ילדים</option>
+                                <option value="בית קרקע">בית קרקע</option>
+                                <option value="דירה">דירה</option>
+                            </select>
+                        </span>
                         <span asp-validation-for="Match" class="text-danger"></span>
                     </div>
                     <div class="feture">
@@ -67,6 +90,6 @@
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-    <link href="~/css/edit2.css" rel="stylesheet" />
+    <link href="~/css/edit_1.css" rel="stylesheet" />
     <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
 }

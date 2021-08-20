@@ -100,7 +100,7 @@ P > a:hover {
 
 .row {
     justify-content: space-between;
-    grid-row-gap: 1em;
+    grid-row-gap: 3em;
 }
 
 #price {

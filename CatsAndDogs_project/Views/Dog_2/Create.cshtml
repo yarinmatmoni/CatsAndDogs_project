@@ -6,88 +6,183 @@
 
 <h1>הוספה לרשימת אימוץ - כלבים</h1>
 
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="Name" class="control-label"></label>
-                <input asp-for="Name" class="form-control" autocomplete="off" />
-                <span asp-validation-for="Name" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="ListBreed" class="control-label"></label>
-                <select asp-for="ListBreed" class="form-control" asp-items="ViewBag.ListBreed"></select>
-                <span asp-validation-for="ListBreed" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Age" class="control-label"></label>
-                <input asp-for="Age" class="form-control" autocomplete="off" />
-                <span asp-validation-for="Age" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Size" class="control-label"></label>
-                <select asp-for="Size" class="form-control">
-                    <option value="" selected disabled hidden>בחר</option>
-                    <option value="קטן">קטן</option>
-                    <option value="בינוני">בינוני</option>
-                    <option value="גדול">גדול</option>
-                </select>
-                <span asp-validation-for="Size" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Gender" class="control-label"></label>
-                <select asp-for="Gender" class="form-control">
-                    <option value="" selected disabled hidden>בחר</option>
-                    <option value="זכר">זכר</option>
-                    <option value="נקבה">נקבה</option>
-                </select>
-                <span asp-validation-for="Gender" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Color" class="control-label"></label>
-                <input asp-for="Color" class="form-control" autocomplete="off" />
-                <span asp-validation-for="Color" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="LifeExpectancy" class="control-label"></label>
-                <input asp-for="LifeExpectancy" class="form-control" autocomplete="off" />
-                <span asp-validation-for="LifeExpectancy" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Match" class="control-label"></label>
-                <select asp-for="Match" class="form-control">
-                    <option value="" selected disabled hidden>בחר</option>
-                    <option value="משפחה עם ילדים">משפחה עם ילדים</option>
-                    <option value="בית קרקע">בית קרקע</option>
-                    <option value="דירה">דירה</option>
-                </select>
-                <span asp-validation-for="Match" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Description" class="control-label"></label>
-                <textarea asp-for="Description" class="form-control" rows="4" cols="50"></textarea>
-                <span asp-validation-for="Description" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Image" class="control-label"></label>
-                <input asp-for="Image" class="form-control" autocomplete="off" />
-                <span asp-validation-for="Image" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
-        </form>
-    </div>
-</div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
+<div class="row">
+    <div class="card col-3" style="width: 18rem; position:inherit">
+        <div class="card-body">
+            <form asp-action="Create">
+                <div class="Create">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="feture">
+                        <h5 class="card-title"><label asp-for="Name" class="control-label"></label> :</h5>
+                        <span> <input asp-for="Name" class="form-control" autocomplete="off" /></span>
+                        <span asp-validation-for="Name" class="text-danger"></span>
+                    </div>
+                    <div class="feture">
+                        <h5 class="card-title"><label asp-for="ListBreed" class="control-label"></label> :</h5>
+                        <span><select asp-for="ListBreed" class="form-control" asp-items="ViewBag.ListBreed"></select></span>
+                        <span asp-validation-for="ListBreed" class="text-danger"></span>
+                    </div>
+                    <div class="feture">
+                        <h5 class="card-title"> <label asp-for="Age" class="control-label"></label> :</h5>
+                        <span><input asp-for="Age" class="form-control" autocomplete="off" /></span>
+                        <span asp-validation-for="Age" class="text-danger"></span>
+                    </div>
+                    <div class="feture">
+                        <h5 class="card-title"><label asp-for="Size" class="control-label"></label> :</h5>
+                        <span>
+                            <select asp-for="Size" class="form-control">
+                                <option value="" selected disabled hidden>בחר</option>
+                                <option value="קטן">קטן</option>
+                                <option value="בינוני">בינוני</option>
+                                <option value="גדול">גדול</option>
+                            </select>
+                        </span>
+                        <span asp-validation-for="Size" class="text-danger"></span>
+                    </div>
+                    <div class="feture">
+                        <h5 class="card-title">  <label asp-for="Gender" class="control-label"></label> :</h5>
+                        <span>
+                            <select asp-for="Gender" class="form-control">
+                                <option value="" selected disabled hidden>בחר</option>
+                                <option value="זכר">זכר</option>
+                                <option value="נקבה">נקבה</option>
+                            </select>
+                        </span>
+                        <span asp-validation-for="Gender" class="text-danger"></span>
+                    </div>
+                    <div class="feture">
+                        <h5 class="card-title"><label asp-for="Color" class="control-label"></label> :</h5>
+                        <span> <input asp-for="Color" class="form-control" autocomplete="off" /></span>
+                        <span asp-validation-for="Color" class="text-danger"></span>
+                    </div>
+                    <div class="feture">
+                        <h5 class="card-title"><label asp-for="LifeExpectancy" class="control-label"></label> :</h5>
+                        <span><input asp-for="LifeExpectancy" class="form-control" autocomplete="off" /></span>
+                        <span asp-validation-for="LifeExpectancy" class="text-danger"></span>
+                    </div>
+                    <div class="feture">
+                        <h5 class="card-title"> <label asp-for="Match" class="control-label"></label> :</h5>
+                        <span>
+                            <select asp-for="Match" class="form-control">
+                                <option value="" selected disabled hidden>בחר</option>
+                                <option value="משפחה עם ילדים">משפחה עם ילדים</option>
+                                <option value="בית קרקע">בית קרקע</option>
+                                <option value="דירה">דירה</option>
+                            </select>
+                        </span>
+                        <span asp-validation-for="Match" class="text-danger"></span>
+                    </div>
+                    <div class="feture">
+                        <h5 class="card-title"> <label asp-for="Description" class="control-label"></label> :</h5>
+                        <span><textarea asp-for="Description" id="text_descripton" class="form-control" rows="4" cols="50" style="font-size:18px"></textarea></span>
+                        <span asp-validation-for="Description" class="text-danger"></span>
+                    </div>
+                    <div class="feture">
+                        <h5 class="card-title"><label asp-for="Image" class="control-label"></label> :</h5>
+                        <span> <input asp-for="Image" class="form-control" autocomplete="off" /></span>
+                        <span asp-validation-for="Image" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="img">
+                    <div class="options">
+                        <a asp-action="Index"><i class="material-icons">keyboard_backspace</i></a>
+                        <input type="submit" value="שמור" class="btn btn-primary" />
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
 </div>
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-    <link href="~/css/create.css" rel="stylesheet" />
+    <link href="~/css/create_2.css" rel="stylesheet" />
     <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
 }
+
+    @*<div class="row">
+            <div class="col-md-4">
+                <form asp-action="Create">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="form-group">
+                        <label asp-for="Name" class="control-label"></label>
+                        <input asp-for="Name" class="form-control" autocomplete="off" />
+                        <span asp-validation-for="Name" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="ListBreed" class="control-label"></label>
+                        <select asp-for="ListBreed" class="form-control" asp-items="ViewBag.ListBreed"></select>
+                        <span asp-validation-for="ListBreed" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Age" class="control-label"></label>
+                        <input asp-for="Age" class="form-control" autocomplete="off" />
+                        <span asp-validation-for="Age" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Size" class="control-label"></label>
+                        <select asp-for="Size" class="form-control">
+                            <option value="" selected disabled hidden>בחר</option>
+                            <option value="קטן">קטן</option>
+                            <option value="בינוני">בינוני</option>
+                            <option value="גדול">גדול</option>
+                        </select>
+                        <span asp-validation-for="Size" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Gender" class="control-label"></label>
+                        <select asp-for="Gender" class="form-control">
+                            <option value="" selected disabled hidden>בחר</option>
+                            <option value="זכר">זכר</option>
+                            <option value="נקבה">נקבה</option>
+                        </select>
+                        <span asp-validation-for="Gender" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Color" class="control-label"></label>
+                        <input asp-for="Color" class="form-control" autocomplete="off" />
+                        <span asp-validation-for="Color" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="LifeExpectancy" class="control-label"></label>
+                        <input asp-for="LifeExpectancy" class="form-control" autocomplete="off" />
+                        <span asp-validation-for="LifeExpectancy" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Match" class="control-label"></label>
+                        <select asp-for="Match" class="form-control">
+                            <option value="" selected disabled hidden>בחר</option>
+                            <option value="משפחה עם ילדים">משפחה עם ילדים</option>
+                            <option value="בית קרקע">בית קרקע</option>
+                            <option value="דירה">דירה</option>
+                        </select>
+                        <span asp-validation-for="Match" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Description" class="control-label"></label>
+                        <textarea asp-for="Description" class="form-control" rows="4" cols="50"></textarea>
+                        <span asp-validation-for="Description" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Image" class="control-label"></label>
+                        <input asp-for="Image" class="form-control" autocomplete="off" />
+                        <span asp-validation-for="Image" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="Create" class="btn btn-primary" />
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div>
+            <a asp-action="Index">Back to List</a>
+        </div>
+
+        @section Scripts {
+            @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+            <link href="~/css/create_2.css" rel="stylesheet" />
+            <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+        }*@
 

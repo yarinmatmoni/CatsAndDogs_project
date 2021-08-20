@@ -1,0 +1,168 @@
+﻿body {
+    margin-top: 120px;
+}
+
+h1 {
+    text-align: center;
+    font-size: 50px;
+    margin-bottom: 35px;
+    color: burlywood;
+    font-family: 'Amatic SC', cursive;
+    text-decoration-line: underline;
+}
+
+.card {
+    width: 86rem !important;
+    position: inherit;
+    height: auto;
+    border: 2px solid;
+    border-radius: 10px;
+    border-color: dimgrey;
+    box-shadow: 0px 8px 16px 0px rgb(0 0 0 / 20%);
+}
+
+.card-body {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5px;
+}
+
+    .card-body > form {
+        display: contents;
+    }
+
+.card-title {
+    font-size: 30px;
+    color: dimgray;
+    font-family: 'Amatic SC', cursive;
+    padding-top: 6px;
+    -webkit-text-stroke: thin;
+}
+
+.feture {
+    display: grid;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.feture-description {
+    display: flex;
+    margin-top: 30px;
+}
+
+    .feture-description > span {
+        width: 640px;
+        height: 100px;
+    }
+
+span {
+    padding-right: 25px;
+    font-size: 24px;
+    font-family: 'Amatic SC', cursive;
+}
+
+    span > input {
+        display: block;
+        width: 250px !important;
+        font-family: 'Amatic SC', cursive;
+        font-weight: 400;
+        line-height: 1.5;
+        color: #212529;
+        background-color: #fff;
+        background-clip: padding-box;
+        font-size: 20px !important;
+        width: 300px !important;
+    }
+
+.options {
+    margin-top: 218px;
+    text-align-last: center;
+    justify-content: space-between;
+    display: flex;
+}
+
+    .options > input {
+        width: 200px;
+        padding: 14px;
+        font-family: 'Amatic SC', cursive;
+        font-size: 25px;
+        padding: 4px;
+    }
+
+    .options > a {
+        margin-left: 62px;
+    }
+
+.img {
+    margin-top: auto;
+}
+
+.far, .material-icons {
+    background-color: aqua;
+    padding: 12px;
+    font-size: 30px;
+    font-size: 25px;
+    background-color: #ffe4c1;
+    border: 2px solid;
+    border-radius: 8px;
+    color: dimgray;
+}
+
+    .far:hover, .material-icons:hover {
+        background-color: #696969ab;
+        color: white;
+        border-color: #696969ab;
+    }
+
+
+select {
+    font-size: 24px !important; 
+    width: 300px !important;
+}
+
+#text_descripton {
+    font-size: 22px !important;
+    width: 300px;
+}
+
+@media only screen and (max-width: 1400px) {
+    .card {
+        width: 77rem !important;
+        margin: auto;
+    }
+}
+
+@media only screen and (max-width: 1260px) {
+
+    .card-body {
+        display: list-item;
+        list-style: none;
+        margin: auto;
+    }
+
+.card {
+    width: 29rem !important;
+    height: 60rem;
+    margin: auto;
+    height: auto;
+}
+
+.options {
+    margin-top: 60px;
+}
+
+.options > input {
+    width: 200px;
+    padding: 14px;
+    font-family: 'Amatic SC', cursive;
+    font-size: 25px !important;
+    padding: 4px !important;
+    color: white !important;
+}
+
+    .feture-description > span {
+        width: 325px;
+        margin-bottom: 10px;
+        height: auto;
+    }
+}

@@ -14,7 +14,7 @@
             <div class="feture">
                 <h5 class="card-title">גזע :</h5>
                 <span>
-                    @foreach(var modle in Model.ListBreed)
+                    @foreach (var modle in Model.ListBreed)
                     {
                         @Html.DisplayFor(modelItem => modle.Name) <label> ,</label>
                     }
@@ -34,6 +34,9 @@
             </div>
             <div class="feture">
                 <h5 class="card-title">תוחלת חיים :</h5><span>@Html.DisplayFor(modle => modle.LifeExpectancy)</span>
+            </div>
+            <div class="feture">
+                <h5 class="card-title">התאמה :</h5><span>@Html.DisplayFor(modle => modle.Match)</span>
             </div>
             <div class="feture-description">
                 <h5 class="card-title">תיאור:</h5><span>@Html.DisplayFor(modle => modle.Description)</span>

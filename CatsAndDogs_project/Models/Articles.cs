@@ -10,7 +10,7 @@ namespace CatsAndDogs_project.Models
     {
         //public string Category { get; set; }
 
-        public int AriticalId { get; set; }
+        public int Id { get; set; }
 
         [Required(ErrorMessage = "זהו שדה חובה")]
         [StringLength(80, MinimumLength = 5, ErrorMessage = "אורך הכותרת חייב להכיל בין 5-80 תווים")]
@@ -46,6 +46,11 @@ namespace CatsAndDogs_project.Models
         [Display(Name = "צרף קישור לתמונה")]
         public string Img { get; set; }
 
-        public Category Category { get; set; }
+        [Required(ErrorMessage = "זהו שדה חובה")]
+        [Display(Name = "קטגוריה")]
+        public int categoryId { get; set; }
+
+        
+        public ArticalsCategory Category { get; set; }
     }
 }

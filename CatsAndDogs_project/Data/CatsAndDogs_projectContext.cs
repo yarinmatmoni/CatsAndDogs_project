@@ -58,6 +58,12 @@ namespace CatsAndDogs_project.Data
 
 
         public DbSet<CatsAndDogs_project.Models.BreedCat_2> BreedCat_2 { get; set; }
+
+
+        public DbSet<CatsAndDogs_project.Models.Articles> Articles { get; set; }
+
+
+        public DbSet<CatsAndDogs_project.Models.ArticalsCategory> ArticalsCategory { get; set; }
         
     }
 }

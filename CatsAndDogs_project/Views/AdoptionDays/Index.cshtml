@@ -4,11 +4,21 @@
     ViewData["Title"] = "Index";
 }
 
+<head>
+    <link href="~/css/adaption_date_1.css" rel="stylesheet" />
+</head>
+
 <h1>ימי אימוץ קורבים</h1>
 
 <p>
     <a class="create_btn" asp-action="Create">יום אימוץ חדש</a>
 </p>
+
+<form asp-action="Search" class="search">
+    <input name="queryDate" placeholder="הקלד תאריך לחיפוש..." autocomplete="off" />
+    <input name="queryLocation" placeholder="הקלד מיקום לחיפוש..." autocomplete="off" />
+    <input id="sub_search" type="submit" value="חיפוש" />
+</form>
 
 <table class="table">
     <thead>
@@ -51,7 +61,7 @@
 </table>
 
 
-@section Scripts {
+@*@section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
     <link href="~/css/adaption_date.css" rel="stylesheet" />
-}
+}*@

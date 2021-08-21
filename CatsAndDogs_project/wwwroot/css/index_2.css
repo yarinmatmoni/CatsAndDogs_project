@@ -2,6 +2,15 @@
     margin-top:120px;
 }
 
+.top_options {
+    display: flex;
+    justify-content: center;
+}
+
+.top_options > p {
+    margin-inline: 30px;
+}
+
 .card {
     width: 18rem;
     position: inherit;
@@ -41,7 +50,6 @@ h5 {
     font-family: 'Amatic SC', cursive;
     color: dimgray;
 }
-
 
 p {
     margin-bottom: 35px;

@@ -7,10 +7,16 @@
 
 <h1>אימוץ כלבים</h1>
 
-<p>
-    <a class="create_btn" asp-action="Create">הוספת כלב לאימוץ</a>
-</p>
+<div class="top_options">
+    <p>
+        <a class="create_btn" asp-action="Create">הוספת כלב לאימוץ</a>
+    </p>
 
+    <form asp-action="Search">
+        <input name="query" placeholder="הקלד לחיפוש.." autocomplete="off"/>
+        <input type="submit" value="חיפוש" />
+    </form>
+</div>
 <div class="container">
     <div class="row">
 
@@ -45,6 +51,6 @@
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-    <link href="~/css/index_1.css" rel="stylesheet" />
+    <link href="~/css/index_2.css" rel="stylesheet" />
 }
 

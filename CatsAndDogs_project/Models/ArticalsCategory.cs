@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CatsAndDogs_project.Models
 {
-    public class Category
+    public class ArticalsCategory
     {
         public int Id { get; set; }
 

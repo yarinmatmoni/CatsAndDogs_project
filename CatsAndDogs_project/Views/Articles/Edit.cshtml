@@ -4,65 +4,77 @@
     ViewData["Title"] = "Edit";
 }
 
-<h1>Edit</h1>
+<head>
+    <link href="~/css/articals_edit.css" rel="stylesheet" />
+</head>
 
-<h4>Articles</h4>
-<hr />
+<h1>עריכת כתבה </h1>
+
 <div class="row">
-    <div class="col-md-4">
-        <form asp-action="Edit">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="Id" />
-            <div class="form-group">
-                <label asp-for="Titel" class="control-label"></label>
-                <input asp-for="Titel" class="form-control" />
-                <span asp-validation-for="Titel" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Author" class="control-label"></label>
-                <input asp-for="Author" class="form-control" />
-                <span asp-validation-for="Author" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="CreationDate" class="control-label"></label>
-                <input asp-for="CreationDate" class="form-control" />
-                <span asp-validation-for="CreationDate" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="LastUpDate" class="control-label"></label>
-                <input asp-for="LastUpDate" class="form-control" />
-                <span asp-validation-for="LastUpDate" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Summary" class="control-label"></label>
-                <input asp-for="Summary" class="form-control" />
-                <span asp-validation-for="Summary" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Body" class="control-label"></label>
-                <input asp-for="Body" class="form-control" />
-                <span asp-validation-for="Body" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Img" class="control-label"></label>
-                <input asp-for="Img" class="form-control" />
-                <span asp-validation-for="Img" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="categoryId" class="control-label"></label>
-                <select asp-for="categoryId" class="form-control" asp-items="ViewBag.categoryId"></select>
-                <span asp-validation-for="categoryId" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
-            </div>
-        </form>
+    <div class="card col-3" style="width: 18rem; position:inherit">
+        <div class="card-body">
+            <form asp-action="Edit">
+                <div class="Edit">
+                    <link href="~/css/articals_create1.css" rel="stylesheet" />
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="body-all">
+                        <div class="body-right">
+                            <div class="feture">
+                                <h5 class="card-title"><label asp-for="Titel" class="control-label"></label> :</h5>
+                                <span><input asp-for="Titel" class="form-control" autocomplete="off" /></span>
+                                <span asp-validation-for="Titel" class="text-danger"></span>
+                            </div>
+                            <div class="feture">
+                                <h5 class="card-title"><label asp-for="Author" class="control-label"></label> :</h5>
+                                <span><input asp-for="Author" class="form-control" autocomplete="off" /></span>
+                                <span asp-validation-for="Author" class="text-danger"></span>
+                            </div>
+                            <div class="feture">
+                                <h5 class="card-title"><label asp-for="CreationDate" class="control-label"></label> :</h5>
+                                <span><input asp-for="CreationDate" class="form-control" /></span>
+                                <span asp-validation-for="CreationDate" class="text-danger"></span>
+                            </div>
+                            <div class="feture">
+                                <h5 class="card-title"><label asp-for="LastUpDate" class="control-label"></label> :</h5>
+                                <span><input asp-for="LastUpDate" class="form-control" /></span>
+                                <span asp-validation-for="LastUpDate" class="text-danger"></span>
+                            </div>
+
+                            <div class="feture">
+                                <h5 class="card-title"><label asp-for="Img" class="control-label"></label> :</h5>
+                                <span><input asp-for="Img" class="form-control" /></span>
+                                <span asp-validation-for="Img" class="text-danger"></span>
+                            </div>
+                            <div class="feture">
+                                <h5 class="card-title"> <label asp-for="categoryId" class="control-label"></label> :</h5>
+                                <select asp-for="categoryId" class="form-control" asp-items="ViewBag.categoryId">  <option value="" selected disabled hidden>בחר</option></select>
+                            </div>
+                        </div>
+                        <div class="body-left">
+                            <div class="feture">
+                                <h5 class="card-title-left"><label asp-for="Summary" class="control-label"></label> :</h5>
+                                <span><textarea asp-for="Summary" class="form-control" id="input-left" autocomplete="off" style="font-size:18px"></textarea></span>
+                                <span asp-validation-for="Summary" class="text-danger"></span>
+                            </div>
+                            <div class="feture">
+                                <h5 class="card-title-left"> <label asp-for="Body" class="control-label"></label>  :</h5>
+                                <span><textarea asp-for="Body" class="form-control" id="bo-left" autocomplete="off" style="font-size:18px"></textarea></span>
+                                <span asp-validation-for="Body" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <a asp-action="Index"><i class="material-icons">keyboard_backspace</i></a>
+                        <input type="submit" value="שמור" class="btn btn-primary" />
+                    </div>
+                </div>
+            </form>
+        </div>
     </div>
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
+
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}

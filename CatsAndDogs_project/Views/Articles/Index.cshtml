@@ -3,75 +3,38 @@
 @{
     ViewData["Title"] = "Index";
 }
+<head>
+    <link href="~/css/articals_index.css" rel="stylesheet" />
+</head>
 
-<h1>Index</h1>
+<h1>כתבות</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a class="crt_btn" asp-action="Create">יצירת כתבה חדשה</a>
 </p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Titel)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Author)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.CreationDate)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.LastUpDate)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Summary)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Body)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Img)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Category)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Titel)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Author)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CreationDate)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.LastUpDate)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Summary)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Body)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Img)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Category.Name)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+
+<div class="container">
+    <div class="row">
+
+        @foreach (var item in Model)
+        {
+            <div class="card col-3" style="width: 18rem; position:inherit">
+                <img src="@item.Img" class="card-img-top" alt="@item.Titel">
+                <div class="card-body">
+                    <h5 class="card-title"> @item.Titel</h5>
+                    <p class="card-text">@item.Summary</p>
+              
+                    <p id="category"> כתבה בנושא : @item.Category.Name </p>
+                    
+                </div>
+                <div class="option">
+                    <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-primary">לפרטים נוספים</a>
+                    <a class="editOption" asp-action="Edit" asp-route-id="@item.Id">עריכה</a>
+                    <a class="removeOption" asp-action="Delete" asp-route-id="@item.Id">מחיקה</a>
+                </div>
+            </div>
+
+        }
+
+    </div>
+</div>

@@ -22,7 +22,23 @@ namespace CatsAndDogs_project.Controllers
         // GET: AdoptionDays
         public async Task<IActionResult> Index()
         {
-            return View(await _context.AdoptionDays.ToListAsync());
+            var q = from d in _context.AdoptionDays.OrderBy(x => x.DateandTime)
+                    where(d.DateandTime>DateTime.Today)
+                    select d;
+            return View(await q.ToListAsync());
+        }
+
+        public async Task<IActionResult> Search(string queryDate, string queryLocation)  // add search 
+        {
+            var q = from d in _context.AdoptionDays
+                    where ((d.DateandTime.Date.ToString().Contains(queryDate) && queryLocation == null) || (queryDate == null && queryLocation == null)
+                    || d.Location.Contains(queryLocation)
+                    || d.DateandTime.Date.ToString().Contains(queryDate) && d.Location.Contains(queryLocation)
+                    || queryDate == null && d.Location.Contains(queryLocation))
+                    orderby d.DateandTime
+                    select d;
+
+            return View("Index", await q.ToListAsync());
         }
 
         // GET: AdoptionDays/Details/5

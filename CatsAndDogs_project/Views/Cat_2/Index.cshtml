@@ -4,11 +4,21 @@
     ViewData["Title"] = "Index";
 }
 
+<head>
+    <link href="~/css/index_1.css" rel="stylesheet" />
+</head>
+
 <h1>אימוץ חתולים</h1>
 
 <p>
     <a class="create_btn" asp-action="Create">הוספת חתול לאימוץ</a>
 </p>
+
+<form asp-action="Search" class="search">
+    <input name="queryBreed" placeholder="הקלד גזע לחיפוש..." autocomplete="off" />
+    <input name="queryGander" placeholder="הקלד מין לחיפוש... (זכר/נקבה)" autocomplete="off" />
+    <input id="sub_search" type="submit" value="חיפוש" />
+</form>
 
 <div class="container">
     <div class="row">
@@ -40,7 +50,7 @@
     </div>
 </div>
 
-@section Scripts {
+@*@section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
     <link href="~/css/index_1.css" rel="stylesheet" />
-}
+}*@

@@ -26,6 +26,18 @@ namespace CatsAndDogs_project.Controllers
             return View(await CatsAndDogs_projectContext.ToListAsync());
         }
 
+        public async Task<IActionResult> Search(string queryBreed, string queryGander)  // add search 
+        {
+            var q = from c in _context.Cat_2.Include(b => b.BreedCatList)
+                    where ((c.Gender.Contains(queryGander) && queryBreed == null) || (queryGander == null && queryBreed == null)
+                    || c.BreedCatList.Any(n => n.Name.Contains(queryBreed)
+                    || c.Gender.Contains(queryGander) && c.BreedCatList.Any(n => n.Name.Contains(queryBreed)))
+                    || queryGander == null && c.BreedCatList.Any(n => n.Name.Contains(queryBreed)))
+                    select c;
+
+            return View("Index", await q.ToListAsync());
+        }
+
         // GET: Cat_2/Details/5
         public async Task<IActionResult> Details(int? id)
         {

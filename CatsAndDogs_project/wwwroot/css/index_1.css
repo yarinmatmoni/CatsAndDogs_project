@@ -2,9 +2,33 @@
     margin-top:120px;
 }
 
-.top_options {
+.search {
+    margin-bottom: 50px;
     display: flex;
     justify-content: center;
+}
+
+.search > input {
+    width: 18rem;
+    padding: 8px;
+    border-radius: 8px;
+    border: 2.5px solid #e0b97f;
+    font-family: 'Amatic SC', cursive;
+    font-size: 22px;
+    background-color: #ffe4c1a3;
+    outline:none;
+    margin:5px;
+}
+
+#sub_search {
+    width: 95px;
+    color: white;
+    background-color: #e0b97f;
+}
+
+#sub_search:hover{
+    color:#e0b97f;
+    background-color:white;
 }
 
 .top_options > p {
@@ -129,5 +153,13 @@ P > a:hover {
         display: block;
         position: inherit !important;
         color:white !important;
+    }
+
+    .search {
+        display: grid;
+    }
+
+    #sub_search{
+        width:auto;
     }
 }

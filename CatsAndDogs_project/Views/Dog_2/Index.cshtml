@@ -5,18 +5,23 @@
 }
 
 
+<head>
+    <link href="~/css/index_1.css" rel="stylesheet" />
+</head>
+
 <h1>אימוץ כלבים</h1>
 
-<div class="top_options">
-    <p>
-        <a class="create_btn" asp-action="Create">הוספת כלב לאימוץ</a>
-    </p>
 
-    <form asp-action="Search">
-        <input name="query" placeholder="הקלד לחיפוש.." autocomplete="off"/>
-        <input type="submit" value="חיפוש" />
-    </form>
-</div>
+<p>
+    <a class="create_btn" asp-action="Create">הוספת כלב לאימוץ</a>
+</p>
+
+<form asp-action="Search" class="search">
+    <input name="queryBreed" placeholder="הקלד גזע לחיפוש..." autocomplete="off" />
+    <input name="querySize" placeholder="הקלד גודל לחיפוש... (גדול/בינוני/קטן)" autocomplete="off" />
+    <input id="sub_search" type="submit" value="חיפוש" />
+</form>
+
 <div class="container">
     <div class="row">
 
@@ -49,8 +54,8 @@
 
 
 
-@section Scripts {
+@*@section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
     <link href="~/css/index_2.css" rel="stylesheet" />
-}
+}*@
 

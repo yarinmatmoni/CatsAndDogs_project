@@ -25,7 +25,14 @@
         <ul class="dropdown_ul">
 
             <li> <a class="logo" asp-action="index" asp-controller="Home"> <img id=logo src="~/images/logo.jpg" alt="logo"></a></li>
-            
+            @if (Context.User != null && Context.User.Claims != null && Context.User.Claims.Count() > 0)
+            {
+                <li><a asp-action="Logout" asp-controller="Users">היתנתקות</a></li>
+            }
+            else
+            {
+                <li><a asp-action="Login" asp-controller="Users">היתחברות</a></li>
+            }
             <li id="menu_respon">
                 <div class="dropdown">
                     <a class="btn"><i class="fa fa-bars"></i></a>
@@ -79,7 +86,7 @@
                     <button class="dropbtn"><i id=icon class="bi bi-geo"> </i>איפה אנחנו</button>
                 </div>
             </li>
-            <li  id="contect">
+            <li id="contect">
                 <div class="dropdown">
                     <button class="dropbtn"><i id=icon class="bi bi-chat"></i>צור קשר</button>
                 </div>

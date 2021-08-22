@@ -7,6 +7,10 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using CatsAndDogs.Models;
 using CatsAndDogs_project.Data;
+using Microsoft.AspNetCore.Http;
+using System.Security.Claims;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authentication;
 
 namespace CatsAndDogs_project.Controllers
 {
@@ -40,6 +44,10 @@ namespace CatsAndDogs_project.Controllers
                 {
                     _context.Add(user);
                     await _context.SaveChangesAsync();
+
+                    var u = _context.User.FirstOrDefault(u => u.UserName == user.UserName && u.Password == user.Password);
+                    Signin(u);
+
                     return RedirectToAction(nameof(Index), "Home");
                 }
 
@@ -68,11 +76,14 @@ namespace CatsAndDogs_project.Controllers
         {
             if (ModelState.IsValid)
             {
-                var q = _context.User.FirstOrDefault(u => u.UserName == user.UserName && u.Password == user.Password); 
+                
+                var q = from u in _context.User
+                        where u.UserName == user.UserName && u.Password == user.Password
+                        select u;
 
-                if (q != null) // there is not another username
+                if (q.Count() >0) // there is not another username
                 {
-                    
+                    Signin(q.First());
                     return RedirectToAction(nameof(Index), "Home");
                 }
 
@@ -85,7 +96,37 @@ namespace CatsAndDogs_project.Controllers
             return View(user);
         }
 
+        private async void Signin(User account)
+        {
+            var claims = new List<Claim>
+            {
+                new Claim(ClaimTypes.Name, account.UserName),
+                new Claim(ClaimTypes.Role, account.Usertype.ToString()),
+            };
+            var claimsIdentity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
+            var authProperties = new AuthenticationProperties
+            {
+                //ExpiresUtc = DateTimeOffset.UtcNow.AddMinutes(10)};
+            };
 
+            await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme,
+                new ClaimsPrincipal(claimsIdentity), authProperties);
+        }
+
+        public async Task<IActionResult> Logout() 
+        {
+            await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+            return RedirectToAction("Login");
+        }
+
+        // GET: Users/AccsessDenied
+        public IActionResult AccsessDenied()
+        {
+            return View();
+        }
+
+
+    }
 
         //// GET: Users
         //public async Task<IActionResult> Index()
@@ -218,4 +259,4 @@ namespace CatsAndDogs_project.Controllers
         //    return _context.User.Any(e => e.UserName == id);
         //}
     }
-}
+

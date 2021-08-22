@@ -10,6 +10,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using CatsAndDogs_project.Data;
+using Microsoft.AspNetCore.Authentication.Cookies;
 
 namespace CatsAndDogs_project
 {
@@ -29,6 +30,19 @@ namespace CatsAndDogs_project
 
             services.AddDbContext<CatsAndDogs_projectContext>(options =>
                     options.UseSqlServer(Configuration.GetConnectionString("CatsAndDogs_projectContext")));
+
+            services.AddSession(options =>     // remember the user for 10 min from the last time the user use the web
+            {
+                options.IdleTimeout = TimeSpan.FromMinutes(10);
+            });
+
+            services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie(
+                options => 
+                {   
+                    options.LoginPath = "/Users/Login"; 
+                    options.AccessDeniedPath = "/Users/AccessDenied";
+                });
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -49,6 +63,10 @@ namespace CatsAndDogs_project
             app.UseStaticFiles();
 
             app.UseRouting();
+
+            app.UseSession();
+
+            app.UseAuthentication();
 
             app.UseAuthorization();
 

@@ -5,34 +5,37 @@
 }
 
 <head>
-    <link href="~/css/articals_details_1.css" rel="stylesheet" />
+    <link href="~/css/articals_details_2.css" rel="stylesheet" />
 </head>
 
 <h1> @Html.DisplayFor(model => model.Titel)</h1>
 <div class="card col-3" style="width: 18rem; position:inherit">
     <div class="card-body">
         <div class="details">
-            @*<h5 class="card-title-name">שם הכלב :  @Html.DisplayFor(model => model.Name)</h5>*@
-            <div class="feture">
-                <h5 class="card-title">מאת :</h5>
-                <span>  @Html.DisplayFor(model => model.Author)</span>
+            <div class="body-up">
+                <div class="feture">
+                    <h5 class="card-title">מאת :</h5>
+                    <span>  @Html.DisplayFor(model => model.Author)</span>
                 </div>
-            <div class="feture">
-                <h5 class="card-title">נוצרה בתאריך </h5> <span>@Html.DisplayFor(model => model.CreationDate)</span>
+                <div class="feture">
+                    <h5 class="card-title">נוצרה בתאריך </h5> <span>@Html.DisplayFor(model => model.CreationDate)</span>
+                </div>
+                <div class="feture">
+                    <h5 class="card-title">עודכן בתאריך :</h5><span>@Html.DisplayFor(model => model.LastUpDate)</span>
+                </div>
+                <div class="feture">
+                    <h5 class="card-title">קטגוריה :</h5><span> @Html.DisplayFor(model => model.Category.Name)</span>
+                </div>
             </div>
-            <div class="feture">
-                <h5 class="card-title">עודכן בתאריך :</h5><span>@Html.DisplayFor(model => model.LastUpDate)</span>
+            <div class="body-down">
+                <div class="feture">
+                    <h5 class="card-title">תקציר:</h5><span> @Html.DisplayFor(model => model.Summary)</span>
+                </div>
+                <div class="feture">
+                    <h5 class="card-title">גוף הכתבה  :</h5><span> @Html.DisplayFor(model => model.Body)</span>
+                </div>
             </div>
-            <div class="feture">
-                <h5 class="card-title">קטגוריה :</h5><span> @Html.DisplayFor(model => model.Category.Name)</span>
-            </div>
-            <div class="feture">
-                <h5 class="card-title">תקציר:</h5><span> @Html.DisplayFor(model => model.Summary)</span>
-            </div>
-            <div class="feture">
-                <h5 class="card-title">גוף הכתבה  :</h5><span> @Html.DisplayFor(model => model.Body)</span>
-            </div>
-            
+
         </div>
         <div class="img">
             <img src=@Html.DisplayFor(model => model.Img) class="card-img">

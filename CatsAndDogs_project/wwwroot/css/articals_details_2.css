@@ -13,7 +13,7 @@ h1 {
 }
 
 .card {
-    width: 90rem !important;
+    width: 100% !important;
     position: inherit;
     height:auto;
     border: 2px solid;
@@ -28,7 +28,7 @@ h1 {
 }
 
 .card-img {
-    width: 288px;
+    width: 280px;
     height: 245px;
     border: 2px solid;
     border-color: darkgray;
@@ -95,9 +95,15 @@ span {
     color: white;
     border-color: #696969ab;
 }
+.body-down {
+    margin-top:80px;
+}
+.body-up {
+    margin-top:10px;
+}
+
 
 @media only screen and (max-width: 1400px) {
-
     .card {
         width: 77rem !important;
         margin: auto;

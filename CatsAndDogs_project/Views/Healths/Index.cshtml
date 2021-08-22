@@ -4,6 +4,10 @@
     ViewData["Title"] = "Index";
 }
 
+<head>
+    <link href="~/css/index_forstore.css" rel="stylesheet" />
+</head>
+
 @*<h1>Index</h1>
 
     <p>
@@ -72,6 +76,18 @@
     <a class="create_btn" asp-action="Create">הוספת מוצר בריאות חדש</a>
 </p>
 
+
+
+<div class="sidenav">
+    <h4> קטגוריות לבריאות</h4>
+    <hr />
+    <a href="#">תוספי תזונה</a>
+    <a href="#">טיפול פרעושים</a>
+    <a href="#">בריאות העור</a>
+    <a href="#">בריאות הפה</a>
+    
+</div>
+
 <div class="container">
     <div class="row">
 
@@ -100,7 +116,7 @@
 
 
 
-@section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-    <link href="~/css/index_1.css" rel="stylesheet" />
-}
+@*@section Scripts {
+        @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+        <link href="~/css/index_1.css" rel="stylesheet" />
+    }*@

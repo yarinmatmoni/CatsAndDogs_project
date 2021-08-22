@@ -36,6 +36,7 @@ namespace CatsAndDogs_project
         {
             if (env.IsDevelopment())
             {
+                app.UseStaticFiles();///////
                 app.UseDeveloperExceptionPage();
             }
             else

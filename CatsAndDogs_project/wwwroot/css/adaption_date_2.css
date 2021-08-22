@@ -115,3 +115,13 @@ tr {
 #delete_btn :hover {
     color: tomato;
 }
+
+@media only screen and (max-width: 760px) {
+    .search {
+        display: grid;
+    }
+
+    #sub_search {
+        width: auto;
+    }
+}

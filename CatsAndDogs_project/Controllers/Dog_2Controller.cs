@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using CatsAndDogs_project.Data;
 using CatsAndDogs_project.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace CatsAndDogs_project.Controllers
 {

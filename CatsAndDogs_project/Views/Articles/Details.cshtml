@@ -4,58 +4,96 @@
     ViewData["Title"] = "Details";
 }
 
-<h1>Details</h1>
+<head>
+    <link href="~/css/articals_details_1.css" rel="stylesheet" />
+</head>
 
-<div>
+<h1> @Html.DisplayFor(model => model.Titel)</h1>
+<div class="card col-3" style="width: 18rem; position:inherit">
+    <div class="card-body">
+        <div class="details">
+            @*<h5 class="card-title-name">שם הכלב :  @Html.DisplayFor(model => model.Name)</h5>*@
+            <div class="feture">
+                <h5 class="card-title">מאת :</h5>
+                <span>  @Html.DisplayFor(model => model.Author)</span>
+                </div>
+            <div class="feture">
+                <h5 class="card-title">נוצרה בתאריך </h5> <span>@Html.DisplayFor(model => model.CreationDate)</span>
+            </div>
+            <div class="feture">
+                <h5 class="card-title">עודכן בתאריך :</h5><span>@Html.DisplayFor(model => model.LastUpDate)</span>
+            </div>
+            <div class="feture">
+                <h5 class="card-title">קטגוריה :</h5><span> @Html.DisplayFor(model => model.Category.Name)</span>
+            </div>
+            <div class="feture">
+                <h5 class="card-title">תקציר:</h5><span> @Html.DisplayFor(model => model.Summary)</span>
+            </div>
+            <div class="feture">
+                <h5 class="card-title">גוף הכתבה  :</h5><span> @Html.DisplayFor(model => model.Body)</span>
+            </div>
+            
+        </div>
+        <div class="img">
+            <img src=@Html.DisplayFor(model => model.Img) class="card-img">
+            <div class="options">
+                <a asp-action="Edit" asp-route-id="@Model.Id"><i class='far fa-edit'></i></a>
+                <a asp-action="Index"><i class="material-icons">keyboard_backspace</i></a>
+            </div>
+        </div>
+    </div>
+</div>
+
+@*<div>
     <h4>Articles</h4>
     <hr />
     <dl class="row">
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Titel)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Titel)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Author)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Author)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.CreationDate)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.CreationDate)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.LastUpDate)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.LastUpDate)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Summary)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Summary)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Body)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Body)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Img)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Img)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Category)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Category.Name)
         </dd>
     </dl>
@@ -63,4 +101,4 @@
 <div>
     <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
     <a asp-action="Index">Back to List</a>
-</div>
+</div>*@

@@ -4,14 +4,34 @@
     ViewData["Title"] = "Index";
 }
 
+<head>
+    <link rel="stylesheet" href="~/css/index_forstore.css"  />
+</head>
+
 <h1>אקססוריז</h1>
 
 <p>
     <a class="create_btn" asp-action="Create">הוספת אקססוריז חדש</a>
 </p>
 
+<div class="sidenav">
+    <h4> קטגוריות לאקססוריז</h4>
+    <hr />
+    <a href="#">רצועות</a>
+    <a href="#services">צעצועים</a>
+</div>
+
 <div class="container">
+
     <div class="row">
+
+        <div class="dropdown-menu">
+            <a class="dropdown-item" href="#">Action</a>
+            <a class="dropdown-item" href="#">Another action</a>
+            <a class="dropdown-item" href="#">Something else here</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">Separated link</a>
+        </div>
 
         @foreach (var item in Model)
         {
@@ -22,7 +42,7 @@
                     <p class="card-text" style="overflow: hidden;text-overflow: ellipsis;white-space: nowrap;">@item.Description</p>
                     <p> @Html.DisplayNameFor(model => model.Recommendation) @item.Recommendation </p>
                     <p id="price"> @Html.DisplayNameFor(model => model.Price): @item.Price ₪ </p>
-                    
+
                 </div>
                 <div class="option">
                     <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-primary">לפרטים נוספים</a>
@@ -33,12 +53,14 @@
 
         }
 
+
+
     </div>
 </div>
 
 
 
-@section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-    <link href="~/css/index_1.css" rel="stylesheet" />
-}
+@*@section Scripts {
+        @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+        <link href="~/css/index_1.css" rel="stylesheet" />
+    }*@

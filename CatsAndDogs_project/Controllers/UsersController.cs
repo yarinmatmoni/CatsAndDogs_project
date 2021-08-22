@@ -34,12 +34,25 @@ namespace CatsAndDogs_project.Controllers
         {
             if (ModelState.IsValid)
             {
-                _context.Add(user);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                var q = _context.User.FirstOrDefault(u => u.UserName == user.UserName); // if exsit return null
+
+                if (q == null) // there is not another username
+                {
+                    _context.Add(user);
+                    await _context.SaveChangesAsync();
+                    return RedirectToAction(nameof(Index), "Home");
+                }
+
+                else
+                {
+                    ViewData["Error"] = "שם משתמש זה תפוס, אנא בחר שם משתמש אחר";
+                }
+
             }
             return View(user);
         }
+
+
 
 
 

@@ -64,6 +64,9 @@ namespace CatsAndDogs_project.Data
 
 
         public DbSet<CatsAndDogs_project.Models.ArticalsCategory> ArticalsCategory { get; set; }
+
+
+        public DbSet<CatsAndDogs.Models.User> User { get; set; }
         
     }
 }

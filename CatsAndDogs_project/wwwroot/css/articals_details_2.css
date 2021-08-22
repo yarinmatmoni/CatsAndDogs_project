@@ -73,10 +73,11 @@ span {
 }
 
 .options {
-    margin-top: 170px;
+   margin-top: auto;
     text-align-last: center;
     justify-content: space-between;
     display: flex;
+    
 }
 
 .far, .material-icons {
@@ -96,10 +97,11 @@ span {
     border-color: #696969ab;
 }
 .body-down {
-    margin-top:80px;
+    margin-top:72px;
 }
 .body-up {
-    margin-top:10px;
+    margin-top: 11px;
+    margin-right: 20px;
 }
 
 

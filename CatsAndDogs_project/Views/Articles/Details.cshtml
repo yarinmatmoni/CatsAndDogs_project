@@ -34,17 +34,19 @@
                 <div class="feture">
                     <h5 class="card-title">גוף הכתבה  :</h5><span> @Html.DisplayFor(model => model.Body)</span>
                 </div>
+
             </div>
 
         </div>
         <div class="img">
             <img src=@Html.DisplayFor(model => model.Img) class="card-img">
-            <div class="options">
-                <a asp-action="Edit" asp-route-id="@Model.Id"><i class='far fa-edit'></i></a>
-                <a asp-action="Index"><i class="material-icons">keyboard_backspace</i></a>
-            </div>
         </div>
+
     </div>
+    <div class="options">
+    <a asp-action="Edit" asp-route-id="@Model.Id"><i class='far fa-edit'></i></a>
+    <a asp-action="Index"><i class="material-icons">keyboard_backspace</i></a>
+</div>
 </div>
 
 @*<div>

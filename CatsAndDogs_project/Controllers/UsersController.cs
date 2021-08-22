@@ -30,7 +30,7 @@ namespace CatsAndDogs_project.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Register([Bind("UserName,Password,FirstName,SecondName")] User user)
+        public async Task<IActionResult> Register([Bind("UserName,Password")] User user)
         {
             if (ModelState.IsValid)
             {
@@ -53,7 +53,37 @@ namespace CatsAndDogs_project.Controllers
         }
 
 
+        // GET: Users/Login
+        public IActionResult Login()
+        {
+            return View();
+        }
 
+        // POST: Users/Login
+        // To protect from overposting attacks, enable the specific properties you want to bind to.
+        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Login([Bind("UserName,Password")] User user)
+        {
+            if (ModelState.IsValid)
+            {
+                var q = _context.User.FirstOrDefault(u => u.UserName == user.UserName && u.Password == user.Password); 
+
+                if (q != null) // there is not another username
+                {
+                    
+                    return RedirectToAction(nameof(Index), "Home");
+                }
+
+                else
+                {
+                    ViewData["Error"] = "שם משתמש ו/או סיסמא אינם נכונים";
+                }
+
+            }
+            return View(user);
+        }
 
 
 

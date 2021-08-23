@@ -47,6 +47,7 @@ namespace CatsAndDogs_project.Controllers
             return View(health);
         }
 
+        [Authorize(Roles = "Admin , Editor")]
         // GET: Healths/Create
         public IActionResult Create()
         {
@@ -54,6 +55,7 @@ namespace CatsAndDogs_project.Controllers
             return View();
         }
 
+        [Authorize(Roles = "Admin , Editor")]
         // POST: Healths/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
@@ -71,6 +73,7 @@ namespace CatsAndDogs_project.Controllers
             return View(health);
         }
 
+        [Authorize(Roles = "Admin , Editor")]
         // GET: Healths/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
@@ -88,6 +91,7 @@ namespace CatsAndDogs_project.Controllers
             return View(health);
         }
 
+        [Authorize(Roles = "Admin , Editor")]
         // POST: Healths/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
@@ -124,6 +128,7 @@ namespace CatsAndDogs_project.Controllers
             return View(health);
         }
 
+        [Authorize(Roles = "Admin , Editor")]
         // GET: Healths/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
@@ -143,6 +148,7 @@ namespace CatsAndDogs_project.Controllers
             return View(health);
         }
 
+        [Authorize(Roles = "Admin , Editor")]
         // POST: Healths/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]

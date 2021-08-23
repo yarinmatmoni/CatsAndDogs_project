@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using CatsAndDogs_project.Data;
 using CatsAndDogs_project.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace CatsAndDogs_project.Controllers
 {
@@ -42,29 +43,31 @@ namespace CatsAndDogs_project.Controllers
         }
 
         // GET: AdoptionDays/Details/5
-        public async Task<IActionResult> Details(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
+        //public async Task<IActionResult> Details(int? id)
+        //{
+        //    if (id == null)
+        //    {
+        //        return NotFound();
+        //    }
 
-            var adoptionDays = await _context.AdoptionDays
-                .FirstOrDefaultAsync(m => m.Id == id);
-            if (adoptionDays == null)
-            {
-                return NotFound();
-            }
+        //    var adoptionDays = await _context.AdoptionDays
+        //        .FirstOrDefaultAsync(m => m.Id == id);
+        //    if (adoptionDays == null)
+        //    {
+        //        return NotFound();
+        //    }
 
-            return View(adoptionDays);
-        }
+        //    return View(adoptionDays);
+        //}
 
+        [Authorize(Roles = "Admin , Editor")]
         // GET: AdoptionDays/Create
         public IActionResult Create()
         {
             return View();
         }
 
+        [Authorize(Roles = "Admin , Editor")]
         // POST: AdoptionDays/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
@@ -81,6 +84,7 @@ namespace CatsAndDogs_project.Controllers
             return View(adoptionDays);
         }
 
+        [Authorize(Roles = "Admin , Editor")]
         // GET: AdoptionDays/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
@@ -97,6 +101,7 @@ namespace CatsAndDogs_project.Controllers
             return View(adoptionDays);
         }
 
+        [Authorize(Roles = "Admin , Editor")]
         // POST: AdoptionDays/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
@@ -132,6 +137,7 @@ namespace CatsAndDogs_project.Controllers
             return View(adoptionDays);
         }
 
+        [Authorize(Roles = "Admin , Editor")]
         // GET: AdoptionDays/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
@@ -150,6 +156,7 @@ namespace CatsAndDogs_project.Controllers
             return View(adoptionDays);
         }
 
+        [Authorize(Roles = "Admin , Editor")]
         // POST: AdoptionDays/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]

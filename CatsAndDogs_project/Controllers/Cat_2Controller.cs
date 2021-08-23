@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using CatsAndDogs_project.Data;
 using CatsAndDogs_project.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace CatsAndDogs_project.Controllers
 {
@@ -55,6 +56,7 @@ namespace CatsAndDogs_project.Controllers
             return View(cat_2);
         }
 
+        [Authorize(Roles = "Admin , Editor")]
         // GET: Cat_2/Create
         public IActionResult Create()
         {
@@ -62,6 +64,7 @@ namespace CatsAndDogs_project.Controllers
             return View();
         }
 
+        [Authorize(Roles = "Admin , Editor")]
         // POST: Cat_2/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
@@ -81,6 +84,7 @@ namespace CatsAndDogs_project.Controllers
             return View(cat_2);
         }
 
+        [Authorize(Roles = "Admin , Editor")]
         // GET: Cat_2/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
@@ -98,6 +102,7 @@ namespace CatsAndDogs_project.Controllers
             return View(cat_2);
         }
 
+        [Authorize(Roles = "Admin , Editor")]
         // POST: Cat_2/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
@@ -134,6 +139,7 @@ namespace CatsAndDogs_project.Controllers
             return View(cat_2);
         }
 
+        [Authorize(Roles = "Admin , Editor")]
         // GET: Cat_2/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
@@ -151,6 +157,7 @@ namespace CatsAndDogs_project.Controllers
             return View(cat_2);
         }
 
+        [Authorize(Roles = "Admin , Editor")]
         // POST: Cat_2/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]

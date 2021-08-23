@@ -47,6 +47,7 @@ namespace CatsAndDogs_project.Controllers
             return View(nutrition);
         }
 
+        [Authorize(Roles = "Admin , Editor")]
         // GET: Nutritions/Create
         public IActionResult Create()
         {
@@ -54,6 +55,7 @@ namespace CatsAndDogs_project.Controllers
             return View();
         }
 
+        [Authorize(Roles = "Admin , Editor")]
         // POST: Nutritions/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
@@ -71,6 +73,7 @@ namespace CatsAndDogs_project.Controllers
             return View(nutrition);
         }
 
+        [Authorize(Roles = "Admin , Editor")]
         // GET: Nutritions/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
@@ -88,6 +91,7 @@ namespace CatsAndDogs_project.Controllers
             return View(nutrition);
         }
 
+        [Authorize(Roles = "Admin , Editor")]
         // POST: Nutritions/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
@@ -124,7 +128,9 @@ namespace CatsAndDogs_project.Controllers
             return View(nutrition);
         }
 
+        [Authorize(Roles = "Admin , Editor")]
         // GET: Nutritions/Delete/5
+
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -143,7 +149,9 @@ namespace CatsAndDogs_project.Controllers
             return View(nutrition);
         }
 
+        [Authorize(Roles = "Admin , Editor")]
         // POST: Nutritions/Delete/5
+
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)

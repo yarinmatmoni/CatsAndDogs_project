@@ -250,6 +250,10 @@ h6 {
     .dogfood, .catfood, .guides, .professionals {
         border-left:none;
     }
+
+    span {
+        display:none;
+    }
 }
 
 @media only screen and (max-width: 900px) {

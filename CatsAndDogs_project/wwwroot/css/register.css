@@ -43,6 +43,10 @@ h3 {
     color: #696969ab;
 }
 
+#btn_s > input{
+    font-size:28px !important;
+}
+
 .btn {
     width: 95px;
     color: #e0b97f !important;
@@ -50,6 +54,7 @@ h3 {
     outline: none;
     border-color: #e0b97f;
     margin-top: 12px;
+    font-family: 'Amatic SC', cursive;
 }
 
 .btn:hover{
@@ -68,4 +73,12 @@ h3 {
     color: burlywood;
     font-size: 23px;
     text-decoration: none;
+}
+
+@media only screen and (max-width: 1200px) {
+    #btn_s {
+        margin-top: 30px;
+        font-size: 27px;
+        font-family: 'Amatic SC', cursive;
+    }
 }

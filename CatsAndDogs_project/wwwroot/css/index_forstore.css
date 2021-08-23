@@ -71,6 +71,36 @@ body{
     margin-top:120px;
 }
 
+.choose {
+    margin-bottom: 50px;
+    display: flex;
+    justify-content: center;
+}
+
+    .choose > input {
+        width: 18rem;
+        padding: 8px;
+        border-radius: 8px;
+        border: 2.5px solid #e0b97f;
+        font-family: 'Amatic SC', cursive;
+        font-size: 22px;
+        background-color: #ffe4c1a3;
+        outline: none;
+        margin: 5px;
+    }
+
+    .choose > select {
+        width: 18rem;
+        padding: 8px;
+        border-radius: 8px;
+        border: 2.5px solid #e0b97f;
+        font-family: 'Amatic SC', cursive;
+        font-size: 22px;
+        background-color: #ffe4c1a3;
+        outline: none;
+        margin: 5px;
+    }
+
 .search {
     margin-bottom: 50px;
     display: flex;

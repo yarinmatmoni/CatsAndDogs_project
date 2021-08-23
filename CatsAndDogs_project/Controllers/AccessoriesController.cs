@@ -28,6 +28,13 @@ namespace CatsAndDogs_project.Controllers
             var catsAndDogs_projectContext = _context.Accessories.Include(a => a.Category);
             return View(await catsAndDogs_projectContext.ToListAsync());
         }
+
+        public async Task<IActionResult> DogOrCat(string animal /*string cate, int num1, int num2*/)
+        {
+            var catsAndDogs_projectContext = _context.Accessories.Include(a => a.Category).Where(a => a.Type.Equals(animal));
+            return View("Index", await catsAndDogs_projectContext.ToListAsync());
+        }
+
         [Authorize]
         // GET: Accessories/Details/5
         public async Task<IActionResult> Details(int? id)

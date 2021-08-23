@@ -53,6 +53,10 @@
     display: none;
 }
 
+h2 > span {
+    padding-right: 100px !important;
+}
+
 span {
     padding-right: 0px !important;
 }

@@ -117,8 +117,8 @@ namespace CatsAndDogs_project.Controllers
             return RedirectToAction("Login");
         }
 
-        // GET: Users/AccsessDenied
-        public IActionResult AccsessDenied()
+        // GET: Users/AccessDenied
+        public IActionResult AccessDenied()
         {
             return View();
         }

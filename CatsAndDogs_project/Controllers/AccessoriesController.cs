@@ -11,7 +11,7 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace CatsAndDogs_project.Controllers
 {
-    [Authorize]
+    
     public class AccessoriesController : Controller
     {
         private readonly CatsAndDogs_projectContext _context;
@@ -21,13 +21,14 @@ namespace CatsAndDogs_project.Controllers
             _context = context;
         }
 
+        [Authorize]
         // GET: Accessories
         public async Task<IActionResult> Index()
         {
             var catsAndDogs_projectContext = _context.Accessories.Include(a => a.Category);
             return View(await catsAndDogs_projectContext.ToListAsync());
         }
-
+        [Authorize]
         // GET: Accessories/Details/5
         public async Task<IActionResult> Details(int? id)
         {
@@ -47,6 +48,7 @@ namespace CatsAndDogs_project.Controllers
             return View(accessories);
         }
 
+        [Authorize(Roles = "Admin , Editor")]
         // GET: Accessories/Create
         public IActionResult Create()
         {
@@ -54,6 +56,7 @@ namespace CatsAndDogs_project.Controllers
             return View();
         }
 
+        [Authorize(Roles = "Admin , Editor")]
         // POST: Accessories/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
@@ -71,6 +74,7 @@ namespace CatsAndDogs_project.Controllers
             return View(accessories);
         }
 
+        [Authorize(Roles = "Admin , Editor")]
         // GET: Accessories/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
@@ -88,6 +92,7 @@ namespace CatsAndDogs_project.Controllers
             return View(accessories);
         }
 
+        [Authorize(Roles = "Admin , Editor")]
         // POST: Accessories/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
@@ -124,6 +129,7 @@ namespace CatsAndDogs_project.Controllers
             return View(accessories);
         }
 
+        [Authorize(Roles = "Admin , Editor")]
         // GET: Accessories/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
@@ -143,6 +149,7 @@ namespace CatsAndDogs_project.Controllers
             return View(accessories);
         }
 
+        [Authorize(Roles = "Admin , Editor")]
         // POST: Accessories/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]

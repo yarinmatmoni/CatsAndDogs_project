@@ -1,10 +1,18 @@
 ﻿@model CatsAndDogs.Models.User
 
 @{
-    ViewData["Title"] = "AccsessDenied";
+    ViewData["Title"] = "AccessDenied";
     Layout = "_LoginLayout";
 }
 
-<h1>גישתך נדחתה</h1>
-<h2>אין לך גישה לעמוד זה, אם ברשותך משתמש עם אפשריות גישה רחבות יותר</h2>
-<a asp-action="Logout">לחץ כאן</a>
+<head>
+    <link href="~/css/accsess_dinied.css" rel="stylesheet"/>
+</head>
+
+<div class="message">
+    <h1>גישתך נידחתה ...</h1>
+    <h2>אין לך גישה לעמוד זה,</h2>
+    <h2> אם ברשותך משתמש עם אפשריות גישה רחבות יותר</h2>
+    <a asp-action="Logout">לחץ כאן כדי להתחבר מחדש</a>
+    <a asp-action="Index" asp-controller="Home">חזרה לעמוד הבית</a>
+</div>

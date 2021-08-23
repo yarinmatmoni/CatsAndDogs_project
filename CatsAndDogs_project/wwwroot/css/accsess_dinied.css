@@ -1,0 +1,45 @@
+﻿body {
+    text-align: center;
+    margin-top: 150px;
+}
+
+.message {
+    background-color: #fcadadad;
+    padding: 25px;
+    border: 5px solid;
+    height: auto;
+    border-color: #f8c5c7;
+    box-shadow: 0px 8px 16px 0px rgb(0 0 0 / 20%);
+    border-radius: 20px;
+}
+
+h1 {
+    font-size: 80px;
+    text-decoration: underline;
+    color: tomato;
+    font-family: 'Amatic SC', cursive;
+}
+
+h2 {
+    font-size: 55px;
+    font-family: 'Amatic SC', cursive;
+}
+
+a {
+    background-color: #4e8dff;
+    padding: 16px;
+    justify-content: center;
+    font-size: 26px;
+    width: 25rem;
+    display: inline-block;
+    border: 2px solid blue;
+    border-radius: 10px;
+    color: whitesmoke;
+    text-decoration: none;
+    margin: 5px;
+}
+
+a:hover {
+    color: #4e8dff;
+    background: whitesmoke;
+}

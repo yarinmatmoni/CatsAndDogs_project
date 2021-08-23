@@ -50,10 +50,9 @@ namespace CatsAndDogs_project.Controllers
 
                     return RedirectToAction(nameof(Index), "Home");
                 }
-
                 else
                 {
-                    ViewData["Error"] = "שם משתמש זה תפוס, אנא בחר שם משתמש אחר";
+                    ViewData["Error"] = "שם המשתמש תפוס, אנא בחר שם משמתמש אחר";
                 }
 
             }
@@ -86,10 +85,9 @@ namespace CatsAndDogs_project.Controllers
                     Signin(q.First());
                     return RedirectToAction(nameof(Index), "Home");
                 }
-
                 else
                 {
-                    ViewData["Error"] = "שם משתמש ו/או סיסמא אינם נכונים";
+                    ViewData["Error"] = "שם המשתמש ו/או הסיסמא אינם נכונים";
                 }
 
             }

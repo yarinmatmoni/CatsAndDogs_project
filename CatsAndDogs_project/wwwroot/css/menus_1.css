@@ -19,7 +19,30 @@
     border-radius: 50px;
     display: flex;
     margin-top: -12px;
-    margin-right: -195px;
+    margin-right: -270px;
+}
+
+.log_in_out {
+    text-decoration: none;
+    text-align: center;
+    background: rgb(206 143 50 / 35%);
+    border: 2px solid rgb(206 143 50 / 36%);
+    color: whitesmoke;
+    cursor: pointer;
+    font-family: 'Amatic SC', cursive;
+    font-size: 28px;
+    padding: 5px;
+    border-radius: 12px;
+}
+
+.log_in_out:hover {
+        background-color: whitesmoke;
+    color: rgb(206 143 50 / 69%);
+}
+
+.log_li {
+    margin-top: -3px;
+    margin-right: -130px;
 }
 
 #menu_respon {
@@ -28,6 +51,10 @@
 
 #home_respon {
     display: none;
+}
+
+span {
+    padding-right: 0px !important;
 }
 
 .dropbtn {
@@ -95,6 +122,10 @@
     color: rgb(206, 143, 50);
 }
 
+.log_in_out_btn {
+    display: none;
+}
+
 .bottommenu a {
     text-decoration: none;
     color: #6c6969;
@@ -144,8 +175,21 @@ h6 {
 }
 
 
-@media only screen and (max-width: 1200px) {
-    .logo {
+@media only screen and (max-width: 1250px) {
+
+    .nav_top {
+        display: inline-flex;
+    }
+
+    #logo {
+        display: none;
+    }
+
+    #contect {
+        display: none;
+    }
+
+    #location {
         display: none;
     }
 
@@ -162,9 +206,15 @@ h6 {
 
     #menu_respon {
         display: inline-block;
-        margin-right: -122px;
         padding: 5px;
         margin-top: -4px;
+    }
+
+    .dropdown_ul {
+        display: flex;
+        justify-content: space-around;
+        margin-top: 12px;
+        margin-right: auto;
     }
 
     .dropdown-content {
@@ -188,41 +238,41 @@ h6 {
         margin-top: -10px !important;
     }
 
-    .dropdown_ul {
-        display: flex;
-        direction: rtl;
-        justify-content: space-between;
-        width: 82%;
-        margin-inline: auto;
+    .log_in_out {
+        position: absolute;
+        margin-right: -96px;
+        margin-top: -7px;
     }
-
-    #contect {
-        display: none;
-    }
-
-    #location {
-        display: none;
-    }
-
 }
 
-@media only screen and (max-width: 1160px) {
-    .dropdown_ul {
-        width: 65%;
-    }
-
-    #home_respon {
-        margin-inline: auto;
-    }
+@media only screen and (max-width: 1000px) {
 
     .dogfood, .catfood, .guides, .professionals {
         border-left:none;
     }
-
 }
 
 @media only screen and (max-width: 900px) {
-    .dropbtn > i {
-        display: none;
+
+    .dropdown_ul {
+        width: 68%;
+    }
+}
+
+@media only screen and (max-width: 750px) {
+    .dropdown_ul {
+        width: 65%;
+    }
+
+    .dropbtn {
+        margin-left: 10px;
+    }
+
+    #home_respon {
+        margin-inline: -13px;
+    }
+
+    .log_in_out {
+        margin-right: -75px;
     }
 }

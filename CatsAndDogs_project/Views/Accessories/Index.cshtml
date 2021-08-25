@@ -5,7 +5,7 @@
 }
 
 <head>
-    <link rel="stylesheet" href="~/css/index_forstore.css"  />
+    <link rel="stylesheet" href="~/css/index_forstore1.css"  />
 </head>
 
 <h1>אקססוריז</h1>
@@ -14,37 +14,40 @@
     <a class="create_btn" asp-action="Create">הוספת אקססוריז חדש</a>
 </p>
 
-<p class="choose" asp-action="DorOrCat">
 
-    @*בחר את סוג החיה:*@ <select name = "animal" id = "animalid" >
+<!--<p class="choose" asp-action="DorOrCat">-->
 
-    <option value = "" selected disabled hidden>בחר</option>
-    <option value="" selected="selected">כלב</option>
-    <option value="" selected="selected">חתול</option>
-    </select>
+        @*בחר את סוג החיה:*@ <!--<select name="animal" id="animalid">
 
-    @*בחר את הקטגוריה הרצויה:*@ <select name = "cate" id = "animalid" >
-
-    <option value = "" selected disabled hidden> בחר קטגוריה </option>
-    @*<option value="" selected disabled hidden>בחר</option>*@
-    <option value="" selected="selected">רצועות</option>
-    <option value="" selected="selected">צעצועים</option>
-    </select>
+        <option value="" selected disabled hidden>בחר</option>
+        <option value="" selected="selected">כלב</option>
+        <option value="" selected="selected">חתול</option>
+    </select>-->
 
 
-    @*מחיר:*@ <input name = "num1" placeholder = "מחיר החל מ" autocomplete = "off" />
+    @*בחר את הקטגוריה הרצויה:*@ <!--<select name="cate" id="animalid">
 
-    <input name = "num2" placeholder = "מחיר עד" autocomplete = "off" />
+        <option value="" selected disabled hidden> בחר קטגוריה </option>-->
+        @*<option value="" selected disabled hidden>בחר</option>*@
+        <!--<option value="" selected="selected">רצועות</option>
+        <option value="" selected="selected">צעצועים</option>
+    </select>-->
 
-    <input id = "sub_search" type = "submit" value = "חיפוש" />
-    </p >
 
-    <div class="sidenav">
+    @*מחיר:*@ <!--<input name="num1" placeholder="מחיר החל מ" autocomplete="off" />
+
+    <input name="num2" placeholder="מחיר עד" autocomplete="off" />
+
+    <input id="sub_search" type="submit" value="חיפוש" />
+</p>-->
+
+
+    @*<div class="sidenav">
         <h4> קטגוריות לאקססוריז</h4>
         <hr />
         <a href="#">רצועות</a>
         <a href="#services">צעצועים</a>
-    </div>
+    </div>*@
 
     <div class="container">
 

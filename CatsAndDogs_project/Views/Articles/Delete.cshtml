@@ -4,66 +4,59 @@
     ViewData["Title"] = "Delete";
 }
 
-<h1>Delete</h1>
 
-<h3>Are you sure you want to delete this?</h3>
-<div>
-    <h4>Articles</h4>
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Titel)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Titel)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Author)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Author)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.CreationDate)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.CreationDate)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.LastUpDate)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.LastUpDate)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Summary)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Summary)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Body)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Body)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Img)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Img)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Category)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Category.Name)
-        </dd class>
-    </dl>
-    
-    <form asp-action="Delete">
-        <input type="hidden" asp-for="Id" />
-        <input type="submit" value="Delete" class="btn btn-danger" /> |
-        <a asp-action="Index">Back to List</a>
-    </form>
+<head>
+    <link href="~/css/articals_delete_1.css" rel="stylesheet" />
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+</head>
+
+<h1>מחיקת כתבה</h1>
+<h3>אתה בטוח שאתה רוצה למחוק את הכתבה <span>@Html.DisplayFor(model => model.Titel)</span> ?</h3>
+<div class="card col-3" style="width: 18rem; position:inherit">
+    <div class="card-body">
+        <div class="details">
+            <div class="body-up">
+                <div class="detail">
+                    <span>  @Html.DisplayFor(model => model.Author)</span>
+                </div>
+
+                <div class="detail">
+                    <p class="catgory">קטגוריה :</p><span> @Html.DisplayFor(model => model.Category.Name)</span>
+                </div>
+                <div class="date">
+                    <div class="detail">
+                        <p class="detail-title">נוצרה בתאריך :</p>
+                        <span class="detail-description">@Html.DisplayFor(model => model.CreationDate)</span>
+                    </div>
+                    <div class="detail">
+                        <p class="detail-title">עדכון אחרון :</p>
+                        <span class="detail-description">@Html.DisplayFor(model => model.LastUpDate)</span>
+                    </div>
+                </div>
+            </div>
+            <div class="body-down">
+                <div class="feture">
+                    <span class="summar"> @Html.DisplayFor(model => model.Summary)</span>
+                </div>
+                <div class="art_body" style="white-space:pre-line">
+                    <span> @Html.DisplayFor(model => model.Body)</span>
+                </div>
+
+            </div>
+
+        </div>
+        <div class="img">
+            <img src=@Html.DisplayFor(model => model.Img) class="card-img">
+        </div>
+
+    </div>
+    <div class="options">
+        <form asp-action="Delete">
+            <input type="hidden" asp-for="Id" />
+            <input type="submit" value="מחיקה" class="btn btn-danger" />
+        </form>
+        <div id="back">
+            <a asp-action="Index"><i class="material-icons">keyboard_backspace</i></a>
+        </div>
+    </div>
 </div>

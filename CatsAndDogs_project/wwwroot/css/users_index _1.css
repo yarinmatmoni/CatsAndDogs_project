@@ -1,0 +1,128 @@
+﻿body {
+    margin-top: 120px;
+}
+
+h1 {
+    text-align: center;
+    font-size: 50px;
+    margin-bottom: 65px;
+    color: burlywood;
+    font-family: 'Amatic SC', cursive;
+    text-decoration-line: underline;
+}
+
+.create_btn {
+    font-size: 25px;
+    text-decoration: none;
+    background-color: #ffe4c1;
+    padding: 7px;
+    border: 2px solid;
+    border-radius: 8px;
+    font-family: 'Amatic SC', cursive;
+    color: dimgray;
+}
+
+.search {
+    margin-bottom: 50px;
+    display: flex;
+    justify-content: center;
+}
+
+    .search > input {
+        width: 18rem;
+        padding: 8px;
+        border-radius: 8px;
+        border: 2.5px solid #e0b97f;
+        font-family: 'Amatic SC', cursive;
+        font-size: 22px;
+        background-color: #ffe4c1a3;
+        outline: none;
+        margin: 5px;
+    }
+
+#sub_search {
+    width: 95px;
+    color: white;
+    background-color: #e0b97f;
+}
+
+    #sub_search:hover {
+        color: #e0b97f;
+        background-color: white;
+    }
+
+
+p {
+    margin-bottom: 35px;
+}
+
+P > a:hover {
+    background-color: #696969ab;
+    color: white;
+    border-color: #696969ab;
+}
+
+.table {
+    border: 2px solid;
+    border-color: burlywood;
+    box-shadow: 0px 8px 16px 0px rgb(0 0 0 / 20%);
+}
+
+thead {
+    background-color: #faf0e2;
+}
+
+th {
+    padding: 12px !important;
+    text-align: center !important;
+    color: burlywood;
+    font-family: 'Amatic SC', cursive;
+    font-size: 35px;
+}
+
+td {
+    padding: 20px !important;
+    text-align: center !important;
+}
+
+tr {
+    border-color: inherit;
+    border-style: solid;
+    border-width: 0;
+    font-family: 'Amatic SC', cursive;
+    font-size: 22px;
+    color: #4b4949e6;
+}
+
+.options {
+    display: flex;
+    justify-content: space-around;
+}
+
+.options > a {
+    padding: 5px;
+    margin-top: 15px;
+    color: #4b4949e6;
+}
+
+#edit_btn :hover {
+    color: #9b2bd3;
+}
+
+#info_btn :hover {
+    color: dodgerblue;
+}
+
+#delete_btn :hover {
+    color: tomato;
+}
+
+@media only screen and (max-width: 760px) {
+    .search {
+        display: grid;
+    }
+
+    #sub_search {
+        width: auto;
+    }
+}

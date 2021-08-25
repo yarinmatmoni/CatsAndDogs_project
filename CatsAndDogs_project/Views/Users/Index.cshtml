@@ -4,14 +4,29 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+
+<head>
+    <link href="~/css/users_index _1.css" rel="stylesheet"/>
+</head>
+
+<h1>משתמשים</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a class="create_btn" asp-action="Create">יצירת משתמש חדש</a>
 </p>
+
+@*<form asp-action="Search" class="search">
+    <input name="queryDate" placeholder="הקלד תאריך לחיפוש..." autocomplete="off" />
+    <input name="queryLocation" placeholder="הקלד מיקום לחיפוש..." autocomplete="off" />
+    <input id="sub_search" type="submit" value="חיפוש" />
+</form>*@
+
 <table class="table">
     <thead>
         <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.UserName)
+            </th>
             <th>
                 @Html.DisplayNameFor(model => model.Password)
             </th>
@@ -22,20 +37,63 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Password)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Usertype)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.UserName">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.UserName">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.UserName">Delete</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UserName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Password)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Usertype)
+                </td>
+                <td>
+                    <div class="options">
+                        <a id="edit_btn" asp-action="Edit" asp-route-id="@item.UserName"><i class="material-icons">edit</i></a>
+                        <a id="delete_btn" asp-action="Delete" asp-route-id="@item.UserName"><i class="material-icons">close</i></a>
+                    </div>
+                </td>
+            </tr>
+        }
     </tbody>
+</table>
+
+
+
+@*<h1>Index</h1>
+
+    <p>
+        <a asp-action="Create">Create New</a>
+    </p>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Password)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Usertype)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+    @foreach (var item in Model) {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Password)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Usertype)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.UserName">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.UserName">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.UserName">Delete</a>
+                </td>
+            </tr>
+    }
+        </tbody>*@
 </table>

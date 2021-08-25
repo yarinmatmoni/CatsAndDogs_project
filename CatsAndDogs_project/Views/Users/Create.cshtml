@@ -1,24 +1,30 @@
 ﻿@model CatsAndDogs.Models.User
 
 @{
-    ViewData["Title"] = "Edit";
+    ViewData["Title"] = "Create";
 }
 
-<h1>עריכת הפרטים של : @Html.DisplayFor(modle => modle.UserName)</h1>
+<h1>הוספת משתמש חדש</h1>
+
 
 <div class="row">
     <div class="card col-3" style="width: 18rem; position:inherit">
         <div class="card-body">
-            <form asp-action="Edit">
-                <div class="Edit">
+            <form asp-action="Create">
+                <div class="Create">
                     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-                    <input type="hidden" asp-for="UserName" />
                     <div class="feture">
-                        <h5 class="card-title"><label asp-for="UserName" class="control-label"></label> :</h5><span><input asp-for="UserName" class="form-control" /></span>
+                        <h5 class="card-title"><label asp-for="UserName" class="control-label"></label> :</h5>
+                        <span> <input asp-for="UserName" class="form-control" autocomplete="off" /></span>
                         <span asp-validation-for="UserName" class="text-danger"></span>
                     </div>
                     <div class="feture">
-                        <h5 class="card-title"><label asp-for="Usertype" class="control-label"></label> :</h5>
+                        <h5 class="card-title"><label asp-for="Password" class="control-label"></label> :</h5>
+                        <span><input asp-for="Password" class="form-control" autocomplete="off" /></span>
+                        <span asp-validation-for="Password" class="text-danger"></span>
+                    </div>
+                    <div class="feture">
+                        <h5 class="card-title"> <label asp-for="Usertype" class="control-label"></label> :</h5>
                         <span>
                             <select asp-for="Usertype" class="form-control">
                                 <option value="" selected disabled hidden>בחר</option>
@@ -29,11 +35,11 @@
                         </span>
                         <span asp-validation-for="Usertype" class="text-danger"></span>
                     </div>
-                    <div class="img">
-                        <div class="options">
-                            <a asp-action="Index"><i class="material-icons">keyboard_backspace</i></a>
-                            <input type="submit" value="שמור" class="btn btn-primary" />
-                        </div>
+                </div>
+                <div class="img">
+                    <div class="options">    
+                        <a asp-action="Index"><i class="material-icons">keyboard_backspace</i></a>
+                        <input type="submit" value="שמור" class="btn btn-primary" />
                     </div>
                 </div>
             </form>
@@ -43,6 +49,6 @@
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-    <link href="~/css/edit_1.css" rel="stylesheet" />
+    <link href="~/css/create_2.css" rel="stylesheet" />
     <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
 }

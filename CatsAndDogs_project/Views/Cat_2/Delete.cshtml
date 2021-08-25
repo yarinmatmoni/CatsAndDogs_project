@@ -4,6 +4,10 @@
     ViewData["Title"] = "Delete";
 }
 
+<head>
+    <link href="~/css/delete_2.css" rel="stylesheet" />
+</head>
+
 <h1>מחיקת חתול מרשימת האימוץ</h1>
 <h3>האם אתה בטוח שתרצה למחוק את <span>@Html.DisplayFor(model => model.Name)</span> מרשימת האימוץ ?</h3>
 
@@ -49,9 +53,3 @@
     </div>
 </div>
 
-
-
-@section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-    <link href="~/css/delete1.css" rel="stylesheet" />
-}

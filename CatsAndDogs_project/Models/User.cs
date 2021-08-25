@@ -39,6 +39,8 @@ namespace CatsAndDogs.Models
         //[StringLength(30, MinimumLength = 2, ErrorMessage = "אורך שם המשפחה חייב להיות בין 2-30 תווים")]
         //public string SecondName { get; set; }
 
+        [Display(Name = "סוג משתמש")]
+        [Required(ErrorMessage = "זהו שדה חובה")]
         public UserType Usertype { get; set; } = UserType.Client;
 
     }

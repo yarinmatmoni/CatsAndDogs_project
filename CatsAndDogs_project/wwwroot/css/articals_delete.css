@@ -98,7 +98,8 @@ span {
     border-color: #696969ab;
 }
 .body-down {
-    margin-top:72px;
+    justify-content : space-between;
+    /*margin-top:67px;*/
 }
 .body-up {
     margin-top: 11px;
@@ -111,6 +112,10 @@ span {
     justify-content: center;
    /* margin-top: 5px;*/
 }
+.art_body {
+    margin-top : 10px;
+}
+
 
 
 @media only screen and (max-width: 1400px) {

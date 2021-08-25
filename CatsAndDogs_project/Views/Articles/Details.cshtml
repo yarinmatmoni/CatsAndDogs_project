@@ -5,7 +5,8 @@
 }
 
 <head>
-    <link href="~/css/articals_details_3.css" rel="stylesheet" />
+    <link href="~/css/articals_details.css" rel="stylesheet" />
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
 </head>
 
 <h1> @Html.DisplayFor(model => model.Titel)</h1>
@@ -16,7 +17,7 @@
                 <div class="detail">
                     <span>  @Html.DisplayFor(model => model.Author)</span>
                 </div>
-                
+
                 <div class="detail">
                     <p class="catgory">קטגוריה :</p><span> @Html.DisplayFor(model => model.Category.Name)</span>
                 </div>
@@ -33,9 +34,9 @@
             </div>
             <div class="body-down">
                 <div class="feture">
-                    <span> @Html.DisplayFor(model => model.Summary)</span>
+                    <span class="summar"> @Html.DisplayFor(model => model.Summary)</span>
                 </div>
-                <div class="feture">
+                <div class="art_body" style="white-space:pre-line">
                     <span> @Html.DisplayFor(model => model.Body)</span>
                 </div>
 
@@ -48,8 +49,12 @@
 
     </div>
     <div class="options">
-    <a asp-action="Edit" asp-route-id="@Model.Id"><i class='far fa-edit'></i></a>
-    <a asp-action="Index"><i class="material-icons">keyboard_backspace</i></a>
-</div>
+        <a asp-action="Edit" asp-route-id="@Model.Id"><i class='far fa-edit'></i></a>
+        <a asp-action="Index"><i class="material-icons">keyboard_backspace</i></a>
+    </div>
 </div>
 
+@*@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+}*@

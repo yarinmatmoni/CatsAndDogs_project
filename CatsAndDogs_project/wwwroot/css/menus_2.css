@@ -9,6 +9,7 @@
     width: 100%;
     margin-left: -8px;
     height: 60px;
+    z-index: 3;
 }
 
 #logo {

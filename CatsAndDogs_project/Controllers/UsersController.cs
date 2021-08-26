@@ -201,7 +201,7 @@ namespace CatsAndDogs_project.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(string id, [Bind("UserName,Usertype")] User user)
+        public async Task<IActionResult> Edit(string id, [Bind("UserName,Password,Usertype")] User user)
         {
             if (id != user.UserName)
             {

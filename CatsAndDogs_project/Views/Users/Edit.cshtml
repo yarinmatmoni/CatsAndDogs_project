@@ -18,6 +18,10 @@
                         <span asp-validation-for="UserName" class="text-danger"></span>
                     </div>
                     <div class="feture">
+                        <h5 class="card-title"><label asp-for="Password" class="control-label"></label> :</h5><span><input asp-for="Password" class="form-control" /></span>
+                        <span asp-validation-for="Password" class="text-danger"></span>
+                    </div>
+                    <div class="feture">
                         <h5 class="card-title"><label asp-for="Usertype" class="control-label"></label> :</h5>
                         <span>
                             <select asp-for="Usertype" class="form-control">

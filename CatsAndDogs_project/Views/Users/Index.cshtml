@@ -15,11 +15,10 @@
     <a class="create_btn" asp-action="Create">יצירת משתמש חדש</a>
 </p>
 
-@*<form asp-action="Search" class="search">
-    <input name="queryDate" placeholder="הקלד תאריך לחיפוש..." autocomplete="off" />
-    <input name="queryLocation" placeholder="הקלד מיקום לחיפוש..." autocomplete="off" />
+<form asp-action="Search" class="search">
+    <input name="queryUsername" placeholder="הקלד שם משתמש לחיפוש..." autocomplete="off" />
     <input id="sub_search" type="submit" value="חיפוש" />
-</form>*@
+</form>
 
 <table class="table">
     <thead>
@@ -27,9 +26,9 @@
             <th>
                 @Html.DisplayNameFor(model => model.UserName)
             </th>
-            <th>
+            @*<th>
                 @Html.DisplayNameFor(model => model.Password)
-            </th>
+            </th>*@
             <th>
                 @Html.DisplayNameFor(model => model.Usertype)
             </th>
@@ -43,9 +42,9 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.UserName)
                 </td>
-                <td>
+                @*<td>
                     @Html.DisplayFor(modelItem => item.Password)
-                </td>
+                </td>*@
                 <td>
                     @Html.DisplayFor(modelItem => item.Usertype)
                 </td>

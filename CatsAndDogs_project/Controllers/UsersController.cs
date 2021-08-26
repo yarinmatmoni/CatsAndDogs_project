@@ -129,8 +129,21 @@ namespace CatsAndDogs_project.Controllers
         // GET: Users
         public async Task<IActionResult> Index()
         {
-            return View(await _context.User.ToListAsync());
+            var q = from u in _context.User.OrderBy(x => x.Usertype)
+                    select u;
+            return View(await q.ToListAsync());
         }
+
+        public async Task<IActionResult> Search(string queryUsername)  // add search 
+        {
+            var q = from u in _context.User
+                    where ((u.UserName.Contains(queryUsername)) || (queryUsername == null))
+                    orderby u.Usertype
+                    select u;
+
+            return View("Index", await q.ToListAsync());
+        }
+
 
 
         [Authorize(Roles = "Admin")]

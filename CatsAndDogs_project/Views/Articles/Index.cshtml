@@ -9,9 +9,12 @@
 
 <h1>כתבות</h1>
 
-<p>
-    <a class="crt_btn" asp-action="Create">יצירת כתבה חדשה</a>
-</p>
+@if (ViewContext.HttpContext.User.IsInRole("Admin") || ViewContext.HttpContext.User.IsInRole("Editor"))
+{
+    <p>
+        <a class="crt_btn" asp-action="Create">יצירת כתבה חדשה</a>
+    </p>
+}
 
 <div class="container">
     <div class="row">
@@ -23,9 +26,9 @@
                 <div class="card-body">
                     <h5 class="card-title"> @item.Titel</h5>
                     <p class="card-text">@item.Summary</p>
-              
+
                     <p id="category"> כתבה בנושא : @item.Category.Name </p>
-                    
+
                 </div>
                 <div class="option">
                     <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-primary">המשך קריאה</a>

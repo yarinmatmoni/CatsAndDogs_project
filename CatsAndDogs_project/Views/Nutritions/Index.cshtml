@@ -84,9 +84,12 @@
 
 <h1>תזונה</h1>
 
-<p>
-    <a class="create_btn" asp-action="Create">הוספת מוצר תזונה חדש</a>
-</p>
+@if (ViewContext.HttpContext.User.IsInRole("Admin") || ViewContext.HttpContext.User.IsInRole("Editor"))
+{
+    <p>
+        <a class="create_btn" asp-action="Create">הוספת מוצר תזונה חדש</a>
+    </p>
+}
 
 <p class="choose" asp-action="DorOrCat">
 
@@ -119,13 +122,13 @@
 
 
 @*<div class="sidenav">
-    <h4> קטגוריות לתזונה</h4>
-    <hr />
-    <a href="#">מזון</a>
-    <a href="#">חטיפים</a>
-    <a href="#">מעדנים</a>
-    <a href="#">מזון טיפולי</a>
-</div>*@
+        <h4> קטגוריות לתזונה</h4>
+        <hr />
+        <a href="#">מזון</a>
+        <a href="#">חטיפים</a>
+        <a href="#">מעדנים</a>
+        <a href="#">מזון טיפולי</a>
+    </div>*@
 
 <div class="container">
     <div class="row">

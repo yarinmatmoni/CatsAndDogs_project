@@ -52,10 +52,13 @@
                     @Html.DisplayFor(modelItem => item.Discription)
                 </td>
                 <td>
-                    <div class="options">
-                        <a id="edit_btn" asp-action="Edit" asp-route-id="@item.Id"><i class="material-icons">edit</i></a>
-                        <a id="delete_btn" asp-action="Delete" asp-route-id="@item.Id"><i class="material-icons">close</i></a>
-                    </div>
+                    @if (ViewContext.HttpContext.User.IsInRole("Admin") || ViewContext.HttpContext.User.IsInRole("Editor"))
+                    {
+                        <div class="options">
+                            <a id="edit_btn" asp-action="Edit" asp-route-id="@item.Id"><i class="material-icons">edit</i></a>
+                            <a id="delete_btn" asp-action="Delete" asp-route-id="@item.Id"><i class="material-icons">close</i></a>
+                        </div>
+                    }
                 </td>
             </tr>
         }

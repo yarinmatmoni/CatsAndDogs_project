@@ -11,10 +11,15 @@
 
 <h1>אימוץ כלבים</h1>
 
-
-<p>
-    <a class="create_btn" asp-action="Create">הוספת כלב לאימוץ</a>
-</p>
+@if (ViewContext.HttpContext.User.IsInRole("Admin") || ViewContext.HttpContext.User.IsInRole("Editor"))
+{
+    <p>
+        <a class="create_btn" asp-action="Create">הוספת כלב לאימוץ</a>
+    </p>
+    <p>
+        <a class="create_btn" asp-action="index" asp-controller="Breed_2">גזעי כלבים</a>
+    </p>
+}
 
 <form asp-action="Search" class="search">
     <input name="queryBreed" placeholder="הקלד גזע לחיפוש..." autocomplete="off" />
@@ -33,12 +38,12 @@
                     <h5 class="card-title">שם הכלב: @item.Name</h5>
                     <p class="card-text" style="overflow: hidden;text-overflow: ellipsis;white-space: nowrap;">@item.Description</p>
                     <p>
-                        <h5>גזע הכלב :</h5>                 
+                        <h5>גזע הכלב :</h5>
                         @foreach (var b in item.ListBreed)
                         {
                             @Html.DisplayFor(modelItem => b.Name) <label> ,</label>
                         }
-                    </p>               
+                    </p>
                 </div>
                 <div class="option">
                     <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-primary">לפרטים נוספים</a>
@@ -55,7 +60,7 @@
 
 
 @*@section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-    <link href="~/css/index_2.css" rel="stylesheet" />
-}*@
+        @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+        <link href="~/css/index_2.css" rel="stylesheet" />
+    }*@
 

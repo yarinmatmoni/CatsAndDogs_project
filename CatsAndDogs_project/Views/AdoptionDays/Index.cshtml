@@ -10,9 +10,12 @@
 
 <h1>ימי אימוץ קורבים</h1>
 
-<p>
-    <a class="create_btn" asp-action="Create">יום אימוץ חדש</a>
-</p>
+@if (ViewContext.HttpContext.User.IsInRole("Admin") || ViewContext.HttpContext.User.IsInRole("Editor"))
+{
+    <p>
+        <a class="create_btn" asp-action="Create">יום אימוץ חדש</a>
+    </p>  
+}
 
 <form asp-action="Search" class="search">
     <input name="queryDate" placeholder="הקלד תאריך לחיפוש..." autocomplete="off" />

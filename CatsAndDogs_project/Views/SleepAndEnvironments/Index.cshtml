@@ -77,9 +77,12 @@
 
 <h1>שינה וסביבה</h1>
 
-<p>
-    <a class="create_btn" asp-action="Create">הוספת מוצר חדש</a>
-</p>
+@if (ViewContext.HttpContext.User.IsInRole("Admin") || ViewContext.HttpContext.User.IsInRole("Editor"))
+{
+    <p>
+        <a class="create_btn" asp-action="Create">הוספת מוצר חדש</a>
+    </p>
+}
 
 <p class="choose" asp-action="DorOrCat">
 
@@ -112,12 +115,12 @@
 
 
 @*<div class="sidenav">
-    <h4> קטגוריות לשינה וסביבה</h4>
-    <hr />
-    <a href="#">מיטות</a>
-    <a href="#">כלובי נשיאה ואילוף</a>
-    <a href="#">מלונות</a>
-</div>*@
+        <h4> קטגוריות לשינה וסביבה</h4>
+        <hr />
+        <a href="#">מיטות</a>
+        <a href="#">כלובי נשיאה ואילוף</a>
+        <a href="#">מלונות</a>
+    </div>*@
 
 <div class="container">
     <div class="row">

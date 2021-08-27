@@ -10,9 +10,16 @@
 
 <h1>אימוץ חתולים</h1>
 
-<p>
-    <a class="create_btn" asp-action="Create">הוספת חתול לאימוץ</a>
-</p>
+@if (ViewContext.HttpContext.User.IsInRole("Admin") || ViewContext.HttpContext.User.IsInRole("Editor"))
+{
+    <p>
+        <a class="create_btn" asp-action="Create">הוספת חתול לאימוץ</a>
+    </p>
+    
+    <p>
+        <a class="create_btn" asp-action="index" asp-controller="BreedCat_2">גזעי חתולים</a>
+    </p>
+}
 
 <form asp-action="Search" class="search">
     <input name="queryBreed" placeholder="הקלד גזע לחיפוש..." autocomplete="off" />
@@ -51,6 +58,6 @@
 </div>
 
 @*@section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-    <link href="~/css/index_1.css" rel="stylesheet" />
-}*@
+        @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+        <link href="~/css/index_1.css" rel="stylesheet" />
+    }*@

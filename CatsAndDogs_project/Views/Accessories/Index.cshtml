@@ -10,9 +10,12 @@
 
 <h1>אקססוריז</h1>
 
-<p>
-    <a class="create_btn" asp-action="Create">הוספת אקססוריז חדש</a>
-</p>
+@if (ViewContext.HttpContext.User.IsInRole("Admin") || ViewContext.HttpContext.User.IsInRole("Editor"))
+{
+    <p>
+        <a class="create_btn" asp-action="Create">הוספת אקססוריז חדש</a>
+    </p>
+}
 
 
 <!--<p class="choose" asp-action="DorOrCat">-->

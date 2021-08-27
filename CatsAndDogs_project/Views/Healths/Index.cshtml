@@ -72,9 +72,12 @@
 
 <h1>בריאות</h1>
 
-<p>
-    <a class="create_btn" asp-action="Create">הוספת מוצר בריאות חדש</a>
-</p>
+@if (ViewContext.HttpContext.User.IsInRole("Admin") || ViewContext.HttpContext.User.IsInRole("Editor"))
+{
+    <p>
+        <a class="create_btn" asp-action="Create">הוספת מוצר בריאות חדש</a>
+    </p>
+}
 
 <p class="choose" asp-action="DorOrCat">
 
@@ -87,13 +90,13 @@
 
     @*בחר את הקטגוריה הרצויה:*@ <select name="cate" id="categ">
 
-    <option value="" selected disabled hidden> בחר קטגוריה </option>
-    @*<option value="" selected disabled hidden>בחר</option>*@
-    <option value="" selected="selected">תוספי תזונה</option>
-    <option value="" selected="selected">טיפול בפרעושים</option>
-    <option value="" selected="selected"> בריאות העור</option>
-    <option value="" selected="selected">בריאות הפה </option>
-</select>
+        <option value="" selected disabled hidden> בחר קטגוריה </option>
+        @*<option value="" selected disabled hidden>בחר</option>*@
+        <option value="" selected="selected">תוספי תזונה</option>
+        <option value="" selected="selected">טיפול בפרעושים</option>
+        <option value="" selected="selected"> בריאות העור</option>
+        <option value="" selected="selected">בריאות הפה </option>
+    </select>
 
 
     @*מחיר:*@ <input name="num1" placeholder="מחיר החל מ" autocomplete="off" />
@@ -107,14 +110,14 @@
 
 
 @*<div class="sidenav">
-    <h4> קטגוריות לבריאות</h4>
-    <hr />
-    <a href="#">תוספי תזונה</a>
-    <a href="#">טיפול פרעושים</a>
-    <a href="#">בריאות העור</a>
-    <a href="#">בריאות הפה</a>
-    
-</div>*@
+        <h4> קטגוריות לבריאות</h4>
+        <hr />
+        <a href="#">תוספי תזונה</a>
+        <a href="#">טיפול פרעושים</a>
+        <a href="#">בריאות העור</a>
+        <a href="#">בריאות הפה</a>
+
+    </div>*@
 
 <div class="container">
     <div class="row">

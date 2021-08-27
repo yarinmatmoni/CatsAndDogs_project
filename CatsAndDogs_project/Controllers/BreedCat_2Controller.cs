@@ -24,8 +24,22 @@ namespace CatsAndDogs_project.Controllers
         // GET: BreedCat_2
         public async Task<IActionResult> Index()
         {
-            return View(await _context.BreedCat_2.ToListAsync());
+            var q = from b in _context.BreedCat_2.OrderBy(x => x.Name)
+                    select b;
+
+            return View(await q.ToListAsync());
         }
+
+        public async Task<IActionResult> Search(string queryName)  // add search 
+        {
+            var q = from b in _context.BreedCat_2
+                    where (b.Name.Contains(queryName)) || (queryName == null)
+                    orderby b.Name
+                    select b;
+
+            return View("Index", await q.ToListAsync());
+        }
+
 
         // GET: BreedCat_2/Details/5
         public async Task<IActionResult> Details(int? id)

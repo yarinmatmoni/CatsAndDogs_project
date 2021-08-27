@@ -77,9 +77,12 @@
 
 <h1>טיפוח</h1>
 
-<p>
-    <a class="create_btn" asp-action="Create">הוספת מוצר טיפוח חדש</a>
-</p>
+@if (ViewContext.HttpContext.User.IsInRole("Admin") || ViewContext.HttpContext.User.IsInRole("Editor"))
+{
+    <p>
+        <a class="create_btn" asp-action="Create">הוספת מוצר טיפוח חדש</a>
+    </p>
+}
 
 <p class="choose" asp-action="DorOrCat">
 
@@ -92,12 +95,12 @@
 
     @*בחר את הקטגוריה הרצויה:*@ <select name="cate" id="categ">
 
-    <option value="" selected disabled hidden> בחר קטגוריה </option>
-    @*<option value="" selected disabled hidden>בחר</option>*@
-    <option value="" selected="selected">שמפו</option>
-    <option value="" selected="selected">מברשות</option>
-    <option value="" selected="selected">בגדים</option>
-</select>
+        <option value="" selected disabled hidden> בחר קטגוריה </option>
+        @*<option value="" selected disabled hidden>בחר</option>*@
+        <option value="" selected="selected">שמפו</option>
+        <option value="" selected="selected">מברשות</option>
+        <option value="" selected="selected">בגדים</option>
+    </select>
 
 
     @*מחיר:*@ <input name="num1" placeholder="מחיר החל מ" autocomplete="off" />
@@ -108,13 +111,13 @@
 </p>
 
 @*<div class="sidenav">
-    <h4> קטגוריות לטיפוח</h4>
-    <hr />
-    <a href="#">שמפו</a>
-    <a href="#">מברשות</a>
-    <a href="#">בגדים</a>
+        <h4> קטגוריות לטיפוח</h4>
+        <hr />
+        <a href="#">שמפו</a>
+        <a href="#">מברשות</a>
+        <a href="#">בגדים</a>
 
-</div>*@
+    </div>*@
 
 <div class="container">
     <div class="row">

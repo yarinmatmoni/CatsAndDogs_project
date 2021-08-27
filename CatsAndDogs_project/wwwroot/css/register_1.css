@@ -76,6 +76,10 @@ h3 {
     text-decoration: none;
 }
 
+.back {
+    display:block;
+}
+
 @media only screen and (max-width: 1200px) {
     #btn_s {
         margin-top: 30px;

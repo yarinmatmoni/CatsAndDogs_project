@@ -11,6 +11,24 @@ h1 {
     margin-bottom: 60px;
 }
 
+.create_btn {
+    font-size: 25px;
+    text-decoration: none;
+    background-color: #ffe4c1;
+    padding: 7px;
+    border: 2px solid;
+    border-radius: 8px;
+    font-family: 'Amatic SC', cursive;
+    color: dimgray;
+}
+
+P > a:hover {
+    background-color: #696969ab;
+    color: white;
+    border-color: #696969ab;
+}
+
+
 .small-tiitles {
     text-align: center;
     display: flex;

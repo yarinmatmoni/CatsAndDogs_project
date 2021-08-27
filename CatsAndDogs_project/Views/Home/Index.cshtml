@@ -3,8 +3,15 @@
 }
 
 <head>
-    <link href="~/css/homePage1.css" rel="stylesheet" />
+    <link href="~/css/homePage2.css" rel="stylesheet" />
 </head>
+
+@if (ViewContext.HttpContext.User.IsInRole("Admin"))
+{
+    <p>
+        <a class="create_btn" asp-action="index" asp-controller="Users">כנסיה לאזור משתמשמים</a>
+    </p>
+}
 
 <h1>ברוכים הבאים ל - Cats and Dogs</h1>
 <div class="small-tiitles">
@@ -12,6 +19,8 @@
     <h2>חנות מוצרים ומזון <span>|</span></h2>
     <h2>מדריכים וטיפים מהמומחים</h2>
 </div>
+
+
 
 <section id="slider">
     <figure>

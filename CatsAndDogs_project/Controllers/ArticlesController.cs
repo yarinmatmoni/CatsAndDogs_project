@@ -27,6 +27,20 @@ namespace CatsAndDogs_project.Controllers
             return View(await catsAndDogs_projectContext.ToListAsync());
         }
 
+        public async Task<IActionResult> NewPuppy()
+        {
+            return View(await _context.Articles.ToListAsync());
+        }
+
+        public async Task<IActionResult> Search(string queryCategory)  // add search 
+        {
+            var q = from a in _context.Articles.Include(c => c.Category)
+                    where ((a.Category.Name.Contains(queryCategory)) || (queryCategory == null))
+                    select a;
+
+            return View("Index", await q.ToListAsync());
+        }
+
         // GET: Articles/Details/5
         public async Task<IActionResult> Details(int? id)
         {

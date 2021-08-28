@@ -35,7 +35,7 @@ namespace CatsAndDogs_project.Controllers
                     where ((d.DateandTime.Date.ToString().Contains(queryDate) && queryLocation == null) || (queryDate == null && queryLocation == null)
                     || d.Location.Contains(queryLocation)
                     || d.DateandTime.Date.ToString().Contains(queryDate) && d.Location.Contains(queryLocation)
-                    || queryDate == null && d.Location.Contains(queryLocation))
+                    || queryDate == null && d.Location.Contains(queryLocation)) && d.DateandTime > DateTime.Today
                     orderby d.DateandTime
                     select d;
 

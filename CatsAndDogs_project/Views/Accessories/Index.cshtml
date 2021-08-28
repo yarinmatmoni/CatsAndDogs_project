@@ -17,6 +17,16 @@
     </p>
 }
 
+<form asp-action="Search" class="search">
+    
+        <input name="animal" placeholder="הקלד את סוג החיה (כלב/חתול)" autocomplete="off" />
+        <input name="categoryname" placeholder="הקלד את סוג הפריט הרצוי (רצועות/צעצועים)" autocomplete="off" />    
+        <input name="pricestart" placeholder="מחיר החל מ" autocomplete="off" />
+        <input name="priceend" placeholder="מחיר עד" autocomplete="off" />
+        <input id="sub_search" type="submit" value="חיפוש" />
+    
+</form>
+
 
 <!--<p class="choose" asp-action="DorOrCat">-->
 

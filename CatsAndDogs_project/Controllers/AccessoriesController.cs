@@ -29,12 +29,27 @@ namespace CatsAndDogs_project.Controllers
             return View(await catsAndDogs_projectContext.ToListAsync());
         }
 
+        public async Task<IActionResult> Search(string animal, string categoryname, int pricestart, int priceend)  // add search 
+        {        
+                var catsAndDogs_projectContext = _context.Accessories.Include(a => a.Category).Where(a => a.Type.Equals(animal));
+                return View("Index", await catsAndDogs_projectContext.ToListAsync());
+
+            //var q = from d in _context.Dog_2.Include(b => b.ListBreed)
+            //        where ((d.Size.Contains(querySize) && queryBreed == null) || (querySize == null && queryBreed == null)
+            //        || d.ListBreed.Any(n => n.Name.Contains(queryBreed)
+            //        || d.Size.Contains(querySize) && d.ListBreed.Any(n => n.Name.Contains(queryBreed)))
+            //        || querySize == null && d.ListBreed.Any(n => n.Name.Contains(queryBreed)))
+            //        select d;
+
+            //return View("Index", await q.ToListAsync());
+        }
+
         //public async Task<IActionResult> DogOrCat(string animal /*, string cate, int num1, int num2*/)
         //{
         //    var catsAndDogs_projectContext = _context.Accessories.Include(a => a.Category).Where(a => a.Type.Equals(animal));
         //    return View("Index", await catsAndDogs_projectContext.ToListAsync());
         //}
-      
+
         [Authorize]
         // GET: Accessories/Details/5
         public async Task<IActionResult> Details(int? id)

@@ -1,0 +1,146 @@
+﻿body {
+    margin-top: 100px;
+}
+
+
+h1 {
+    text-align: center;
+    font-size: 50px;
+    margin-bottom: 35px;
+    color: burlywood;
+    font-family: 'Amatic SC', cursive;
+    text-decoration-line: underline;
+}
+
+.card {
+    width: 86rem !important;
+    position: inherit;
+    height:auto;
+    border: 2px solid;
+    border-radius: 10px;
+    border-color: dimgrey;
+    box-shadow: 0px 8px 16px 0px rgb(0 0 0 / 20%);
+}
+
+.card-body {
+    display: flex;
+    justify-content: space-between;
+}
+
+.card-img {
+    width: 400px;
+    height: 270px;
+    border: 2px solid;
+    border-color: darkgray;
+    padding: 2px;
+    border-radius: 10px;
+}
+
+.card-title-name {
+    font-size: 58px;
+    color: dimgray;
+    font-family: 'Amatic SC', cursive;
+    margin-bottom: 20px;
+}
+
+
+.card-title {
+    font-size: 25px;
+    color: dimgray;
+    font-family: 'Amatic SC', cursive;
+    text-decoration: underline;
+    -webkit-text-stroke: thin;
+}
+
+.feture {
+    display: flex;
+    flex-direction: row;
+}
+
+.feture-description {
+    display: flex;
+    margin-top: 30px;
+}
+
+.feture-description > span {
+    width: 640px;
+    height: 100px;
+}
+
+span {
+    padding-right: 25px;
+    font-size: 24px;
+    font-family: 'Amatic SC', cursive;
+}
+
+.options {
+    margin-top: 170px;
+    text-align-last: center;
+    justify-content: space-between;
+    display: flex;
+}
+
+.far, .material-icons, .fas {
+    background-color: aqua;
+    padding: 12px;
+    font-size: 30px;
+    font-size: 25px;
+    background-color: #ffe4c1;
+    border: 2px solid;
+    border-radius: 8px;
+    color: dimgray;
+}
+
+.shopping {
+    background-color: aqua;
+    padding: 12px;
+    font-size: 25px;
+    font-size: 20px;
+    background-color: #ffe4c1;
+    border: 2px solid;
+    border-radius: 8px;
+    color: dimgray;
+}
+
+    .far:hover, .material-icons:hover {
+        background-color: #696969ab;
+        color: white;
+        border-color: #696969ab;
+    }
+
+@media only screen and (max-width: 1400px) {
+
+    .card {
+        width: 77rem !important;
+        margin: auto;
+    }
+}
+
+@media only screen and (max-width: 1260px) {
+
+    .card-body {
+        display: list-item;
+        list-style: none;
+    }
+
+    .card {
+        width: 29rem !important;
+        height: 60rem;
+        height: 60rem;
+        margin: auto;
+        height: auto;
+    }
+
+    .options {
+        margin-top: 60px;
+    }
+
+    .feture-description > span {
+        width: 325px;
+        margin-bottom: 10px;
+        height: auto;
+    }
+
+
+
+}

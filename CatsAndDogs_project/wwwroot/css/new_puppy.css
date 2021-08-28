@@ -1,0 +1,132 @@
+﻿body{
+    margin-top:100px;
+}
+.new-pet-head {
+    background: url(https://www.eli-elkoubi.net/wp-content/uploads/2021/01/Eli-Elkoubi-2.jpg) no-repeat ;
+    background-position: bottom;
+    min-height: 295px;
+    background-size: 100%;
+    opacity:0.7;
+    margin-bottom:15px;
+}
+
+h1 {
+    text-align: start;
+    font-size: 66px;
+    margin-bottom: 14px;
+    color: black;
+    font-family: 'Amatic SC', cursive;
+    width: 18rem;
+}
+.sub-title {
+    width: 18rem;
+}
+.row {
+    margin-right: -15px;
+    margin-left: -15px;
+}
+.img_right {
+    float: right;
+    width: 23rem;
+    border-style: double;
+    border-color: antiquewhite;
+    padding: 1px;
+    margin-top: 23px;
+}
+.img_left {
+    float:left;
+    width: 23rem;
+    border-style: double;
+    border-color: antiquewhite;
+    padding: 1px;
+    margin-top: 23px;
+}
+.guide {
+    border-bottom-style: solid;
+    border-bottom-color: burlywood;
+    margin-top: 14px;
+    padding: 12px;
+}
+.guide-body-left {
+    width: 50rem;
+    margin-right: 23rem;
+}
+.guide-body-right {
+    width: 50rem;
+}
+.guide-title {
+    padding: 0;
+    padding-right: 35px;
+    font-family: 'Amatic SC', cursive;
+}
+.guide-text {
+    padding: 0;
+    padding-right: 35px;
+    padding-top: 24px;
+}
+.full-artical {
+    border-style: solid;
+    border-radius: 22px;
+    background-color: dimgray;
+    color: white;
+    float: left;
+    line-height: 40px;
+    height: 45px;
+    min-width: 160px;
+    text-align: center;
+    text-decoration: none;
+}
+.far, .material-icons {
+    font-size: 25px;
+    background-color: dimgray;
+    display: inline-block;
+}
+.full-artical:hover {
+    text-decoration: none;
+    background-color: dimgray;
+    color: white;
+}
+@media only screen and (max-width: 1400px) {
+    .card {
+        width: 45rem !important;
+        margin: auto;
+    }
+    .option {
+        display: inline-flex;
+        margin-bottom: 3px;
+    }
+    .editOption {
+        margin-right: 2rem;
+    }
+
+}
+
+@media only screen and (max-width: 768px) {
+    .row {
+        justify-content: center;
+    }
+    .btn-primary {
+        display: block;
+        position: inherit !important;
+        color:white !important;
+    }
+    .removeOption {
+        display: block;
+    }
+
+    .search {
+        display: grid;
+    }
+    .editOption {
+        display: block;
+        margin-right: -8rem;
+    }
+
+    #sub_search{
+        width:auto;
+    }
+    .crt_btn {
+        margin-right: 13rem;
+    }
+   
+}

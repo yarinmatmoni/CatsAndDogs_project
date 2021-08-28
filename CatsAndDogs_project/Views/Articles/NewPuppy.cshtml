@@ -4,42 +4,142 @@
     ViewData["Title"] = "NewPuppy";
 }
 <head>
-    <link href="~/css/articals_index_2.css" rel="stylesheet" />
+    <link href="~/css/new_puppy.css" rel="stylesheet" />
 </head>
 
-<h1>גור חדש במשפחה</h1>
-
-@*<p>
-    <a class="crt_btn" asp-action="Create">יצירת כתבה חדשה</a>
-</p>
-
-<form asp-action="Search" class="search">
-    <input name="queryCategory" placeholder="הקלד קטגוריה לחיפוש..." autocomplete="off" />
-    <input id="sub_search" type="submit" value="חיפוש" />
-</form>
+<div class="new-pet-head">
+    <h1>המדריך המלא לכלב החדש שלך</h1>
+    <p class="sub-title">הוספתם חבר חדש לחיים? מזל טוב, אספנו עבורכם את כל המידע הדרוש לכם על החבר החדש </p>
+</div>
 
 <div class="container">
     <div class="row">
+        <div class="guide">
+            <img class="img_right" src="http://mayer-vet.com/wordpress-he/wp-contents/uploads/Depositphotos_7527601_original.jpg">
+            <div class="guide-body-left">
+                <div class=" guide-title">
+                    <h2 class="new-pet-item-title">קבלת הגור</h2>
+                </div>
+                <div class=" guide-text">
+                    <p>
+                        עכשיו שקיבלתם את החבר החדש והקטן שלכם, עליכם לעשות הכל על מנת להקל על התהליך ולהפוך אותו לנעים יותר לגור.<br>
+                        הלילה הראשון של הגור בלי אימא שלו לצידו עלול להיות קשה מאוד.  מומלץ לקחת בובת פרווה, לרוקן ממנה קצת מילוי, ולדחוף לתוכה בקבוק מים חמים ושעון מתקתק. חשוב לוודא, שהשעון לא מכוון לצלצל בשש בבוקר, הדבר עשוי להקל על הגור את השינה לבד.<br>
+                        כאשר גור הכלבים שלכם מגיע לגיל שבין 8 ל- 16 שבועות, עליכם לערוך לו היכרות עם מצבים חדשים, סוגים שונים של אנשים, מקומות ציבוריים שונים, חיות וכדומה. המטרה היא לאפשר לגור הכלבים להכיר מצבים חדשים רבים ככל האפשר עד שהוא מגיע לגיל 4 חודשים.<br>
+                        יש לתת לכלבלב הקטן כמה שיותר אהבה בימים הראשונים, תוך הצבת גבולות נחרצים.<br>
+                    </p>
+                </div>
+                <a class="full-artical"><span>לכתבה המלאה<i class="material-icons">keyboard_backspace</i></span></a>
+            </div>
+        </div>
+    </div>
+</div>
 
-        @foreach (var item in Model)
-        {
-            <div class="card col-6" style="width: 36rem; position:inherit">
-                <img src="@item.Img" class="card-img-top" alt="@item.Titel">
-                <div class="card-body">
-                    <h5 class="card-title"> @item.Titel</h5>
-                    <p class="card-text">@item.Summary</p>
-              
-                    <p id="category"> כתבה בנושא : @item.Category.Name </p>
-                    
+<div class="container">
+    <div class="row">
+        <div class="guide">
+            <img class="img_left" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7mBqPMW803SyOLMkKZfOtR1Hmw66GEMtJHg&usqp=CAU">
+            <div class="guide-body-right">
+                <div class=" guide-title">
+                    <h2 class="new-pet-item-title">תזונה</h2>
                 </div>
-                <div class="option">
-                    <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-primary">המשך קריאה</a>
-                    <a class="editOption" asp-action="Edit" asp-route-id="@item.Id">עריכה</a>
-                    <a class="removeOption" asp-action="Delete" asp-route-id="@item.Id">מחיקה</a>
+                <div class=" guide-text">
+                    <p>
+                        התחילו להאכיל את הגור במזון יבש לגורי כלבים כבר מהיום הראשון.<br>
+                        אם המרקם קשה בשבילו ניתן לרכך את הכופתיות עם מעט מים פושרים. אין צורך לתת לגור כל דבר אחר לאכול. רק מזון יבש לגורי כלבים וצלחת מים טריים. אל תתנו לו חלב ומוצריו, לא לחם, לא ביצים, לא כדורי קלציום ולא כלום.<br>
+                        האכילו את הגור לעתים קרובות. בשלושת החודשים הראשונים לחייו הוא צריך לקבל אוכל 4 פעמים ביום. הוראות האכלה מפורטות אמורות להופיע על אריזת המזון.
+                    </p>
                 </div>
+                <a class="full-artical"><span>לכתבה המלאה<i class="material-icons">keyboard_backspace</i></span></a>
+
             </div>
 
-        }
-
+        </div>
     </div>
-</div>*@
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="guide">
+            <img class="img_right" src="https://www.happypet.co.il/media/wysiwyg/blogs/25965224_xlSMALL.jpg">
+            <div class="guide-body-left">
+                <div class=" guide-title">
+                    <h2 class="new-pet-item-title">מקום לגור החדש</h2>
+                </div>
+                <div class=" guide-text">
+                    <p>כלבים רבים לא אוהבים להיות מרוחקים מבני הבית ולכן יעדיפו להיות באזור בו יש התקהלות לרוב כמו הסלון. כלבים אחרים עשויים להיות נרגשים מדי ממקום עמוס התרחשויות, ולהעדיף פינה שקטה יותר. מקם את אזור השינה והחפצים של הגור שלך באזור שנראה לך מתאים ושים לב האם הוא מרוצה במקומו החדש או שלא. תמיד תוכל לנסות ולהחליף את המיקום.</p>
+                </div>
+                <a class="full-artical"><span>לכתבה המלאה<i class="material-icons">keyboard_backspace</i></span></a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="guide">
+            <img class="img_left" src="https://www.purina.co.il/sites/site.prod1.purina.co.il/files/styles/medium_img_360x223/public/2019-02/how_tochoose_vet_post_image_471x292.jpg?itok=EDkyeyXE">
+            <div class="guide-body-right">
+                <div class=" guide-title">
+                    <h2 class="new-pet-item-title">ביקור ראשון אצל הוטרינר</h2>
+                </div>
+                <div class=" guide-text">
+                    <p>קבע פגישה ראשונה אצל הווטרינר מוקדם ככל האפשר.&nbsp;הווטרינר של כלבכם יכול לעזור לכם לא רק בנוגע למתן חיסונים לכלב, או בנוגע לטיפול נגד תולעים או המלצה בקשר לסוג המזון, הווטרינר יכול גם לעזור לכם בנוגע לשאלות הקשורות להתנהגותו של הכלב, עצות לגבי חינוך הכלב, הווטרינר יכול לתת לכם פתרונות לבעיות שגרתיות כגון נשירה אצל כלבים, טיפול בטפילים, עצות מועילות לחורף ולקיץ וכדומה.</p>
+                </div>
+                <a class="full-artical"><span>לכתבה המלאה<i class="material-icons">keyboard_backspace</i></span></a>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="guide">
+            <img class="img_right" src="https://d3m9l0v76dty0.cloudfront.net/system/photos/274265/large/f372da2f034efce0899b73336b8752bd.jpg?1534848772">
+            <div class="guide-body-left">
+                <div class=" guide-title">
+                    <h2 class="new-pet-item-title">טיפולים וטיפוח בשגרה</h2>
+                </div>
+                <div class=" guide-text">
+                    <p>
+                        הכלבים שלנו זקוקים להרבה טיפול וטיפוח, כמעט כמונו, רק בתדירות הרבה יותר נמוכה.<br>
+                        בשגרה השוטפת, יש לקצוץ את ציפורני הכלב, לנקות ריר עיניים וכתמי דמעות, לצחצח לכלב שיניים על מנת לשמור על בריאות הפה ולמנוע הצטברות אבן שן אשר יכולה לגרום לדלקות, זיהומים וכאבים. בנוסף, יש לנקות את אוזניי הכלבים באופן קבוע אחת לשבועיים, על מנת למנוע הצטברות חיידקים וטפילים.<br>
+                        מרבית הכלבים זקוקים לרחצה פעם בחודש, ונהנים מאוד מהברשה אשר גורמת להם לכיף גדול.
+                    </p>
+                </div>
+                <a class="full-artical"><span>לכתבה המלאה<i class="material-icons">keyboard_backspace</i></span></a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@*
+
+
+    <div class="container">
+        <div class="row">
+
+            @foreach (var item in Model)
+            {
+                <div class="card col-6" style="width: 36rem; position:inherit">
+                    <img src="@item.Img" class="card-img-top" alt="@item.Titel">
+                    <div class="card-body">
+                        <h5 class="card-title"> @item.Titel</h5>
+                        <p class="card-text">@item.Summary</p>
+
+                        <p id="category"> @item.Category.Name </p>
+
+                    </div>
+                    <div class="option">
+                        <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-primary">המשך קריאה</a>
+                        <a class="editOption" asp-action="Edit" asp-route-id="@item.Id">עריכה</a>
+                        <a class="removeOption" asp-action="Delete" asp-route-id="@item.Id">מחיקה</a>
+                    </div>
+                </div>
+
+            }
+
+        </div>
+    </div>*@

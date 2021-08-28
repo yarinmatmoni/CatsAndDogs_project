@@ -5,7 +5,7 @@
 }
 
 <head>
-    <link rel="stylesheet" href="~/css/index_forstore1.css"  />
+    <link rel="stylesheet" href="~/css/index_forstore1.css" />
 </head>
 
 <h1>אקססוריז</h1>
@@ -15,84 +15,83 @@
     <p>
         <a class="create_btn" asp-action="Create">הוספת אקססוריז חדש</a>
     </p>
+
 }
+@*<a class="ShoppingBag">לסל הקניות</a>*@
+<button style='font-size:24px'>לסל הקניות <i class='fas fa-cart-arrow-down'></i></button>
 
 <form asp-action="Search" class="search">
-    
-        <input name="animal" placeholder="הקלד את סוג החיה (כלב/חתול)" autocomplete="off" />
-        <input name="categoryname" placeholder="הקלד את סוג הפריט הרצוי (רצועות/צעצועים)" autocomplete="off" />    
-        <input name="pricestart" placeholder="מחיר החל מ" autocomplete="off" />
-        <input name="priceend" placeholder="מחיר עד" autocomplete="off" />
-        <input id="sub_search" type="submit" value="חיפוש" />
-    
+
+    <input name="animal" placeholder="הקלד את סוג החיה (כלב/חתול)" autocomplete="off" />
+    <input name="categoryname" placeholder="הקלד את סוג הפריט הרצוי (רצועות/צעצועים)" autocomplete="off" />
+    <input name="pricestart" placeholder="מחיר החל מ" autocomplete="off" />
+    <input name="priceend" placeholder="מחיר עד" autocomplete="off" />
+    <input id="sub_search" type="submit" value="חיפוש" />
+
 </form>
 
 
 <!--<p class="choose" asp-action="DorOrCat">-->
+@*בחר את סוג החיה:*@
+<!--<select name="animal" id="animalid">
 
-        @*בחר את סוג החיה:*@ <!--<select name="animal" id="animalid">
+    <option value="" selected disabled hidden>בחר</option>
+    <option value="" selected="selected">כלב</option>
+    <option value="" selected="selected">חתול</option>
+</select>-->
+@*בחר את הקטגוריה הרצויה:*@
+<!--<select name="cate" id="animalid">
 
-        <option value="" selected disabled hidden>בחר</option>
-        <option value="" selected="selected">כלב</option>
-        <option value="" selected="selected">חתול</option>
-    </select>-->
-
-
-    @*בחר את הקטגוריה הרצויה:*@ <!--<select name="cate" id="animalid">
-
-        <option value="" selected disabled hidden> בחר קטגוריה </option>-->
-        @*<option value="" selected disabled hidden>בחר</option>*@
-        <!--<option value="" selected="selected">רצועות</option>
-        <option value="" selected="selected">צעצועים</option>
-    </select>-->
-
-
-    @*מחיר:*@ <!--<input name="num1" placeholder="מחיר החל מ" autocomplete="off" />
+<option value="" selected disabled hidden> בחר קטגוריה </option>-->
+@*<option value="" selected disabled hidden>בחר</option>*@
+<!--<option value="" selected="selected">רצועות</option>
+    <option value="" selected="selected">צעצועים</option>
+</select>-->
+@*מחיר:*@
+<!--<input name="num1" placeholder="מחיר החל מ" autocomplete="off" />
 
     <input name="num2" placeholder="מחיר עד" autocomplete="off" />
 
     <input id="sub_search" type="submit" value="חיפוש" />
 </p>-->
-
-
-    @*<div class="sidenav">
+@*<div class="sidenav">
         <h4> קטגוריות לאקססוריז</h4>
         <hr />
         <a href="#">רצועות</a>
         <a href="#services">צעצועים</a>
     </div>*@
 
-    <div class="container">
+<div class="container">
 
-        <div class="row">
+    <div class="row">
 
-            <div class="dropdown-menu">
-                <a class="dropdown-item" href="#">Action</a>
-                <a class="dropdown-item" href="#">Another action</a>
-                <a class="dropdown-item" href="#">Something else here</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">Separated link</a>
-            </div>
+        <div class="dropdown-menu">
+            <a class="dropdown-item" href="#">Action</a>
+            <a class="dropdown-item" href="#">Another action</a>
+            <a class="dropdown-item" href="#">Something else here</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">Separated link</a>
+        </div>
 
-            @foreach (var item in Model)
-            {
-                <div class="card col-3" style="width: 18rem; position:inherit">
-                    <img src="@item.Image" class="card-img-top" alt="@item.Name">
-                    <div class="card-body">
-                        <h5 class="card-title"> @item.Name</h5>
+        @foreach (var item in Model)
+        {
+            <div class="card col-3" style="width: 18rem; position:inherit">
+                <img src="@item.Image" class="card-img-top" alt="@item.Name">
+                <div class="card-body">
+                    <h5 class="card-title"> @item.Name</h5>
                     <p class="card-text" style="overflow: hidden;text-overflow: ellipsis;white-space: nowrap;">@item.Description</p>
                     <p> @Html.DisplayNameFor(model => model.Recommendation) @item.Recommendation </p>
                     <p id="price"> @Html.DisplayNameFor(model => model.Price): @item.Price ₪ </p>
 
                 </div>
-                    <div class="option">
-                        <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-primary">לפרטים נוספים</a>
-                        @if (ViewContext.HttpContext.User.IsInRole("Admin") || ViewContext.HttpContext.User.IsInRole("Editor"))
-                        {
-                            <a class="editOption" asp-action="Edit" asp-route-id="@item.Id">עריכה</a>
-                            <a class="removeOption" asp-action="Delete" asp-route-id="@item.Id">מחיקה</a>
-                        }
-                    </div>
+                <div class="option">
+                    <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-primary">לפרטים נוספים</a>
+                    @if (ViewContext.HttpContext.User.IsInRole("Admin") || ViewContext.HttpContext.User.IsInRole("Editor"))
+                    {
+                        <a class="editOption" asp-action="Edit" asp-route-id="@item.Id">עריכה</a>
+                        <a class="removeOption" asp-action="Delete" asp-route-id="@item.Id">מחיקה</a>
+                    }
+                </div>
             </div>
 
         }

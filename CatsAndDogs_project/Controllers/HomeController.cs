@@ -27,6 +27,11 @@ namespace CatsAndDogs.Controllers
             return View();
         }
 
+        public IActionResult Location()
+        {
+            return View();
+        }
+
         //public IActionResult Privacy()
         //{
         //    return View();

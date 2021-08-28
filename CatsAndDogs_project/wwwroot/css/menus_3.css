@@ -72,6 +72,7 @@ span {
     font-size: 28px;
     margin-left: 70px;
     margin-top: -5px;
+    text-decoration:none;
 }
 
 .dropbtn > i {
@@ -177,6 +178,10 @@ h6 {
 
 .dogfood ul, .catfood ul, .guides ul, .professionals ul, .information ul {
     list-style-type: none;
+}
+
+#location, #contect {
+    margin-top: -5px;
 }
 
 

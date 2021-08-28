@@ -6,14 +6,8 @@
     <link href="~/css/homePage2.css" rel="stylesheet" />
 </head>
 
-<body onload="welcome();">
+<body>
 
-    @*@if (ViewContext.HttpContext.User.IsInRole("Admin") || ViewContext.HttpContext.User.IsInRole("Editor")
-      || ViewContext.HttpContext.User.IsInRole("Client"))
-    {
-       
-        <div id="welcome"></div> 
-    }*@
 
     @if (ViewContext.HttpContext.User.IsInRole("Admin"))
     {
@@ -73,5 +67,5 @@
         </script>
     </section>
 
-    <script src="~/js/site.js"></script>
 </body>
+

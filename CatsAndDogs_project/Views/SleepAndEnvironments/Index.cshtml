@@ -84,33 +84,43 @@
     </p>
 }
 
-<p class="choose" asp-action="DorOrCat">
+<form asp-action="Search" class="search">
 
-    @*בחר את סוג החיה:*@ <select name="animal" id="animalid">
+    <input name="animal" placeholder="הקלד את סוג החיה (כלב/חתול)" autocomplete="off" />
+    <input name="categoryname" placeholder="הקלד את סוג הפריט הרצוי (מיטות/כלובי נשיאה ואילוף/מלונות)" autocomplete="off" />
+    <input name="pricestart" placeholder="מחיר החל מ" autocomplete="off" />
+    <input name="priceend" placeholder="מחיר עד" autocomplete="off" />
+    <input id="sub_search" type="submit" value="חיפוש" />
+
+</form>
+
+<!--<p class="choose" asp-action="DorOrCat">-->
+
+    @*בחר את סוג החיה:*@ <!--<select name="animal" id="animalid">
 
         <option value="" selected disabled hidden>בחר</option>
         <option value="" selected="selected">כלב</option>
         <option value="" selected="selected">חתול</option>
-    </select>
+    </select>-->
 
-    @*בחר את הקטגוריה הרצויה:*@ <select name="cate" id="categ">
+    @*בחר את הקטגוריה הרצויה:*@ <!--<select name="cate" id="categ">
 
-        <option value="" selected disabled hidden> בחר קטגוריה </option>
+        <option value="" selected disabled hidden> בחר קטגוריה </option>-->
         @*<option value="" selected disabled hidden>בחר</option>*@
-        <option value="" selected="selected">מיטות ומזרונים </option>
+        <!--<option value="" selected="selected">מיטות ומזרונים </option>
         <option value="" selected="selected"> כלובי נשיאה ואילוף</option>
         <option value="" selected="selected"> מלונות </option>
-    </select>
+    </select>-->
 
 
-    @*מחיר:*@ <input name="num1" placeholder="מחיר החל מ" autocomplete="off" />
+    @*מחיר:*@ <!--<input name="num1" placeholder="מחיר החל מ" autocomplete="off" />
 
     <input name="num2" placeholder="מחיר עד" autocomplete="off" />
 
 
 
     <input id="sub_search" type="submit" value="חיפוש" />
-</p>
+</p>-->
 
 
 

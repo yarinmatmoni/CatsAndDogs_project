@@ -51,7 +51,7 @@
 
 h1 {
     text-align: center;
-    font-size: 75px;
+    font-size: 150px;
     margin-bottom: 65px;
     color: burlywood;
     font-family: 'Amatic SC', cursive;
@@ -121,7 +121,7 @@ p {
     text-decoration: none;
     font-size: 16px;
     padding-top: 10px;
-    padding-right: 19rem;
+    padding-right: 28rem;
 }
 
 .removeOption {
@@ -137,17 +137,22 @@ p {
     grid-row-gap: 3em;
 }
 
-/*#price {
-    color: #16c634 !important;
-    font-size: 27px;
-    font-weight: 600;
-    font-family: 'Amatic SC', cursive;
-    margin-top: 25px;
-    margin-bottom: auto;
-}*/
+@media only screen and (max-width: 1400px) {
+    .card {
+        width: 45rem !important;
+        margin: auto;
+    }
+    .option {
+        display: inline-flex;
+        margin-bottom: 3px;
+    }
+    .editOption {
+        margin-right: 2rem;
+    }
 
+}
 
-@media only screen and (max-width: 760px) {
+@media only screen and (max-width: 768px) {
     .row {
         justify-content: center;
     }
@@ -156,12 +161,23 @@ p {
         position: inherit !important;
         color:white !important;
     }
+    .removeOption {
+        display: block;
+    }
 
     .search {
         display: grid;
+    }
+    .editOption {
+        display: block;
+        margin-right: -8rem;
     }
 
     #sub_search{
         width:auto;
     }
+    .crt_btn {
+        margin-right: 13rem;
+    }
+   
 }

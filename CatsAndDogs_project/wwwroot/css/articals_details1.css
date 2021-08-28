@@ -124,7 +124,6 @@ span {
         margin: auto;
     }
 }
-
 @media only screen and (max-width: 1260px) {
 
     .card-body {
@@ -133,7 +132,7 @@ span {
     }
 
     .card {
-        width: 40rem !important;
+        width: 55rem !important;
         height: 60rem;
         margin: auto;
         height: auto;
@@ -148,5 +147,33 @@ span {
         margin-bottom: 10px;
         height: auto;
     }
+}
+@media only screen and (max-width: 1000px) {
 
+    .card-body {
+        display: list-item;
+        list-style: none;
+    }
+
+    .card {
+        width: 40rem !important;
+       /* height: 60rem;*/
+        margin: auto;
+        height: auto;
+    }
+
+    .options {
+        margin-top: 60px;
+    }
+
+    .feture-description > span {
+        width: 325px;
+        margin-bottom: 10px;
+        height: auto;
+    }
+    .detail-description > span {
+        width: 325px;
+        margin-bottom: 10px;
+        height: auto;
+    }
 }

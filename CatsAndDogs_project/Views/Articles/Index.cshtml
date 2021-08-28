@@ -4,7 +4,7 @@
     ViewData["Title"] = "Index";
 }
 <head>
-    <link href="~/css/articals_index_2.css" rel="stylesheet" />
+    <link href="~/css/articals_index.css" rel="stylesheet" />
 </head>
 
 <h1>כתבות</h1>
@@ -26,7 +26,7 @@
 
         @foreach (var item in Model)
         {
-            <div class="card col-6" style="width: 36rem; position:inherit">
+            <div class="card col-6" style="width: 43rem; position:inherit">
                 <img src="@item.Img" class="card-img-top" alt="@item.Titel">
                 <div class="card-body">
                     <h5 class="card-title"> @item.Titel</h5>

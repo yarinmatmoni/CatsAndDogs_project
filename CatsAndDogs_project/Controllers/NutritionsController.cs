@@ -42,6 +42,7 @@ namespace CatsAndDogs_project.Controllers
                     select a;
             }
 
+            
             return View("Index", await q.ToListAsync());
 
             //var catsAndDogs_projectContext = _context.Nutrition.Include(n => n.Category);

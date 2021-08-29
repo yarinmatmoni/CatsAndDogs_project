@@ -28,10 +28,22 @@
         cursor: pointer;
         outline: none;
     }
-
+h3 {
+    font-size: 1.5rem;
+    text-align: center;
+    font-size: 48px;
+    margin-bottom: 0px;
+    color: burlywood;
+    font-family: 'Amatic SC', cursive;
+    text-decoration-line: underline;
+}
 h4 {
     font-size: 1.5rem;
-    font-weight: bold;
+    text-align: right;
+    font-size: 39px;
+    margin-bottom: 0px;
+    color: burlywood;
+    font-family: 'Amatic SC', cursive
 }
 
         /* On mouse-over */
@@ -176,10 +188,10 @@ body{
 
 h1 {
     text-align: center;
-    font-size: 50px;
+    font-size: 60px;
     margin-bottom: 65px;
     color: burlywood;
-    font-family: 'Amatic SC', cursive;
+    font-family: 'bootstrap-icons';
     text-decoration-line: underline;
 }
 

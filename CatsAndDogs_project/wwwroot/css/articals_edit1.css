@@ -12,13 +12,16 @@ h1 {
 }
 
 .card {
-    width: 86rem !important;
+    /* width: 86rem !important; */
+    width: 100% !important;
     position: inherit;
     height: auto;
     border: 2px solid;
     border-radius: 10px;
     border-color: dimgrey;
     box-shadow: 0px 8px 16px 0px rgb(0 0 0 / 20%);
+    /* padding: 100px; */
+    padding-inline: 35px;
 }
 
 .card-body {
@@ -133,7 +136,7 @@ select {
     color: #dfba8b !important;
     background-color: #f7eee2 !important;
     border-color: #deb988 !important;
-    margin-top: -3rem;
+    margin-top: -16px;
 }
 
 .body-left {
@@ -141,11 +144,11 @@ select {
 }
 
 #input-left {
-    width: 50rem !important;
+    width: 50rem;
     height: 4rem;
 }
 #bo-left {
-    width: 50rem !important;
+    width: 50rem ;
     height: 26rem;
 }
 
@@ -158,7 +161,75 @@ select {
     margin-right:26px !important; 
 }
 
-@media only screen and (min-width: 1400px) {
+#categoryId {
+    margin-right:-25px;
+}
+@media only screen and (max-width: 1400px) {
+    .card {
+        margin: auto;
+        width: 100%;
+    }
+
+    .far, .material-icons {
+        margin-right: 0;
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    .body-all {
+        display: flex;
+        flex-direction: column;
+    }
+    .body-right {
+        margin-right: 36px;
+    }
+ 
+}
+@media only screen and (max-width: 1000px) {
+    .body-all {
+        display: flex;
+        flex-direction: column;
+    }
+    .show {
+        display:block;
+    }
+    #bo-left, #input-left {
+        width: 40rem;
+    }
+}
+@media only screen and (max-width: 800px) {
+    .body-all {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .show {
+        display: block;
+    }
+
+    #bo-left, #input-left {
+        width: 25rem;
+    }
+}
+
+
+/*
+@media only screen and (min-width: 1400px){
+    .card {
+        margin: auto;
+        width:100%;
+    }
+}
+
+
+@media only screen and (max-width: 1200px) {
+    .body-all {
+        display: flex;
+        flex-direction: column;
+    }
+}*/
+
+/*@media only screen and (min-width: 1400px) {
     
     .btn {
         margin-top: -1rem;
@@ -205,4 +276,4 @@ select {
             margin-bottom: 10px;
             height: auto;
         }
-    }
+    }*/

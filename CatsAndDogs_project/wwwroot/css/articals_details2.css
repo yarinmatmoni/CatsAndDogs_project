@@ -11,21 +11,14 @@ h1 {
     font-family: 'Amatic SC', cursive;
     text-decoration-line: underline;
 }
-h3 {
-    font-size: 45px;
-    color: dimgray;
-    font-family: 'Amatic SC', cursive;
-    margin-bottom: 50px;
-    text-align :center;
-}
-h3 > span {
-    color: tomato;
-}
+
 .card {
     width: 100% !important;
     position: inherit;
-    height:auto;
-    border:none;
+    height: auto;
+    border: none;
+    /*border-radius: 10px;*/
+    padding: 12px;
     border-color: dimgrey;
     box-shadow: 0px 8px 16px 0px rgb(0 0 0 / 20%);
 }
@@ -44,6 +37,11 @@ h3 > span {
     border-radius: 10px;
 }
 
+/*.detail-title {
+    font-size: large;
+    
+}*/
+
 .detail {
     display: flex;
     flex-direction: row;
@@ -51,12 +49,37 @@ h3 > span {
     margin: 4px;
 }
 
+/*.detail-description {
+    display: flex;
+    margin-top: 30px;
+    font-size: medium;
+    font-family: 'Amatic SC', cursive;
+}
+
+    .detail-description > span {
+        width: 640px;
+        height: 100px;
+
+    }
+.catgory {
+    display: flex;
+    margin-top: 30px;
+    font-size: 24px;
+    font-family: 'Amatic SC', cursive;
+}
+
+span {
+    padding-right: 25px;
+    font-size: 24px;
+    font-family: 'Amatic SC', cursive;
+}
+*/
 .options {
-    margin-top: auto;
+   margin-top: auto;
     text-align-last: center;
     justify-content: space-between;
     display: flex;
-    justify-content: flex-end;
+    
 }
 
 .far, .material-icons {
@@ -76,8 +99,8 @@ h3 > span {
     border-color: #696969ab;
 }
 .body-down {
-    justify-content : space-between;
-    /*margin-top:67px;*/
+    justify-content: space-between;
+    width: 95%;
 }
 .body-up {
     margin-top: 11px;
@@ -85,38 +108,64 @@ h3 > span {
     
 }
 .date {
+    /*justify-content: space-around;*/
     display: flex;
     justify-content: center;
+   /* margin-top: 5px;*/
 }
 .art_body {
     margin-top : 10px;
 }
-.btn {
-    display: block;
-    width: 100%;
-    font-size: 30px;
-    font-family: 'Amatic SC', cursive;
-    width: 248px;
-    margin-left: 7px;
-    margin-bottom: 9px;
-}
 
-#delete_btn {
-    margin-top: 15px;
-}
-#back {
-    margin-left: 5px;
-}
 
 
 @media only screen and (max-width: 1400px) {
     .card {
-        width: 77rem !important;
+        /*width: 77rem !important;*/
         margin: auto;
     }
 }
+@media only screen and (max-width: 1000px) {
 
-@media only screen and (max-width: 1260px) {
+    .show, .detail-description, .summar {
+        display: block;
+    }
+
+    .card-body{
+        display:block;
+    }
+
+    .card-img {
+        display: flex;
+        width: 100%;
+        height: auto;
+    }
+}
+
+
+/*    .card-body {
+        display: list-item;
+        list-style: none;
+    }
+
+    .card {
+        width: 55rem !important;
+        height: 60rem;
+        margin: auto;
+        height: auto;
+    }
+
+    .options {
+        margin-top: 60px;
+    }
+
+    .feture-description > span {
+        width: 325px;
+        margin-bottom: 10px;
+        height: auto;*/
+
+/* }
+@media only screen and (max-width: 1000px) {
 
     .card-body {
         display: list-item;
@@ -139,5 +188,10 @@ h3 > span {
         margin-bottom: 10px;
         height: auto;
     }
-
+    .detail-description > span {
+        width: 325px;
+        margin-bottom: 10px;
+        height: auto;
+    }
 }
+*/

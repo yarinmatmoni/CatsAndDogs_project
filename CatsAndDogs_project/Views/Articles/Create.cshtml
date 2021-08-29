@@ -5,13 +5,13 @@
 }
 
 <head>
-    <link href="~/css/articals_create_1.css" rel="stylesheet" />
+    <link href="~/css/articals_create2.css" rel="stylesheet" />
 </head>
 
 <h1>הוספת כתבה חדשה</h1>
 
 <div class="row">
-    <div class="card col-3" style="width: 18rem; position:inherit">
+    <div class="card col-6" style="width: 18rem; position:inherit">
         <div class="card-body">
             <form asp-action="Create">
                 <div class="Create"><link href="~/css/articals_create1.css" rel="stylesheet" />
@@ -20,28 +20,28 @@
                         <div class="body-right">
                             <div class="feture">
                                 <h5 class="card-title"><label asp-for="Titel" class="control-label"></label> :</h5>
-                                <span><input asp-for="Titel" class="form-control" autocomplete="off" /></span>
+                                <span class="show"><input asp-for="Titel" class="form-control" autocomplete="off" /></span>
                                 <span asp-validation-for="Titel" class="text-danger"></span>
                             </div>
                             <div class="feture">
                                 <h5 class="card-title"><label asp-for="Author" class="control-label"></label> :</h5>
-                                <span><input asp-for="Author" class="form-control" autocomplete="off" /></span>
+                                <span class="show" ><input asp-for="Author" class="form-control" autocomplete="off" /></span>
                                 <span asp-validation-for="Author" class="text-danger"></span>
                             </div>
                             <div class="feture">
                                 <h5 class="card-title"><label asp-for="CreationDate" class="control-label"></label> :</h5>
-                                <span><input asp-for="CreationDate" class="form-control" /></span>
+                                <span class="show"><input asp-for="CreationDate" class="form-control" /></span>
                                 <span asp-validation-for="CreationDate" class="text-danger"></span>
                             </div>
                             <div class="feture">
                                 <h5 class="card-title"><label asp-for="LastUpDate" class="control-label"></label> :</h5>
-                                <span><input asp-for="LastUpDate" class="form-control" /></span>
+                                <span class="show"><input asp-for="LastUpDate" class="form-control" /></span>
                                 <span asp-validation-for="LastUpDate" class="text-danger"></span>
                             </div>
 
                             <div class="feture">
                                 <h5 class="card-title"><label asp-for="Img" class="control-label"></label> :</h5>
-                                <span><input asp-for="Img" class="form-control" /></span>
+                                <span class="show"><input asp-for="Img" class="form-control" /></span>
                                 <span asp-validation-for="Img" class="text-danger"></span>
                             </div>
                             <div class="feture">
@@ -52,12 +52,12 @@
                         <div class="body-left">
                             <div class="feture">
                                 <h5 class="card-title-left"><label asp-for="Summary" class="control-label"></label> :</h5>
-                                <span><textarea asp-for="Summary" class="form-control" id="input-left" autocomplete="off" style="font-size:18px"></textarea></span>
+                                <span class="show"><textarea asp-for="Summary" class="form-control" id="input-left" autocomplete="off" style="font-size:18px"></textarea></span>
                                 <span asp-validation-for="Summary" class="text-danger"></span>
                             </div>
                             <div class="feture">
                                 <h5 class="card-title-left"> <label asp-for="Body" class="control-label"></label>  :</h5>
-                                <span><textarea asp-for="Body" class="form-control" id="bo-left" autocomplete="off" style="font-size:18px"></textarea></span>
+                                <span class="show"><textarea asp-for="Body" class="form-control" id="bo-left" autocomplete="off" style="font-size:18px"></textarea></span>
                                 <span asp-validation-for="Body" class="text-danger"></span>
                             </div>
                         </div>

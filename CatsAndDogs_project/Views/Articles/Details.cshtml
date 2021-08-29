@@ -5,7 +5,7 @@
 }
 
 <head>
-    <link href="~/css/articals_details1.css" rel="stylesheet" />
+    <link href="~/css/articals_details2.css" rel="stylesheet" />
     <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
 </head>
 
@@ -15,11 +15,11 @@
         <div class="details">
             <div class="body-up">
                 <div class="detail">
-                    <span>  @Html.DisplayFor(model => model.Author)</span>
+                    <span class="show">  @Html.DisplayFor(model => model.Author)</span>
                 </div>
 
                 <div class="detail">
-                    <p class="catgory">קטגוריה :</p><span> @Html.DisplayFor(model => model.Category.Name)</span>
+                    <p class="catgory">קטגוריה :</p><span class="show"> @Html.DisplayFor(model => model.Category.Name)</span>
                 </div>
                 <div class="date">
                     <div class="detail">
@@ -37,7 +37,7 @@
                     <span class="summar"> @Html.DisplayFor(model => model.Summary)</span>
                 </div>
                 <div class="art_body" style="white-space:pre-line">
-                    <span> @Html.DisplayFor(model => model.Body)</span>
+                    <span class="show"> @Html.DisplayFor(model => model.Body)</span>
                 </div>
 
             </div>

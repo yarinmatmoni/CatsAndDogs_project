@@ -42,10 +42,11 @@ h1 {
     margin-top: 8px;
 }
 .guide {
-    border-bottom-style: solid;
+    border-bottom-style: double;
     border-bottom-color: burlywood;
     margin-top: 14px;
     padding: 12px;
+    height:auto;
 }
 .guide-body-left {
     width: 50rem;
@@ -86,22 +87,43 @@ h1 {
     background-color: dimgray;
     color: white;
 }
-@media only screen and (max-width: 1400px) {
-    .card {
-        width: 45rem !important;
+#full {
+    display:block;
+}
+
+
+@media only screen and (max-width: 1200px) {
+
+    .guide {
+        display: flex;
+        flex-direction: column;
+        
+    }
+    .img_right, .img_left {
+        width: 33rem;
+        height: 17rem;
         margin: auto;
     }
-    .option {
-        display: inline-flex;
-        margin-bottom: 3px;
-    }
-    .editOption {
-        margin-right: 2rem;
+    .guide-body-left , .guide-body-right {
+        width:auto;
+        margin-right:0;
     }
 
 }
 
-@media only screen and (max-width: 768px) {
+
+@media only screen and (max-width: 545px) {
+
+    .img_right, .img_left {
+        width: 30rem;
+        height: 15rem;
+        margin: auto;
+    }
+   
+}
+
+
+/*@media only screen and (max-width: 768px) {
     .row {
         justify-content: center;
     }
@@ -129,4 +151,4 @@ h1 {
         margin-right: 13rem;
     }
    
-}
+}*/

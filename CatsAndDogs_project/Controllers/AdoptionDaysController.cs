@@ -29,17 +29,31 @@ namespace CatsAndDogs_project.Controllers
             return View(await q.ToListAsync());
         }
 
-        public async Task<IActionResult> Search(string queryDate, string queryLocation)  // add search 
+        //public async Task<IActionResult> Search(string queryDate, string queryLocation)  // add search 
+        //{
+        //    var q = from d in _context.AdoptionDays
+        //            where ((d.DateandTime.Date.ToString().Contains(queryDate) && queryLocation == null) || (queryDate == null && queryLocation == null)
+        //            || d.Location.Contains(queryLocation)
+        //            || d.DateandTime.Date.ToString().Contains(queryDate) && d.Location.Contains(queryLocation)
+        //            || queryDate == null && d.Location.Contains(queryLocation)) && d.DateandTime > DateTime.Today
+        //            orderby d.DateandTime
+        //            select d;
+
+        //    return View("Index", await q.ToListAsync());
+        //}
+
+        public async Task<IActionResult> Search(string queryDate)  // add search 
         {
+            
             var q = from d in _context.AdoptionDays
-                    where ((d.DateandTime.Date.ToString().Contains(queryDate) && queryLocation == null) || (queryDate == null && queryLocation == null)
-                    || d.Location.Contains(queryLocation)
-                    || d.DateandTime.Date.ToString().Contains(queryDate) && d.Location.Contains(queryLocation)
-                    || queryDate == null && d.Location.Contains(queryLocation)) && d.DateandTime > DateTime.Today
+                    where (d.DateandTime.Date.ToString().Contains(queryDate)) || queryDate==null 
+            
+                    && d.DateandTime>DateTime.Today
                     orderby d.DateandTime
                     select d;
+            
 
-            return View("Index", await q.ToListAsync());
+            return Json(await q.ToListAsync());
         }
 
         // GET: AdoptionDays/Details/5

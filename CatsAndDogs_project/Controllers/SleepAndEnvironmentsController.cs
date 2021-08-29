@@ -28,6 +28,23 @@ namespace CatsAndDogs_project.Controllers
             return View(await catsAndDogs_projectContext.ToListAsync());
         }
 
+        public async Task<IActionResult> Search(string query)
+        {
+            var q = from a in _context.SleepAndEnvironment.Include(b => b.Category)
+                    where ((a.Type.Contains(query)) || a.Name.Contains(query) ||
+                    a.Recommendation.Contains(query) ||a.Description.Contains(query) ||
+                    a.Category.Name.Contains(query))
+                    select a;
+
+            if (query == null)
+            {
+                q = from a in _context.SleepAndEnvironment.Include(b => b.Category)
+                    select a;
+            }
+            return View("Index", await q.ToListAsync());
+
+        }
+
         // GET: SleepAndEnvironments/Details/5
         public async Task<IActionResult> Details(int? id)
         {

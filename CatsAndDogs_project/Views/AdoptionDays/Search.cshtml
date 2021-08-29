@@ -1,0 +1,25 @@
+﻿@model IEnumerable<CatsAndDogs_project.Models.AdoptionDays>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DateandTime)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Location)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Discription)
+                </td>
+                <td>
+                    @if (ViewContext.HttpContext.User.IsInRole("Admin") || ViewContext.HttpContext.User.IsInRole("Editor"))
+                    {
+                        <div class="options">
+                            <a id="edit_btn" asp-action="Edit" asp-route-id="@item.Id"><i class="material-icons">edit</i></a>
+                            <a id="delete_btn" asp-action="Delete" asp-route-id="@item.Id"><i class="material-icons">close</i></a>
+                        </div>
+                    }
+                </td>
+            </tr>
+        }

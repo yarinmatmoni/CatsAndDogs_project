@@ -29,20 +29,109 @@ namespace CatsAndDogs_project.Controllers
             return View(await catsAndDogs_projectContext.ToListAsync());
         }
 
-        public async Task<IActionResult> Search(string animal, string categoryname, int pricestart, int priceend)  // add search 
-        {        
-                var catsAndDogs_projectContext = _context.Accessories.Include(a => a.Category).Where(a => a.Type.Equals(animal));
-                return View("Index", await catsAndDogs_projectContext.ToListAsync());
-
-            //var q = from d in _context.Dog_2.Include(b => b.ListBreed)
-            //        where ((d.Size.Contains(querySize) && queryBreed == null) || (querySize == null && queryBreed == null)
-            //        || d.ListBreed.Any(n => n.Name.Contains(queryBreed)
-            //        || d.Size.Contains(querySize) && d.ListBreed.Any(n => n.Name.Contains(queryBreed)))
-            //        || querySize == null && d.ListBreed.Any(n => n.Name.Contains(queryBreed)))
-            //        select d;
-
-            //return View("Index", await q.ToListAsync());
+        public async Task<IActionResult> Search(string query)
+        {
+            var q = from a in _context.Accessories.Include(b => b.Category)
+                    where ((a.Type.Contains(query)) || a.Name.Contains(query) ||
+                    a.Description.Contains(query) || a.Category.Name.Contains(query)) ||
+                    a.Recommendation.Contains(query)
+                    select a;
+            if(query == null)
+            {
+                q = from a in _context.Accessories.Include(b => b.Category)
+                    select a;
+            }
+            return View("Index", await q.ToListAsync());
         }
+
+        //public async Task<IActionResult> Search()
+        //{
+        //    var catsAndDogs_projectContext = _context.Accessories.Include(a => a.Category);
+        //    return PartialView(await catsAndDogs_projectContext.ToListAsync());
+        //}
+
+        //public async Task<IActionResult> Search(string animal, string categoryname, int pricestart, int priceend)  // add search 
+        //{
+        //    //var catsAndDogs_projectContext = _context.Accessories.Include(a => a.Category).Where(a => a.Type.Equals(animal));
+
+        //    //var q = from a in _context.Accessories.Include(a => a.Category)
+        //    //        where a.Type.Contains(animal) && a.Category.Name.Contains(categoryname) && a.Price >= pricestart && a.Price <= priceend
+
+        //    //              || animal == null && categoryname == null && pricestart.ToString() == null && priceend.ToString() == null
+
+        //    //              // one option:
+        //    //              || a.Type.Contains(animal) && categoryname == null && pricestart.ToString() == null && priceend.ToString() == null
+        //    //              || animal == null && a.Category.Name.Contains(categoryname) && pricestart.ToString() == null && priceend.ToString() == null
+        //    //              || animal == null && categoryname == null && a.Price >= pricestart && priceend.ToString() == null
+        //    //              || animal == null && categoryname == null && pricestart.ToString() == null && a.Price <= priceend
+
+        //    //              //two options:
+        //    //              || a.Type.Contains(animal) && a.Category.Name.Contains(categoryname) && pricestart.ToString() == null && priceend.ToString() == null
+        //    //              || a.Type.Contains(animal) && categoryname == null && a.Price >= pricestart && priceend.ToString() == null
+        //    //              || a.Type.Contains(animal) && categoryname == null && pricestart.ToString() == null && a.Price <= priceend
+
+        //    //              || animal == null && a.Category.Name.Contains(categoryname) && a.Price >= pricestart && priceend.ToString() == null
+        //    //              || animal == null && a.Category.Name.Contains(categoryname) && pricestart.ToString() == null && a.Price <= priceend
+
+        //    //              || animal == null && animal == null && categoryname == null && a.Price >= pricestart && a.Price <= priceend
+
+        //    //              // three options: 
+
+        //    //              || a.Type.Contains(animal) && a.Category.Name.Contains(categoryname) && a.Price >= pricestart && priceend.ToString() == null
+        //    //              || a.Type.Contains(animal) && a.Category.Name.Contains(categoryname) && pricestart.ToString() == null && a.Price <= priceend
+        //    //              || a.Type.Contains(animal) && categoryname == null && a.Price >= pricestart && a.Price <= priceend
+
+        //    //              || animal == null && a.Category.Name.Contains(categoryname) && a.Price >= pricestart && a.Price <= priceend
+
+
+        //    //IQueryable<Accessories> q = _context.Accessories.Include(a => a.Category);
+
+        //    //if (animal == null && categoryname == null && pricestart.ToString() == null && priceend.ToString() == null)
+        //    //{
+        //    //    q = _context.Accessories.Include(a => a.Category);
+        //    //}
+        //    //if (animal != null)
+        //    //{
+        //    //    q = q.Where(a => a.Type.Equals(animal));
+        //    //}
+        //    //if (categoryname != null)
+        //    //{
+        //    //    q = q.Where(a => a.Category.Name.Contains(categoryname));
+        //    //}
+        //    //if (pricestart.ToString() != null)
+        //    //{
+        //    //    q = q.Where(a => a.Price >= pricestart);
+        //    //}
+        //    //if (priceend.ToString() != null)
+        //    //{
+        //    //    q = q.Where(a => a.Price <= priceend);
+        //    //}
+
+
+        //    //var result = q.ToListAsync();
+
+        //    //return View("Index", await result);
+
+
+        //    //var result = _context.Accessories.Where(e => true);
+        //    //if (animal != null)
+        //    //    result = result.Where(e => e.Type == animal);
+        //    //if (categoryname != null)
+        //    //    result = result.Where(e => e.Category.Name == categoryname);
+        //    //if (pricestart.ToString() != null)
+        //    //    result = result.Where(e => e.Price >= pricestart);
+        //    //if (priceend.ToString() != null)
+        //    //    result = result.Where(e => e.Price <= priceend);
+
+
+        //    //// select a;
+        //    //var q = result.ToListAsync();
+
+        //    //return View("Index", await q);
+
+
+
+        //}
 
         //public async Task<IActionResult> DogOrCat(string animal /*, string cate, int num1, int num2*/)
         //{

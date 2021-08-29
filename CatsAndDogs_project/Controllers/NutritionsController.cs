@@ -28,6 +28,28 @@ namespace CatsAndDogs_project.Controllers
             return View(await catsAndDogs_projectContext.ToListAsync());
         }
 
+        public async Task<IActionResult> Search(string query)
+        {
+            var q = from a in _context.Nutrition.Include(b => b.Category)
+                    where ((a.Type.Contains(query)) || a.Name.Contains(query) ||
+                    a.Advantages.Contains(query) || a.Description.Contains(query) ||
+                    a.Category.Name.Contains(query)) || a.matching.Contains(query)
+                    select a;
+
+            if (query == null)
+            {
+                q = from a in _context.Nutrition.Include(b => b.Category)
+                    select a;
+            }
+
+            return View("Index", await q.ToListAsync());
+
+            //var catsAndDogs_projectContext = _context.Nutrition.Include(n => n.Category);
+            //return View(await catsAndDogs_projectContext.ToListAsync());
+        }
+
+
+
         // GET: Nutritions/Details/5
         public async Task<IActionResult> Details(int? id)
         {

@@ -104,8 +104,34 @@ body{
 .search {
     margin-bottom: 50px;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    text-align: initial;
 }
+
+.search1 > input {
+    width: 31rem;
+    padding: 8px;
+    border-radius: 8px;
+    border: 2.5px solid #e0b97f;
+    font-family: 'Amatic SC', cursive;
+    font-size: 22px;
+    background-color: #ffe4c1a3;
+    outline: none;
+    margin: 5px;
+}
+.search2 > input {
+    width: 413px;
+    padding: 9px;
+    border-radius: 8px;
+    border: 2.5px solid #e0b97f;
+    font-family: 'Amatic SC', cursive;
+    font-size: 22px;
+    background-color: #ffe4c1a3;
+    outline: none;
+    margin: 5px;
+}
+
+
 
 .search > input {
     width: 18rem;

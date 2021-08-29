@@ -8,6 +8,76 @@
     <link href="~/css/index_forstore1.css" rel="stylesheet" />
 </head>
 
+<h1>שינה וסביבה</h1>
+
+@if (ViewContext.HttpContext.User.IsInRole("Admin") || ViewContext.HttpContext.User.IsInRole("Editor"))
+{
+    <p>
+        <a class="create_btn" asp-action="Create">הוספת מוצר חדש</a>
+    </p>
+}
+
+<form asp-action="Search" class="search">
+
+    <div class="search1">
+
+        <input name="query" placeholder="הקלד מילת חיפוש" autocomplete="off" />
+        <input id="sub_search" type="submit" value="חיפוש" />
+
+    </div>
+    
+
+    @*<input name="animal" placeholder="הקלד את סוג החיה (כלב/חתול)" autocomplete="off" />
+        <input name="categoryname" placeholder="הקלד את סוג הפריט הרצוי (מיטות/כלובי נשיאה ואילוף/מלונות)" autocomplete="off" />
+        <input name="pricestart" placeholder="מחיר החל מ" autocomplete="off" />
+        <input name="priceend" placeholder="מחיר עד" autocomplete="off" />*@
+   
+
+</form>
+
+@*<div class="sidenav">
+        <h4> קטגוריות לשינה וסביבה</h4>
+        <hr />
+        <a href="#">מיטות</a>
+        <a href="#">כלובי נשיאה ואילוף</a>
+        <a href="#">מלונות</a>
+    </div>*@
+
+<div class="container">
+    <div class="row">
+
+        @foreach (var item in Model)
+        {
+            <div class="card col-3" style="width: 18rem; position:inherit">
+                <img src="@item.Image" class="card-img-top" alt="@item.Name">
+                <div class="card-body">
+                    <h5 class="card-title"> @item.Name</h5>
+                    <p class="card-text" style="overflow: hidden; margin-bottom: -19px; text-overflow: ellipsis;white-space: nowrap;">@item.Description</p>
+                    <p> <h5> @Html.DisplayNameFor(model => model.Recommendation) </h5> @item.Recommendation </p>
+                    <p id="price"> @Html.DisplayNameFor(model => model.Price): @item.Price ₪ </p>
+
+                </div>
+                <div class="option">
+                    <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-primary">לפרטים נוספים</a>
+                    @if (ViewContext.HttpContext.User.IsInRole("Admin") || ViewContext.HttpContext.User.IsInRole("Editor"))
+                    {
+                        <a class="editOption" asp-action="Edit" asp-route-id="@item.Id">עריכה</a>
+                        <a class="removeOption" asp-action="Delete" asp-route-id="@item.Id">מחיקה</a>
+                    }
+                </div>
+            </div>
+
+        }
+
+    </div>
+</div>
+
+
+@*@section Scripts {
+        @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+        <link href="~/css/index_1.css" rel="stylesheet" />
+    }*@
+
 
 @*<h1>Index</h1>
 
@@ -74,96 +144,3 @@
     }
         </tbody>
     </table>*@
-
-<h1>שינה וסביבה</h1>
-
-@if (ViewContext.HttpContext.User.IsInRole("Admin") || ViewContext.HttpContext.User.IsInRole("Editor"))
-{
-    <p>
-        <a class="create_btn" asp-action="Create">הוספת מוצר חדש</a>
-    </p>
-}
-
-<form asp-action="Search" class="search">
-
-    <input name="animal" placeholder="הקלד את סוג החיה (כלב/חתול)" autocomplete="off" />
-    <input name="categoryname" placeholder="הקלד את סוג הפריט הרצוי (מיטות/כלובי נשיאה ואילוף/מלונות)" autocomplete="off" />
-    <input name="pricestart" placeholder="מחיר החל מ" autocomplete="off" />
-    <input name="priceend" placeholder="מחיר עד" autocomplete="off" />
-    <input id="sub_search" type="submit" value="חיפוש" />
-
-</form>
-
-<!--<p class="choose" asp-action="DorOrCat">-->
-
-    @*בחר את סוג החיה:*@ <!--<select name="animal" id="animalid">
-
-        <option value="" selected disabled hidden>בחר</option>
-        <option value="" selected="selected">כלב</option>
-        <option value="" selected="selected">חתול</option>
-    </select>-->
-
-    @*בחר את הקטגוריה הרצויה:*@ <!--<select name="cate" id="categ">
-
-        <option value="" selected disabled hidden> בחר קטגוריה </option>-->
-        @*<option value="" selected disabled hidden>בחר</option>*@
-        <!--<option value="" selected="selected">מיטות ומזרונים </option>
-        <option value="" selected="selected"> כלובי נשיאה ואילוף</option>
-        <option value="" selected="selected"> מלונות </option>
-    </select>-->
-
-
-    @*מחיר:*@ <!--<input name="num1" placeholder="מחיר החל מ" autocomplete="off" />
-
-    <input name="num2" placeholder="מחיר עד" autocomplete="off" />
-
-
-
-    <input id="sub_search" type="submit" value="חיפוש" />
-</p>-->
-
-
-
-@*<div class="sidenav">
-        <h4> קטגוריות לשינה וסביבה</h4>
-        <hr />
-        <a href="#">מיטות</a>
-        <a href="#">כלובי נשיאה ואילוף</a>
-        <a href="#">מלונות</a>
-    </div>*@
-
-<div class="container">
-    <div class="row">
-
-        @foreach (var item in Model)
-        {
-            <div class="card col-3" style="width: 18rem; position:inherit">
-                <img src="@item.Image" class="card-img-top" alt="@item.Name">
-                <div class="card-body">
-                    <h5 class="card-title"> @item.Name</h5>
-                    <p class="card-text" style="overflow: hidden; margin-bottom: -19px; text-overflow: ellipsis;white-space: nowrap;">@item.Description</p>
-                    <p> <h5> @Html.DisplayNameFor(model => model.Recommendation) </h5> @item.Recommendation </p>
-                    <p id="price"> @Html.DisplayNameFor(model => model.Price): @item.Price ₪ </p>
-
-                </div>
-                <div class="option">
-                    <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-primary">לפרטים נוספים</a>
-                    @if (ViewContext.HttpContext.User.IsInRole("Admin") || ViewContext.HttpContext.User.IsInRole("Editor"))
-                    {
-                        <a class="editOption" asp-action="Edit" asp-route-id="@item.Id">עריכה</a>
-                        <a class="removeOption" asp-action="Delete" asp-route-id="@item.Id">מחיקה</a>
-                    }
-                </div>
-            </div>
-
-        }
-
-    </div>
-</div>
-
-
-
-@*@section Scripts {
-        @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-        <link href="~/css/index_1.css" rel="stylesheet" />
-    }*@

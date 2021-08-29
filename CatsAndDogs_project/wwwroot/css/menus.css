@@ -48,11 +48,20 @@
 
 #menu_respon {
     display: none;
+    color: burlywood;
+
 }
 
 #home_respon {
     display: none;
+    color: burlywood;
 }
+.fa {
+   
+    color: burlywood;
+}
+
+
 
 h2 > span {
     padding-right: 100px !important;
@@ -124,7 +133,7 @@ span {
     display: block;
 }
 
-.dropdown:hover .dropbtn {
+.dropdown:hover .dropbtn , .fa:hover {
     color: rgb(206, 143, 50);
 }
 
@@ -261,8 +270,8 @@ h6 {
         border-left:none;
     }
 
-    span {
-        display:none;
+    #menu-span {
+        display: none;
     }
 }
 

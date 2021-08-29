@@ -67,6 +67,9 @@ namespace CatsAndDogs_project.Data
 
 
         public DbSet<CatsAndDogs.Models.User> User { get; set; }
+
+
+        public DbSet<CatsAndDogs_project.Models.Location> Location { get; set; }
         
     }
 }

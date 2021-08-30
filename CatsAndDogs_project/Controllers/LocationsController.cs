@@ -27,6 +27,7 @@ namespace CatsAndDogs_project.Controllers
             return View(await _context.Location.ToListAsync());
         }
 
+
         // GET: Locations/Details/5
         public async Task<IActionResult> Details(int? id)
         {

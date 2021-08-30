@@ -24,23 +24,21 @@ namespace CatsAndDogs_project.Models
         [Display(Name = "גזע")]
         public int Breed_2Id { get; set; }
 
-        [Required(ErrorMessage = "זהו שדה חובה")]
-        [StringLength(50, MinimumLength = 3, ErrorMessage = "שם הגזע חייב להכיל בין 3-50 תווים")]
         [Display(Name = "גזע")]
         public Breed_2 BreedDog { get; set; }
 
         [Required(ErrorMessage = "זהו שדה חובה")]
-        [StringLength(5, MinimumLength = 1, ErrorMessage = "תוחלת החיים חייבת להכיל בין 1-5 תווים")]
+        [StringLength(10, MinimumLength = 1, ErrorMessage = "תוחלת החיים חייבת להכיל בין 1-10 תווים")]
         [Display(Name = "תוחלת חיים ממוצעת")]
         public string AvgLife { get; set; }
 
         [Required(ErrorMessage = "זהו שדה חובה")]
-        [StringLength(5, MinimumLength = 1, ErrorMessage = "המשקל הממוצע חייב להכיל בין 1-5 תווים")]
+        [StringLength(10, MinimumLength = 1, ErrorMessage = "המשקל הממוצע חייב להכיל בין 1-10 תווים")]
         [Display(Name = "משקל ממוצע")]
         public string AvgWeight { get; set; }
 
         [Required(ErrorMessage = "זהו שדה חובה")]
-        [StringLength(7, MinimumLength = 1, ErrorMessage = "הגובה הממוצע חייב להכיל בין 1-7 תווים")]
+        [StringLength(12, MinimumLength = 1, ErrorMessage = "הגובה הממוצע חייב להכיל בין 1-12 תווים")]
         [Display(Name = "גובה גזע")]
         public string AvgHeight { get; set; }
 

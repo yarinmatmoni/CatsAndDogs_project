@@ -24,7 +24,6 @@ namespace CatsAndDogs_project.Models
         [Display(Name = "גזע")]
         public int BreedCat_2Id { get; set; }
 
-        [Required(ErrorMessage = "זהו שדה חובה")]
         [Display(Name = "גזע")]
         public BreedCat_2 BreedCat { get; set; }
 
@@ -39,8 +38,8 @@ namespace CatsAndDogs_project.Models
         public string Characteristics { get; set; }
 
         [Required(ErrorMessage = "זהו שדה חובה")]
-        [MinLength(50, ErrorMessage = "תיאור הבראיות חייב להכיל לפחות 50 תווים")]
-        [Display(Name = "בריאות")]
+        [MinLength(50, ErrorMessage = "מידע נוסף חייב להכיל לפחות 50 תווים")]
+        [Display(Name = "מידע נוסף")]
         public string Health { get; set; }
 
     }

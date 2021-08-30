@@ -46,7 +46,7 @@
 
 .card-img-top {
     padding-top: 10px;
-    height: 185px;
+    height: auto;
 }
 
 h1 {

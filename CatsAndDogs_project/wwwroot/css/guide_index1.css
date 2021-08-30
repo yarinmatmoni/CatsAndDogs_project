@@ -1,0 +1,207 @@
+﻿body{
+    margin-top:120px;
+}
+#img-guide {
+    border-radius: 100px;
+    border-style: solid;
+    border-color: burlywood;
+}
+h1 {
+    text-align: center;
+    font-size: 75px;
+    margin-bottom: 65px;
+    color: burlywood;
+    font-family: 'Amatic SC', cursive;
+    text-decoration-line: underline;
+}
+.card {
+    position: inherit;
+    border-radius: 123px;
+    background: none;
+    border: none;
+    width: auto;
+    position: inherit
+}
+.dog-name {
+    text-align:center;
+}
+/*.search {
+    margin-bottom: 50px;
+    display: flex;
+    justify-content: center;
+}
+
+.search > input {
+    width: 18rem;
+    padding: 8px;
+    border-radius: 8px;
+    border: 2.5px solid #e0b97f;
+    font-family: 'Amatic SC', cursive;
+    font-size: 22px;
+    background-color: #ffe4c1a3;
+    outline: none;
+    margin: 5px;
+}
+
+#sub_search {
+    width: 95px;
+    color: white;
+    background-color: #e0b97f;
+}
+
+#sub_search:hover {
+    color: #e0b97f;
+    background-color: white;
+}
+
+.top_options > p {
+    margin-inline: 30px;
+}
+
+.card {
+    width: 18rem;
+    position: inherit;
+    border: 2px solid;
+    border-radius: 10px;
+    border-color: lightgray;
+    box-shadow: 0px 8px 16px 0px rgb(0 0 0 / 20%);
+}
+
+.card-img-top {
+    padding-top: 10px;
+    height: 185px;
+}
+
+h1 {
+    text-align: center;
+    font-size: 75px;
+    margin-bottom: 65px;
+    color: burlywood;
+    font-family: 'Amatic SC', cursive;
+    text-decoration-line: underline;
+}
+
+h5 {
+    font-family: 'Amatic SC', cursive;
+    color: #b58235;
+    font-size: 22px;
+}
+
+.crt_btn {
+    font-size: 25px;
+    text-decoration: none;
+    background-color: #ffe4c1;
+    padding: 7px;
+    border: 2px solid;
+    border-radius: 8px;
+    font-family: 'Amatic SC', cursive;
+    color: dimgray;
+}
+
+p {
+    margin-bottom: 35px;
+}
+
+ P > a:hover {
+    background-color: #696969ab;
+    color: white;
+    border-color: #696969ab;
+
+}
+
+.card-title {
+    font-size: 30px;
+    color: #696969ab;
+    font-family: 'Amatic SC', cursive;
+}
+
+.card-text {
+    font-size: 15px;
+    margin-bottom: 25px;
+}
+
+.card-body > p {
+    margin-bottom:10px;
+}
+
+.btn-primary {
+    display: block;
+    position: inherit !important;
+    color: white !important;
+    font-family: 'Amatic SC', cursive !important;
+    font-size: 20px !important;
+}
+
+.option {
+    display: inline-flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+
+.editOption {
+    color: blueviolet;
+    text-align: end;
+    text-decoration: none;
+    font-size: 16px;
+    padding-top: 10px;
+    padding-right: 28rem;
+}
+
+.removeOption {
+    color: tomato;
+    text-align: start;
+    font-size: 16px;
+    text-decoration: none;
+    padding-top: 10px;
+}
+
+.row {
+    justify-content: space-between;
+    grid-row-gap: 3em;
+}
+
+@media only screen and (max-width: 1400px) {
+    .card {
+        width: 45rem !important;
+        margin: auto;
+    }
+    .option {
+        display: inline-flex;
+        margin-bottom: 3px;
+    }
+    .editOption {
+        margin-right: 2rem;
+    }
+
+}
+
+@media only screen and (max-width: 768px) {
+    .row {
+        justify-content: center;
+    }
+    .btn-primary {
+        display: block;
+        position: inherit !important;
+        color:white !important;
+    }
+    .removeOption {
+        display: block;
+    }
+
+    .search {
+        display: grid;
+    }
+    .editOption {
+        display: block;
+        margin-right: -8rem;
+    }
+
+    #sub_search{
+        width:auto;
+    }
+    .crt_btn {
+        margin-right: 12rem;
+    }
+   
+}
+*/

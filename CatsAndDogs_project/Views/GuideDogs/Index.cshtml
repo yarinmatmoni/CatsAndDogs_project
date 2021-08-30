@@ -4,86 +4,109 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<head>
+    <link href="~/css/guide_index1.css" rel="stylesheet" />
+</head>
+
+<h1>מדריך כלבים</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    רוצים לאמץ כלב ולא יודעים מה מתאים לכם? הצטרף חבר חדש למשפחה ואתם רוצים להכיר אותו יותר ? הגעתם למקום הנכון!
+    במדריך שלנו תוכלו למצוא את כל המידע הדרוש לכם על מבחר סוגי כלבים.
+    תוכלו לקרוא על האופי המיוחד של כל גזע , על הבעיות הבריאותיות האופניות לו , על אילפו , על מקום גידולו האולטמטיבי ועוד ,
+    כל זה על מנת שתוכלו להכיר את האהובים עליכם טוב יותר.
 </p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.ImageGuied)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Image)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.BreedDog)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.AvgLife)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.AvgWeight)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.AvgHeight)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Description)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Characteristics)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Health)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Training)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.ImageGuied)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Image)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.BreedDog.Name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.AvgLife)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.AvgWeight)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.AvgHeight)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Description)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Characteristics)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Health)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Training)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+
+<p>
+    <a asp-action="Create">הוסף מדריך נוסף</a>
+</p>
+<div class="container">
+    <div class="row">
+        @foreach (var item in Model)
+        {
+            <div class="card col-2">
+                 <a asp-action="Details" asp-route-id="@item.Id"><img id="img-guide" src="@item.ImageGuied"></a>
+                 <p class="dog-name">@item.BreedDog.Name</p>
+    
+            </div>
+         }
+     </div>
+ </div>
+        @*<table class="table">
+                <thead>
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.ImageGuied)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Image)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.BreedDog)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.AvgLife)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.AvgWeight)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.AvgHeight)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Description)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Characteristics)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Health)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Training)
+                        </th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+            @foreach (var item in Model) {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ImageGuied)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Image)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.BreedDog.Name)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.AvgLife)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.AvgWeight)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.AvgHeight)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Description)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Characteristics)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Health)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Training)
+                        </td>
+                        <td>
+                            <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                            <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                            <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                        </td>
+                    </tr>
+            }
+                </tbody>
+            </table>*@

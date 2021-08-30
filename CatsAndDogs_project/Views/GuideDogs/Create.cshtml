@@ -1,0 +1,77 @@
+﻿@model CatsAndDogs_project.Models.GuideDog
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>GuideDog</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="ImageGuied" class="control-label"></label>
+                <input asp-for="ImageGuied" class="form-control" />
+                <span asp-validation-for="ImageGuied" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Image" class="control-label"></label>
+                <input asp-for="Image" class="form-control" />
+                <span asp-validation-for="Image" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Breed_2Id" class="control-label"></label>
+                <select asp-for="Breed_2Id" class ="form-control" asp-items="ViewBag.Breed_2Id"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="AvgLife" class="control-label"></label>
+                <input asp-for="AvgLife" class="form-control" />
+                <span asp-validation-for="AvgLife" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AvgWeight" class="control-label"></label>
+                <input asp-for="AvgWeight" class="form-control" />
+                <span asp-validation-for="AvgWeight" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AvgHeight" class="control-label"></label>
+                <input asp-for="AvgHeight" class="form-control" />
+                <span asp-validation-for="AvgHeight" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Description" class="control-label"></label>
+                <input asp-for="Description" class="form-control" />
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Characteristics" class="control-label"></label>
+                <input asp-for="Characteristics" class="form-control" />
+                <span asp-validation-for="Characteristics" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Health" class="control-label"></label>
+                <input asp-for="Health" class="form-control" />
+                <span asp-validation-for="Health" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Training" class="control-label"></label>
+                <input asp-for="Training" class="form-control" />
+                <span asp-validation-for="Training" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -16,5 +16,7 @@ namespace CatsAndDogs_project.Models
         public string Name { get; set; }
 
         public List<Dog_2> ListDog { get; set; }
+
+        public GuideDog Guide { get; set; }
     }
 }

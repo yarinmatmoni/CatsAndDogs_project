@@ -33,7 +33,7 @@ namespace CatsAndDogs_project.Models
         public DateTime LastUpDate { get; set; }
 
         [Required(ErrorMessage = "זהו שדה חובה")]
-        [StringLength(2000, MinimumLength = 200, ErrorMessage = "התקציר חייב להכיל בין 200-2000 תווים")]
+        [StringLength(2000, MinimumLength = 100, ErrorMessage = "התקציר חייב להכיל בין 100-2000 תווים")]
         [Display(Name = "תקציר")]
         public string Summary { get; set; }
 

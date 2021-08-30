@@ -93,7 +93,7 @@ span {
     text-align-last: center;
     justify-content: flex-start;
     display: flex;
-    border-bottom: double;
+  /*  border-bottom: double;*/
     padding: 20px;
     border-bottom-color: burlywood;
 }

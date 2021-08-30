@@ -17,8 +17,8 @@
             </div>
             <span>@Html.DisplayFor(modle => modle.Type)</span>
             @*<div class="feture">
-            <h5 class="card-title">קטגוריה :</h5><span>@Html.DisplayFor(modle => modle.CategoryId)</span>
-        </div>*@
+                    <h5 class="card-title">קטגוריה :</h5><span>@Html.DisplayFor(modle => modle.CategoryId)</span>
+                </div>*@
             <div class="feture">
                 <h5 class="card-title">תיאור: </h5>
             </div>
@@ -42,6 +42,34 @@
 
             </div>
         </div>
+    </div>
+
+
+    <div>
+
+        <h2 class="findProduct"> היכן ניתן למצוא את המוצר </h2>
+
+        <ul class="list">
+            <li>
+                <h4> <i class="material-icons" style="font-size:20px">place</i> סניף ראשון לציון-   <span class="spanlocation"> רחוב בן גוריון 4 - סניף ראשי</span></h4>
+            </li>
+            <li>
+                <h4><i class="material-icons" style="font-size:20px">place</i> סניף תל אביב- <span class="spanlocation"> רחוב דרך מנחם בגין 121 - מגדל עזריאלי שרונה</span></h4>
+            </li>
+            <li>
+                <h4> <i class="material-icons" style="font-size:20px">place</i> סניף חולון-  <span class="spanlocation"> רחוב גודלה מאיר 7 -קניון עזריאלי חולון</span></h4>
+            </li>
+
+        </ul>
+        <div class="buttolocation">
+            <a asp-action="Index" asp-controller="Locations" class="storeslist"> לרשימת כל הסניפים שלנו </a>
+        </div>
+
+        <br />
+        <div class="map">
+            <iframe width="500" height="450" src="https://maps.google.com/maps?q=israel%20rishon%20le%20zion%20ben%20gurion%204&t=&z=17&ie=UTF8&iwloc=&output=embed" style="border:0" allowfullscreen> </iframe>
+        </div>
+
     </div>
 </div>
 @*<div>
@@ -102,6 +130,6 @@
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-    <link href="~/css/details_forstrore1.css" rel="stylesheet" />
+    <link href="~/css/details_forstrore.css" rel="stylesheet" />
     <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
 }

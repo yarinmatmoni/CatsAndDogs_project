@@ -73,6 +73,9 @@ namespace CatsAndDogs_project.Data
 
 
         public DbSet<CatsAndDogs_project.Models.GuideDog> GuideDog { get; set; }
+
+
+        public DbSet<CatsAndDogs_project.Models.GuideCat> GuideCat { get; set; }
         
     }
 }

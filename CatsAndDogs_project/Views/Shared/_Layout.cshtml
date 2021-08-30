@@ -60,8 +60,8 @@
                 <div class="dropdown">
                     <button class="dropbtn"><i id=icon class="bi bi-info-circle"></i><span id="menu-span" >מידע</span></button>
                     <div class="dropdown-content">
-                        <a href="#">מדריך כלבים</a>
-                        <a href="#">מדריך חתולים</a>
+                        <a asp-action="index" asp-controller="GuideDogs">מדריך כלבים</a>
+                        <a asp-action="index" asp-controller="GuideCats">מדריך חתולים</a>
                         <a asp-action="index" asp-controller="Articles">כתבות</a>
                         <a asp-action="NewPuppy" asp-controller="Articles">גור חדש במשפחה</a>
                         <a asp-action="ChooseName" asp-controller="Articles">בחר שם לכלב</a>

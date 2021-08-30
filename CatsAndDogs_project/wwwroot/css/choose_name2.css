@@ -21,6 +21,23 @@ h1 {
 .sub-title {
     width: 13rem;
 }
+.random-name {
+    padding: 10px;
+    font-family: 'Amatic SC', cursive;
+    font-size: x-large;
+}
+a {
+    text-decoration:none;
+    color :black;
+}
+a :hover {
+    color : burlywood;
+    cursor:pointer;
+}
+
+/*h3 {
+    font-family: 'Amatic SC', cursive;
+}*/
 h2 {
     font-size: 4rem;
     padding: 8px;
@@ -34,7 +51,7 @@ h2 {
 .letter {
     border-left-style: double;
     border-left-color: burlywood;
-    width: 64px;
+    width: 10rem;
     text-align: center;
 }
 .name {
@@ -42,47 +59,32 @@ h2 {
     margin-right: 23px;
     margin-bottom: 13px;
 }
-@media only screen and (max-width: 1400px) {
-    .card {
-        width: 45rem !important;
-        margin: auto;
+
+
+
+@media only screen and (max-width: 1000px) {
+    h1 {
+        font-size: 51px;
     }
-    .option {
-        display: inline-flex;
-        margin-bottom: 3px;
+    .sub-title {
+        width: 7rem;
     }
-    .editOption {
-        margin-right: 2rem;
+    .choose-name-head {
+        background-position:inherit;
+        margin-bottom:auto;
     }
 
 }
 
-@media only screen and (max-width: 768px) {
-    .row {
-        justify-content: center;
-    }
-    .btn-primary {
-        display: block;
-        position: inherit !important;
-        color:white !important;
-    }
-    .removeOption {
-        display: block;
+@media only screen and (max-width: 780px) {
+
+    .choose-name-head {
+        background: none;
+        display: inline-flex;
+        margin-bottom: -11rem;
     }
 
-    .search {
-        display: grid;
+    a:hover{
+        color:burlywood;
     }
-    .editOption {
-        display: block;
-        margin-right: -8rem;
-    }
-
-    #sub_search{
-        width:auto;
-    }
-    .crt_btn {
-        margin-right: 13rem;
-    }
-   
 }

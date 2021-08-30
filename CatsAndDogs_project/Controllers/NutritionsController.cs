@@ -42,12 +42,23 @@ namespace CatsAndDogs_project.Controllers
                     select a;
             }
 
-            
+
             return View("Index", await q.ToListAsync());
 
             //var catsAndDogs_projectContext = _context.Nutrition.Include(n => n.Category);
             //return View(await catsAndDogs_projectContext.ToListAsync());
         }
+
+        //public Task<IActionResult> AddToCart(int? id)
+        //{
+        //    var q = from a in _context.Nutrition.Include(b => b.Category)
+        //            where (a.Id.Equals(id)) 
+        //            select a;
+
+
+        //    CartItem c = new CartItem();
+ 
+        //}
 
 
 

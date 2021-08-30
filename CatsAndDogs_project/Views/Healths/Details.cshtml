@@ -54,20 +54,25 @@
     </div>*@
 
 
-<h1> מוצר: @Html.DisplayFor(model => model.Name)</h1>
+@*<h1> מוצר: @Html.DisplayFor(model => model.Name)</h1>*@
+<h1> בריאות </h1>
+<h2> כל מוצרי הבריאות שיהפכו את חיית המחמד שלכם לבריאה וחזקה יותר</h2>
 <div class="card col-3" style="width: 18rem; position:inherit">
     <div class="card-body">
         <div class="details">
             <h5 class="card-title-name">שם המוצר:   @Html.DisplayFor(model => model.Name)</h5>
             <div class="feture">
-                <h5 class="card-title">מתאים ל: </h5><span>@Html.DisplayFor(modle => modle.Type)</span>
+                <h5 class="card-title">מתאים ל: </h5>
             </div>
+            <span>@Html.DisplayFor(modle => modle.Type)</span>
             <div class="feture">
-                <h5 class="card-title">תיאור: </h5><span>@Html.DisplayFor(modle => modle.Description)</span>
+                <h5 class="card-title">תיאור: </h5>
             </div>
+            <span>@Html.DisplayFor(modle => modle.Description)</span>
             <div class="feture">
-                <h5 class="card-title">מחיר: </h5><span>@Html.DisplayFor(modle => modle.Price)</span>
+                <h5 class="card-title">מחיר: </h5>
             </div>
+            <span>@Html.DisplayFor(modle => modle.Price)</span>
         </div>
         <div class="img">
             <img src=@Html.DisplayFor(model => model.Image) class="card-img">
@@ -87,6 +92,6 @@
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-    <link href="~/css/details_forstrore.css" rel="stylesheet" />
+    <link href="~/css/details_forstrore1.css" rel="stylesheet" />
     <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
 }

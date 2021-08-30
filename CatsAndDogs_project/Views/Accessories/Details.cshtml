@@ -5,27 +5,32 @@
 }
 
 @*<h1>Details</h1>*@
-<h1> מוצר: @Html.DisplayFor(model => model.Name)</h1>
-
+@*<h1> מוצר: @Html.DisplayFor(model => model.Name)</h1>*@
+<h1> אקססוריז </h1>
+<h2> כאן תוכלו למצוא מגוון רחב של אביזרים ואקססוריז שיתמכו בחיית המחמד שלכם</h2>
 <div class="card col-3" style="width: 18rem; position:inherit">
     <div class="card-body">
         <div class="details">
             <h5 class="card-title-name">שם המוצר:   @Html.DisplayFor(model => model.Name)</h5>
             <div class="feture">
-            <h5 class="card-title">מתאים ל: </h5><span>@Html.DisplayFor(modle => modle.Type)</span>
-        </div>
+                <h5 class="card-title">מתאים ל: </h5>
+            </div>
+            <span>@Html.DisplayFor(modle => modle.Type)</span>
             @*<div class="feture">
             <h5 class="card-title">קטגוריה :</h5><span>@Html.DisplayFor(modle => modle.CategoryId)</span>
         </div>*@
             <div class="feture">
-                <h5 class="card-title">תיאור: </h5><span>@Html.DisplayFor(modle => modle.Description)</span>
+                <h5 class="card-title">תיאור: </h5>
             </div>
+            <span>@Html.DisplayFor(modle => modle.Description)</span>
             <div class="feture">
-                <h5 class="card-title">מומלץ ל: </h5><span>@Html.DisplayFor(modle => modle.Recommendation)</span>
+                <h5 class="card-title">מומלץ ל: </h5>
             </div>
+            <span>@Html.DisplayFor(modle => modle.Recommendation)</span>
             <div class="feture">
-                <h5 class="card-title">מחיר: </h5><span>@Html.DisplayFor(modle => modle.Price)</span>
+                <h5 class="card-title">מחיר: </h5>
             </div>
+            <span>@Html.DisplayFor(modle => modle.Price)</span>
         </div>
         <div class="img">
             <img src=@Html.DisplayFor(model => model.Image) class="card-img">
@@ -40,63 +45,63 @@
     </div>
 </div>
 @*<div>
-    <h4>Accessories</h4>
-    <hr />
-    <dl class="row">
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Name)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Name)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Description)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Description)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Recommendation)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Recommendation)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Price)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Price)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Image)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Image)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Type)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Type)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Category)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Category.Name)
-        </dd>
-    </dl>
-</div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
-    <a asp-action="Index">Back to List</a>
-    <a href="#">הוסף לסל</a>
-</div>*@
+        <h4>Accessories</h4>
+        <hr />
+        <dl class="row">
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Name)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Name)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Description)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Description)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Recommendation)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Recommendation)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Price)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Price)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Image)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Image)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Type)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Type)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Category)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Category.Name)
+            </dd>
+        </dl>
+    </div>
+    <div>
+        <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+        <a asp-action="Index">Back to List</a>
+        <a href="#">הוסף לסל</a>
+    </div>*@
 
 
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-    <link href="~/css/details_forstrore.css" rel="stylesheet" />
+    <link href="~/css/details_forstrore1.css" rel="stylesheet" />
     <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
 }

@@ -6,19 +6,20 @@
 h1 {
     text-align: right;
     font-size: 50px;
-    margin-bottom: 35px;
+    margin-bottom: 18px;
     color: burlywood;
     font-family: 'Amatic SC', cursive;
     text-decoration-line: underline;
 }
 
-h5 {
+h5, h4, h3, h2{
     text-align: right;
     margin-bottom: 35px;
     color: burlywood;
     font-family: 'Amatic SC', cursive;
-   
 }
+
+
 
 .card {
     width: 86rem !important;
@@ -33,6 +34,7 @@ h5 {
 .card-body {
     display: flex;
     justify-content: space-between;
+    border-bottom: double;
 }
 
 .card-img {
@@ -82,10 +84,18 @@ span {
 }
 
 .options {
-    margin-top: 170px;
-    text-align-last: center;
+    /*  margin-top: 170px;
+    text-align-last: right;
     justify-content: space-between;
+    display: flex;*/
+
+    margin-top: 58px;
+    text-align-last: center;
+    justify-content: flex-start;
     display: flex;
+    border-bottom: double;
+    padding: 20px;
+    border-bottom-color: burlywood;
 }
 
 .far, .material-icons, .fas {

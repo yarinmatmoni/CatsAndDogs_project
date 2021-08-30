@@ -26,18 +26,7 @@ h1 {
     font-family: 'Amatic SC', cursive;
     font-size: x-large;
 }
-a {
-    text-decoration:none;
-    color :black;
-}
-a :hover {
-    color : burlywood;
-    cursor:pointer;
-}
 
-/*h3 {
-    font-family: 'Amatic SC', cursive;
-}*/
 h2 {
     font-size: 4rem;
     padding: 8px;
@@ -60,6 +49,17 @@ h2 {
     margin-bottom: 13px;
 }
 
+
+#random{
+    color:burlywood;
+    font-size:29px;
+    position: relative !important;
+}
+
+a:hover {
+    color: #a973e1 !important;
+    cursor: pointer;
+}
 
 
 @media only screen and (max-width: 1000px) {
@@ -84,7 +84,4 @@ h2 {
         margin-bottom: -11rem;
     }
 
-    a:hover{
-        color:burlywood;
-    }
 }

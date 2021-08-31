@@ -24,6 +24,20 @@ namespace CatsAndDogs_project.Controllers
         {
             var catsAndDogs_projectContext = _context.GuideDog.Include(g => g.BreedDog);
             return View(await catsAndDogs_projectContext.ToListAsync());
+
+
+            //var allDogs = await _context.Dog_2.ToListAsync();
+            //var allGuides = await _context.GuideDog.ToListAsync();
+
+            //var output = from a in allDogs
+            //             join b in allGuides
+            //             on a.ListBreed.ElementAt(0) equals b.BreedDog
+            //             select (b.BreedDog, a.Name, a.Age, b.AvgLife, a.Description, b.Description, b.Health, b.Training);
+
+
+
+            //return View( output.ToList());
+
         }
 
         // GET: GuideDogs/Details/5

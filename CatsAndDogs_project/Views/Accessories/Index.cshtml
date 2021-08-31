@@ -5,10 +5,16 @@
 }
 
 <head>
-    <link rel="stylesheet" href="~/css/index_forstore1.css" />
+    <link rel="stylesheet" href="~/css/index_forstore.css" />
 </head>
 
-<h1>אקססוריז</h1>
+<div class="toppageAccessories">
+    <h1 class="title1"> אקססוריז </h1>
+    <br />
+    <br />
+    <br />
+    <h2 class="title2"> כאן תוכלו למצוא מגוון רחב של אביזרים ואקססוריז שיתמכו בחיית המחמד שלכם </h2>
+</div>
 
 @if (ViewContext.HttpContext.User.IsInRole("Admin") || ViewContext.HttpContext.User.IsInRole("Editor"))
 {

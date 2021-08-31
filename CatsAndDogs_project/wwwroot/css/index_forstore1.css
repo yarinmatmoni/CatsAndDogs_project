@@ -119,8 +119,14 @@ h4 {
 
 
 
-body{
-    margin-top:120px;
+body {
+    margin-top: 120px;
+  
+}
+
+.forstyle {
+    background-image: url("gradient_bg.png");
+    background-repeat: repeat-x;
 }
 
 .choose {

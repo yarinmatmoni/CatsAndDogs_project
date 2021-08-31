@@ -11,6 +11,8 @@
 @*<div class="toppageNutrition">
     <h1 class="heasnutrition">תזונה</h1>
 </div>*@
+
+
 <h1>תזונה</h1>
 
 @if (ViewContext.HttpContext.User.IsInRole("Admin") || ViewContext.HttpContext.User.IsInRole("Editor"))
@@ -71,7 +73,7 @@
                         </div>
                         <div class="option">
                             <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-primary">לפרטים נוספים</a>
-                            <a class="btn btn-primary"> הוסף לסל </a>
+                            @*<a class="btn btn-primary"> הוסף לסל </a>*@
                             @if (ViewContext.HttpContext.User.IsInRole("Admin") || ViewContext.HttpContext.User.IsInRole("Editor"))
                             {
                                 <a class="editOption" asp-action="Edit" asp-route-id="@item.Id">עריכה</a>

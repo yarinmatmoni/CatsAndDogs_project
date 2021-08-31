@@ -5,11 +5,17 @@
 }
 
 <head>
-    <link href="~/css/index_forstore1.css" rel="stylesheet" />
+    <link href="~/css/index_forstore.css" rel="stylesheet" />
 </head>
 
+<div class="toppageHealth">
+    <h1 class="title1"> בריאות </h1>
+    <br />
+    <br />
+    <br />
+    <h2 class="title2"> כל מוצרי הבריאות שיהפכו את חיית המחמד שלכם לבריאה וחזקה יותר</h2>
+</div>
 
-<h1>בריאות</h1>
 
 @if (ViewContext.HttpContext.User.IsInRole("Admin") || ViewContext.HttpContext.User.IsInRole("Editor"))
 {

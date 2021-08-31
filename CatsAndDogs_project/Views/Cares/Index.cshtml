@@ -5,11 +5,16 @@
 }
 
 <head>
-    <link href="~/css/index_forstore1.css" rel="stylesheet" />
+    <link href="~/css/index_forstore.css" rel="stylesheet" />
 </head>
 
-
-<h1>טיפוח</h1>
+<div class="toppageCare">
+    <h1 class="title1"> טיפוח </h1>
+    <br />
+    <br />
+    <h2 class="title2"> אנו יודעים שחברכם על ארבע כבר מושלם, אך כאן תוכלו למצוא מגוון מוצרים שישלימו את הטיפוח </h2>
+</div>
+@*<h1>טיפוח</h1>*@
 
 @if (ViewContext.HttpContext.User.IsInRole("Admin") || ViewContext.HttpContext.User.IsInRole("Editor"))
 {

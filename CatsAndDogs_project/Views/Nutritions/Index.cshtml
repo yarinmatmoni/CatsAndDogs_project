@@ -5,15 +5,18 @@
 }
 
 <head>
-    <link href="~/css/index_forstore1.css" rel="stylesheet" />
+    <link href="~/css/index_forstore.css" rel="stylesheet" />
 </head>
 
-@*<div class="toppageNutrition">
-    <h1 class="heasnutrition">תזונה</h1>
-</div>*@
+<div class="toppageNutrition">
+    <h1 class="title1">תזונה</h1>
+    <br />
+    <br />
+    <h2 class="title2"> מגוון מזונות ומאכלים שיתאימו לבעל החיים באופן הטוב ביותר ומחירים הטובים ביותר הקיימים בשוק! </h2>
+</div>
 
 
-<h1>תזונה</h1>
+@*<h1>תזונה</h1>*@
 
 @if (ViewContext.HttpContext.User.IsInRole("Admin") || ViewContext.HttpContext.User.IsInRole("Editor"))
 {

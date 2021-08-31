@@ -14,7 +14,7 @@
     border-style: ridge;
 }
 
-.toppage {
+.toppageSleep {
     background: url(https://cdn.pixabay.com/photo/2016/03/27/20/51/bed-1284238_1280.jpg) no-repeat;
     background-position: center;
     min-height: 324px;
@@ -23,17 +23,18 @@
     margin-bottom: 15px;
 }
 
-.headsleep {
+/*.headsleep {
     text-align: right;
     font-size: 60px;
     margin-bottom: 65px;
     color: #ca780b;
     font-family: 'bootstrap-icons';
     font-weight: bold;
-}
+}*/
 
 .toppageNutrition {
-    background: url(https://cdn.pixabay.com/photo/2017/09/16/01/10/food-flat-lay-2754262_1280.jpg) no-repeat;
+  
+    background: url(https://cdn.pixabay.com/photo/2020/05/13/21/03/dog-food-5168940_1280.jpg) no-repeat;
     background-position: center;
     min-height: 324px;
     background-size: 100%;
@@ -41,6 +42,33 @@
     margin-bottom: 15px;
 }
 
+.toppageHealth {
+    background: url(https://cdn.pixabay.com/photo/2018/09/21/23/28/dog-3694266_1280.jpg) no-repeat;
+    background-position: center;
+    min-height: 324px;
+    background-size: 100%;
+    opacity: 0.6;
+    margin-bottom: 15px;
+}
+
+.toppageCare {
+    background: url(https://cdn.pixabay.com/photo/2020/01/19/16/44/cat-4778387_1280.jpg) no-repeat;
+    background-position: center;
+    min-height: 324px;
+    background-size: 100%;
+    opacity: 0.6;
+    margin-bottom: 15px;
+}
+
+.toppageAccessories {
+    background: url(https://cdn.pixabay.com/photo/2020/04/02/08/53/cat-4994140_1280.jpg) no-repeat;
+    background-position: center;
+    min-height: 324px;
+    background-size: 100%;
+    opacity: 0.6;
+    margin-bottom: 15px;
+}
+/*
 .heasnutrition {
     text-align: right;
     font-size: 81px;
@@ -48,6 +76,20 @@
     color: #ca780b;
     font-family: 'bootstrap-icons';
     font-weight: bold;
+}*/
+.title1 {
+    text-align: right;
+    font-size: 81px;
+    margin-bottom: 65px;
+    color: #ffeed9;
+    font-family: 'bootstrap-icons';
+    font-weight: bold;
+}
+
+.title2 {
+    font-size: 2rem;
+    color: antiquewhite;
+    margin-top: revert;
 }
 
 

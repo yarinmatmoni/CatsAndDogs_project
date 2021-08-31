@@ -5,14 +5,18 @@
 }
 
 <head>
-    <link href="~/css/index_forstore1.css" rel="stylesheet" />
+    <link href="~/css/index_forstore.css" rel="stylesheet" />
 </head>
 
-@*<div class="toppage">
-    <h1 class="headsleep">שינה וסביבה</h1>
-</div>*@
+<div class="toppageSleep">
+    <h1 class="title1"> שינה וסביבה </h1>
+    <br />
+    <br />
+    <br />
+    <h2 class="title2"> מוצרים נוחים ונעימים שיתאימו בדיוק לחיית המחמד שלכם, ובמחירים הזולים בארץ! </h2>
+</div>
 
-<h1>שינה וסביבה</h1>
+@*<h1>שינה וסביבה</h1>*@
 
 @if (ViewContext.HttpContext.User.IsInRole("Admin") || ViewContext.HttpContext.User.IsInRole("Editor"))
 {

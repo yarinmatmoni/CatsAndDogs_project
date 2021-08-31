@@ -4,10 +4,39 @@
     ViewData["Title"] = "Details";
 }
 
-<h1>Details</h1>
-
-<div>
-    <h4>GuideDog</h4>
+<head>
+    <link href="~/css/guide_details.css" rel="stylesheet" />
+</head>
+<img src=@Html.DisplayFor(model => model.Image) class="card-img">
+<div class="titel">
+    <h1>@Html.DisplayFor(model => model.BreedDog.Name)</h1>
+</div>
+<div class="dog-info">
+    <div>
+        <h3> @Html.DisplayFor(model => model.AvgLife)</h3>
+        <span class="info-titel">
+            תוחלת חיים ממוצעת
+        </span>
+    </div>
+    <div>
+        <h3>@Html.DisplayFor(model => model.AvgWeight)</h3>
+        <span class="info-titel">
+           משקל ממוצע של כלב בוגר
+        </span>
+    </div>
+    <div>
+        <h3>@Html.DisplayFor(model => model.AvgHeight)</h3>
+        <span class="info-titel">
+            גובה ממוצע של כלב בוגר
+        </span>
+    </div>
+</div> 
+@*<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>*@
+@*<div>
+    
     <hr />
     <dl class="row">
         <dt class = "col-sm-2">
@@ -71,8 +100,5 @@
             @Html.DisplayFor(model => model.Training)
         </dd>
     </dl>
-</div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
-    <a asp-action="Index">Back to List</a>
-</div>
+</div>*@
+

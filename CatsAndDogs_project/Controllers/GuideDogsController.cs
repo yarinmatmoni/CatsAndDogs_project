@@ -49,8 +49,7 @@ namespace CatsAndDogs_project.Controllers
                     select b;
 
             return View("Index", await q.ToListAsync());
-            //var catsAndDogs_projectContext = _context.GuideDog.Include(g => g.BreedDog);
-            //return View("Index", await catsAndDogs_projectContext.ToListAsync());
+            
         }
 
 

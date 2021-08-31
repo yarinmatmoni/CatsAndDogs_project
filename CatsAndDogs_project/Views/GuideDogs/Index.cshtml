@@ -5,7 +5,7 @@
 }
 
 <head>
-    <link href="~/css/guide_index.css" rel="stylesheet" />
+    <link href="~/css/guide_index1.css" rel="stylesheet" />
 </head>
 
 <div class="guide-head">
@@ -17,13 +17,14 @@
             תוכלו לקרוא על האופי המיוחד של כל גזע , על הבעיות הבריאותיות האופניות לו , על אילפו , על מקום גידולו האולטמטיבי ועוד ,
             כל זה על מנת שתוכלו להכיר את האהובים עליכם טוב יותר.
         </p>
-        <p>
-            <a asp-action="Create">הוסף מדריך נוסף</a>
-        </p>
         <form asp-action="Search" class="search">
             <input name="queryBreed" placeholder="הקלד גזע לחיפוש..." autocomplete="off" />
             <input id="sub_search" type="submit" value="חיפוש" />
         </form>
+        <p>
+            <a class="crt_btn" asp-action="Create">הוסף מדריך נוסף</a>
+        </p>
+
     </div>
     <div class="guide-left">
         <img id="img-head" src="https://static.wixstatic.com/media/11062b_3b0b289dbe5448a088a870b81290b4fc~mv2.jpg/v1/fill/w_640,h_452,al_c,q_80,usm_0.66_1.00_0.01/11062b_3b0b289dbe5448a088a870b81290b4fc~mv2.webp" >

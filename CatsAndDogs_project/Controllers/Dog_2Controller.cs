@@ -25,7 +25,9 @@ namespace CatsAndDogs_project.Controllers
         {
             var CatsAndDogs_projectContext = _context.Dog_2.Include(b => b.ListBreed);
             return View(await CatsAndDogs_projectContext.ToListAsync());
+
         }
+
 
         public async Task<IActionResult> Search(string queryBreed, string querySize)  // add search 
         {
@@ -54,6 +56,26 @@ namespace CatsAndDogs_project.Controllers
             }
 
             return View(dog_2);
+        }
+
+        public async Task<IActionResult> MoreDetails(int? id)
+        {
+           
+            var dog = await _context.Dog_2.Include(b => b.ListBreed).Where(b => b.Id == id).ToListAsync(); 
+            var breed = await _context.Breed_2.ToListAsync();
+
+            var output = from d in dog
+                         join b in breed
+                         on d.ListBreed.First().Id equals b.Id into res
+                         select res;
+
+            var breedName = output.ElementAt(0).ElementAt(0).Id;
+
+            var guide = _context.GuideDog.Where(g => g.Breed_2Id == breedName).First();
+
+
+            return RedirectToAction("Details", "GuideDogs", new { id = guide.Id });
+
         }
 
         [Authorize(Roles = "Admin , Editor")]

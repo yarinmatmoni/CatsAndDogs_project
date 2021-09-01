@@ -41,20 +41,34 @@
             <div class="feture-description">
                 <h5 class="card-title">תיאור:</h5><span>@Html.DisplayFor(modle => modle.Description)</span>
             </div>
+            <div>
+                <a class="btn btn-primary" asp-action="MoreDetails" asp-route-Id="@Model.Id"> לפרטים כלליים על גזע הכלב לחץ כאן </a>
+            </div>
         </div>
         <div class="img">
             <img src=@Html.DisplayFor(model => model.Image) class="card-img">
             <div class="options">
                 <a asp-action="Edit" asp-route-id="@Model.Id"><i class='far fa-edit'></i></a>
                 <a asp-action="Index"><i class="material-icons">keyboard_backspace</i></a>
+
             </div>
         </div>
     </div>
 </div>
 
 
+@*<div class="moredetails">
+
+    <a id="moreinfo"> לחץ למידע נוסף על גזע הכלב </a>
+    <div id="result">
+
+    </div>
+</div>*@
+
+
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
     <link href="~/css/details_info.css" rel="stylesheet" />
+    <script src="~/js/guidedog.js"></script>
     <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
 }

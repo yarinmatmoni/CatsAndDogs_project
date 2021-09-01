@@ -52,6 +52,19 @@ h1 {
     font-family: 'Amatic SC', cursive;
     font-size: large;
 }
+.sure {
+    font-family: 'Amatic SC', cursive;
+    font-size: xx-large;
+    text-align:center;
+    margin-top:10px;
+}
+.sure > span{
+    color:tomato;
+    margin: auto !important;
+    padding: 9px;
+    font-size: larger;
+    
+}
 .body-guide {
     margin-top: 42px;
 }
@@ -70,9 +83,12 @@ h1 {
     font-size: 35px;
 }
 .option {
-    text-align: end;
+    text-align: center;
+    margin-top: 13px;
+    display: flex;
+    justify-content: center;
 }
-#edit_btn{
+#delete_btn {
     text-decoration: none;
     color: #ffffff;
     font-family: 'Amatic SC', cursive;
@@ -81,20 +97,9 @@ h1 {
     border-radius: 8px;
     border-style: solid;
     border-color: #ffffff;
-    background: #343a3e;
+    background: red;
 }
 #back-btn {
-    text-decoration: none;
-    color: #ffffff;
-    font-family: 'Amatic SC', cursive;
-    font-size: x-large;
-    padding: 11px;
-    border-radius: 8px;
-    border-style: solid;
-    border-color: #ffffff;
-    background: #343a3e;
-}
-#remove-btn {
     text-decoration: none;
     color: #ffffff;
     font-family: 'Amatic SC', cursive;
@@ -109,30 +114,50 @@ a :hover {
     cursor: pointer;
 }
 
-
 @media only screen and (max-width: 1200px) {
     .dog-info {
         margin-right: 16rem;
     }
 }
+
 @media only screen and (max-width: 990px) {
     .dog-info {
         margin-right: 5rem;
     }
-
 }
+
 @media only screen and (max-width: 767px) {
     .dog-info {
         margin-right: 3rem;
         width: 29rem;
     }
 }
-@media only screen and (max-width: 580px){
+
+@media only screen and (max-width: 580px) {
     .dog-info {
         margin-right: 56px;
         width: 25rem;
     }
 }
+
+@media only screen and (max-width: 1268px) {
+    #delete_btn {
+        color: white !important;
+        margin-top: auto !important;
+    }
+}
+
+/*#remove-btn {
+    text-decoration: none;
+    color: #ffffff;
+    font-family: 'Amatic SC', cursive;
+    font-size: x-large;
+    padding: 11px;
+    border-radius: 8px;
+    border-style: solid;
+    border-color: #ffffff;
+    background: #343a3e;
+}*/
 
 
 /*

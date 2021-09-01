@@ -28,7 +28,9 @@ h1 {
     position: inherit
 }
 .dog-name {
-    text-align:center;
+    text-align: center;
+    font-family: 'Amatic SC', cursive;
+    font-size:x-large;
 }
 .guide-head {
     margin-bottom: 3rem;
@@ -94,6 +96,16 @@ a:hover {
 #sub_search:hover {
     color:burlywood;
 }
+#remove_btn {
+    text-align: center;
+    text-decoration: none;
+    margin-top: -13px;
+    color: black;
+}
+#remove_btn :hover{
+    color:red !important;
+}
+
 
 @media only screen and (max-width: 1200px) {
     .guide-head {

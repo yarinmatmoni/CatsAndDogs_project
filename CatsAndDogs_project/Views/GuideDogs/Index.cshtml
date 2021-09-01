@@ -5,7 +5,7 @@
 }
 
 <head>
-    <link href="~/css/guide_index1.css" rel="stylesheet" />
+    <link href="~/css/guide_index_1.css" rel="stylesheet" />
 </head>
 
 <div class="guide-head">
@@ -21,9 +21,11 @@
             <input name="queryBreed" placeholder="הקלד גזע לחיפוש..." autocomplete="off" />
             <input id="sub_search" type="submit" value="חיפוש" />
         </form>
-        <p>
-            <a class="crt_btn" asp-action="Create">הוסף מדריך נוסף</a>
-        </p>
+        @if (ViewContext.HttpContext.User.IsInRole("Admin") || ViewContext.HttpContext.User.IsInRole("Editor")) {
+            <p>
+                <a class="crt_btn" asp-action="Create">הוסף מדריך נוסף</a>
+            </p>
+        }
 
     </div>
     <div class="guide-left">
@@ -36,10 +38,14 @@
         @foreach (var item in Model)
         {
             <div class="card col-2">
-                <a asp-action="Details" asp-route-id="@item.Id"><img id="img-guide" src="@item.ImageGuied"></a>
-                <p class="dog-name">@item.BreedDog.Name</p>
+            <a asp-action="Details" asp-route-id="@item.Id"><img id="img-guide" src="@item.ImageGuied"></a>
+            <p class="dog-name">@item.BreedDog.Name</p>
+            @if (ViewContext.HttpContext.User.IsInRole("Admin") || ViewContext.HttpContext.User.IsInRole("Editor")){
+                <a id="remove_btn" asp-action="Delete" asp-route-id="@item.Id">מחיקה</a>
+            }
 
             </div>
+            
         }
     </div>
 </div>

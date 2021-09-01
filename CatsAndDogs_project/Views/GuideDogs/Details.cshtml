@@ -5,100 +5,125 @@
 }
 
 <head>
-    <link href="~/css/guide_details1.css" rel="stylesheet" />
+    <link href="~/css/guide_details2.css" rel="stylesheet" />
 </head>
+
 <img src=@Html.DisplayFor(model => model.Image) class="card-img">
 <div class="titel">
     <h1>@Html.DisplayFor(model => model.BreedDog.Name)</h1>
 </div>
 <div class="dog-info">
     <div>
-        <h3> @Html.DisplayFor(model => model.AvgLife)</h3>
+        <h3 class="info"> @Html.DisplayFor(model => model.AvgLife)</h3>
         <span class="info-titel">
             תוחלת חיים ממוצעת
         </span>
     </div>
     <div>
-        <h3>@Html.DisplayFor(model => model.AvgWeight)</h3>
+        <h3 class="info">@Html.DisplayFor(model => model.AvgWeight)</h3>
         <span class="info-titel">
-           משקל ממוצע של כלב בוגר
+            משקל ממוצע של כלב בוגר
         </span>
     </div>
     <div>
-        <h3>@Html.DisplayFor(model => model.AvgHeight)</h3>
+        <h3 class="info">@Html.DisplayFor(model => model.AvgHeight)</h3>
         <span class="info-titel">
             גובה ממוצע של כלב בוגר
         </span>
     </div>
-</div> 
+</div>
+<div class="body-guide">
+    <div class="description">
+        <h3 class="description-title">תיאור כללי</h3>
+        <p class="description-guide" style="white-space:pre-line">@Html.DisplayFor(model => model.Description)</p>
+    </div>
+    <div class="description">
+        <h3 class="description-title">תוכנות אופי</h3>
+        <p class="description-guide" style="white-space:pre-line">@Html.DisplayFor(model => model.Characteristics)</p>
+    </div>
+    <div class="description">
+        <h3 class="description-title">בריאות</h3>
+        <p class="description-guide" style="white-space:pre-line"> @Html.DisplayFor(model => model.Health)</p>
+    </div>
+    <div class="description">
+        <h3 class="description-title">אילוף</h3>
+        <p class="description-guide" style="white-space:pre-line">@Html.DisplayFor(model => model.Training)</p>
+    </div>
+</div>
+<div class="option">
+    <a id="edit_btn" asp-action="Edit" asp-route-id="@Model.Id"><i class='far fa-edit'></i></a>
+    <a id="back-btn" asp-action="Index"><i class="material-icons">keyboard_backspace</i></a>
+</div>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+}
 @*<div>
-    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
-    <a asp-action="Index">Back to List</a>
-</div>*@
-@*<div>
-    
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.ImageGuied)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.ImageGuied)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Image)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Image)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.BreedDog)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.BreedDog.Name)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.AvgLife)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.AvgLife)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.AvgWeight)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.AvgWeight)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.AvgHeight)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.AvgHeight)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Description)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Description)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Characteristics)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Characteristics)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Health)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Health)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Training)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Training)
-        </dd>
-    </dl>
-</div>*@
+
+        <hr />
+        <dl class="row">
+            <dt class = "col-sm-2">
+                @Html.DisplayNameFor(model => model.ImageGuied)
+            </dt>
+            <dd class = "col-sm-10">
+                @Html.DisplayFor(model => model.ImageGuied)
+            </dd>
+            <dt class = "col-sm-2">
+                @Html.DisplayNameFor(model => model.Image)
+            </dt>
+            <dd class = "col-sm-10">
+                @Html.DisplayFor(model => model.Image)
+            </dd>
+            <dt class = "col-sm-2">
+                @Html.DisplayNameFor(model => model.BreedDog)
+            </dt>
+            <dd class = "col-sm-10">
+                @Html.DisplayFor(model => model.BreedDog.Name)
+            </dd>
+            <dt class = "col-sm-2">
+                @Html.DisplayNameFor(model => model.AvgLife)
+            </dt>
+            <dd class = "col-sm-10">
+                @Html.DisplayFor(model => model.AvgLife)
+            </dd>
+            <dt class = "col-sm-2">
+                @Html.DisplayNameFor(model => model.AvgWeight)
+            </dt>
+            <dd class = "col-sm-10">
+                @Html.DisplayFor(model => model.AvgWeight)
+            </dd>
+            <dt class = "col-sm-2">
+                @Html.DisplayNameFor(model => model.AvgHeight)
+            </dt>
+            <dd class = "col-sm-10">
+                @Html.DisplayFor(model => model.AvgHeight)
+            </dd>
+            <dt class = "col-sm-2">
+                @Html.DisplayNameFor(model => model.Description)
+            </dt>
+            <dd class = "col-sm-10">
+                @Html.DisplayFor(model => model.Description)
+            </dd>
+            <dt class = "col-sm-2">
+                @Html.DisplayNameFor(model => model.Characteristics)
+            </dt>
+            <dd class = "col-sm-10">
+                @Html.DisplayFor(model => model.Characteristics)
+            </dd>
+            <dt class = "col-sm-2">
+                @Html.DisplayNameFor(model => model.Health)
+            </dt>
+            <dd class = "col-sm-10">
+                @Html.DisplayFor(model => model.Health)
+            </dd>
+            <dt class = "col-sm-2">
+                @Html.DisplayNameFor(model => model.Training)
+            </dt>
+            <dd class = "col-sm-10">
+                @Html.DisplayFor(model => model.Training)
+            </dd>
+        </dl>
+    </div>*@
 

@@ -3,13 +3,80 @@
 @{
     ViewData["Title"] = "Create";
 }
+<head>
+        <link href="~/css/guide_create.css" rel="stylesheet" />
+    </head>
+    <h1>יצירת מדריך</h1>
 
-<h1>Create</h1>
+    <div class="row">
+        <div class="card col-md-9">
+            <form asp-action="Create">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                @*<input type="hidden" asp-for="Id" />*@
+                <div class="form-group">
+                    <h5> <label asp-for="ImageGuied" class="info-label"></label></h5>
+                    <span><input asp-for="ImageGuied" class="img-guide" autocomplete="off" /></span>
+                    <span asp-validation-for="ImageGuied" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <h5> <label asp-for="Image" class="info-label"></label></h5>
+                    <span><input asp-for="Image" class="img-guide" autocomplete="off" /></span>
+                    <span asp-validation-for="Image" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <h5><label asp-for="Breed_2Id" class="info-label"></label></h5>
+                    <select asp-for="Breed_2Id" class="breed-select" asp-items="ViewBag.Breed_2Id"></select>
+                    <span asp-validation-for="Breed_2Id" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <h5><label asp-for="AvgLife" class="info-label"></label></h5>
+                    <input asp-for="AvgLife" class="info-head" autocomplete="off" />
+                    <span asp-validation-for="AvgLife" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <h5><label asp-for="AvgWeight" class="info-label"></label></h5>
+                    <input asp-for="AvgWeight" class="info-head" autocomplete="off" />
+                    <span asp-validation-for="AvgWeight" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <h5><label asp-for="AvgHeight" class="info-label"></label></h5>
+                    <input asp-for="AvgHeight" class="info-head" autocomplete="off" />
+                    <span asp-validation-for="AvgHeight" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Description" class="info-label"></label>
+                    <span class="show"><textarea asp-for="Description" class="input-info" autocomplete="off" style="font-size:18px"></textarea></span>
+                    <span asp-validation-for="Description" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Characteristics" class="info-label"></label>
+                    <span class="show"><textarea asp-for="Characteristics" class="input-info" autocomplete="off" style="font-size:18px"></textarea></span>
+                    <span asp-validation-for="Characteristics" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Health" class="info-label"></label>
+                    <span class="show"><textarea asp-for="Health" class="input-info" autocomplete="off" style="font-size:18px"></textarea></span>
+                    <span asp-validation-for="Health" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Training" class="info-label"></label>
+                    <span class="show"><textarea asp-for="Training" class="input-info" autocomplete="off" style="font-size:18px"></textarea></span>
+                    <span asp-validation-for="Training" class="text-danger"></span>
+                </div>
+                <div class="option">
+                    <input id="crt_btn" type="submit" value="שמור" class="btn btn-primary" />
+                    <a id="back-btn" asp-action="Index"><i class="material-icons">keyboard_backspace</i></a>
+                </div>
+            </form>
+        </div>
+    </div>
+@*<head>
+    <link href="~/css/guide_create.css" rel="stylesheet" />
+</head>
+<h1>יצירת מדריך</h1>
 
-<h4>GuideDog</h4>
-<hr />
 <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-9">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
@@ -24,7 +91,7 @@
             </div>
             <div class="form-group">
                 <label asp-for="Breed_2Id" class="control-label"></label>
-                <select asp-for="Breed_2Id" class ="form-control" asp-items="ViewBag.Breed_2Id"></select>
+                <select asp-for="Breed_2Id" class="form-control" asp-items="ViewBag.Breed_2Id"></select>
             </div>
             <div class="form-group">
                 <label asp-for="AvgLife" class="control-label"></label>
@@ -70,7 +137,7 @@
 
 <div>
     <a asp-action="Index">Back to List</a>
-</div>
+</div>*@
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}

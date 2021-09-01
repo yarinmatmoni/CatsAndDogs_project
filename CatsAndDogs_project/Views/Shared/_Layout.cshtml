@@ -131,10 +131,10 @@
                 <li>
                     <h6> מדריכים </h6>
                 </li>
-                <li><a href="#">מדריך כלבים</a></li>
-                <li><a href="#">מדריך חתולים</a></li>
-                <li><a href="#">בחר שם לכלב</a></li>
-                <li><a href="#">גור חדש במשפחה</a></li>
+                <li><a asp-action="index" asp-controller="GuideDogs">מדריך כלבים</a></li>
+                <li><a asp-action="index" asp-controller="GuideCats">מדריך חתולים</a></li>
+                <li><a asp-action="ChooseName" asp-controller="Articles">בחר שם לכלב</a></li>
+                <li><a asp-action="NewPuppy" asp-controller="Articles">גור חדש במשפחה</a></li>
             </ul>
         </div>
 
@@ -157,8 +157,8 @@
                     <h6> מידע </h6>
                 </li>
                 <li><a href="#">אודות</a></li>
-                <li><a href="#">צור קשר</a></li>
-                <li><a href="#">מדריכים</a></li>
+                <li><a asp-action="ContactUs" asp-controller="Home">צור קשר</a></li>
+                <li><a asp-action="index" asp-controller="Articles">מדריכים</a></li>
                 <li><a href="#">שאלות ותשובות</a></li>
             </ul>
         </div>

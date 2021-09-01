@@ -51,9 +51,12 @@
     </div>
 </div>
 <div class="option">
-    <a id="edit_btn" asp-action="Edit" asp-route-id="@Model.Id"><i class='far fa-edit'></i></a>
-    <a id="back-btn" asp-action="Index"><i class="material-icons">keyboard_backspace</i></a>
-</div>
+    @if (ViewContext.HttpContext.User.IsInRole("Admin") || ViewContext.HttpContext.User.IsInRole("Editor"))
+    {
+        <a id="edit_btn" asp-action="Edit" asp-route-id="@Model.Id"><i class='far fa-edit'></i></a>
+    }
+        <a id="back-btn" asp-action="Index"><i class="material-icons">keyboard_backspace</i></a>
+    </div>
 
 
 @section Scripts {

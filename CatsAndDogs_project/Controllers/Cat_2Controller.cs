@@ -56,6 +56,27 @@ namespace CatsAndDogs_project.Controllers
             return View(cat_2);
         }
 
+        public async Task<IActionResult> MoreDetails(int? id)
+        {
+
+            var cat = await _context.Cat_2.Include(b => b.BreedCatList).Where(b => b.Id == id).ToListAsync();
+            var breed = await _context.BreedCat_2.ToListAsync();
+
+            var output = from d in cat
+                         join b in breed
+                         on d.BreedCatList.First().Id equals b.Id into res
+                         select res;
+
+            var breedId = output.ElementAt(0).ElementAt(0).Id;
+
+            var guide = _context.GuideCat.Where(g => g.BreedCat_2Id == breedId).First();
+
+
+            return RedirectToAction("Details", "GuideCats", new { id = guide.Id });
+
+        }
+
+
         [Authorize(Roles = "Admin , Editor")]
         // GET: Cat_2/Create
         public IActionResult Create()

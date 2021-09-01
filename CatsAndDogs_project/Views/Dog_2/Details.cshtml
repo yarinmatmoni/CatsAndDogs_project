@@ -42,7 +42,7 @@
                 <h5 class="card-title">תיאור:</h5><span>@Html.DisplayFor(modle => modle.Description)</span>
             </div>
             <div>
-                <a class="btn btn-primary" asp-action="MoreDetails" asp-route-Id="@Model.Id"> לפרטים כלליים על גזע הכלב לחץ כאן </a>
+                <a class="btn btn-primary" asp-action="MoreDetails" asp-route-Id="@Model.Id"> לפרטים כלליים על גזע "@Model.ListBreed.First().Name" לחץ כאן </a>
             </div>
         </div>
         <div class="img">

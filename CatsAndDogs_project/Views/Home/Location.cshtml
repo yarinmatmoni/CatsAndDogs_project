@@ -1,30 +1,27 @@
-﻿@{
+﻿
+@{
     ViewData["Title"] = "Location";
 }
 
 <head>
     <link href="~/css/index_1.css" rel="stylesheet" />
+    <link href="~/css/map.css" rel="stylesheet" />
 </head>
 
 <body>
-
     <h1>איפה תוכלו למצוא אותנו ?</h1>
-    <p>תוכלו למצוא אותנו בסניפים הבאים :</p>
-    <ul>
-        <li>ראשון לציון</li>
-        <li>תל אביב</li>
-        <li>חולון</li>
+    <p id="p_list">תוכלו למצוא אותנו בסניפים הבאים :</p>
+
+    <ul id="list">
+        <li>ראשון לציון, בן גוריון 4 - סניף ראשי</li>
+        <li>תל אביב, מנחם בגין 121</li>
+        <li>חולון, גודלה מאיר 7</li>
         <li>יפתחו מקמות נוספים בהמשך..</li>
     </ul>
 
+    <p id="p2_list">בכל אחד מהסניפים תוכלו לרכוש ממגון המוצרים שמוצגים באתר , מחכים לראותכם :)</p>
 
-
-
-    <h1 style="text-align:center;"><br /><br /> מפת סניפים </h1>
-    @*<div id="myMap">
-            <script type='text/javascript' src='https://www.bing.com/api/maps/mapcontrol?key=AmL7oLu1IcsqMguBIRNjYrN138xH3FEbqiQEGwIKoq3ti1EaaBU4eSJ6nxgXS0gv&callback=GetMap' async defer></script>
-
-        </div>*@
+    <h1> מפת סניפים </h1>
 
     <div id="container" position: absolute>
         <div class="row">
@@ -41,20 +38,37 @@
             </div>
         </div>
     </div>
-    <style>
+</body>
+
+@section Scripts {
+    <script src="~/js/siteformap.js" asp-append-version="true"></script>
+}
+
+
+@*<style>
+
+        .row {
+            position: relative;
+            height: 35rem;
+            width: 90rem;
+            display: flex;
+            margin-inline: 175px;
+        }
+
         #container {
             margin-top: 100px;
         }
 
         #myMap {
-            border: 0px;
+            border: 2px solid;
             position: absolute;
             width: 70%;
             height: 118%;
-           /* left: 128px;
-            top: 650px;*/
+            box-shadow: 0px 8px 16px 0px rgb(0 0 0 / 20%);
         }
 
+        #MicrosoftNav {
+            inset: 20px 59rem auto auto !important;
         }
 
         #mybarChart {
@@ -114,14 +128,9 @@
             .csharpcode .lnum {
                 color: #606060;
             }
-    </style>
+    </style>*@
 
 
-</body>
 
 
-@section Scripts {
-    @*<script src="~/js/site.js"></script>*@
-    <script src="~/js/siteformap.js" asp-append-version="true"></script>
 
-}

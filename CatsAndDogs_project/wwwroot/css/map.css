@@ -1,0 +1,64 @@
+﻿.row {
+    position: relative;
+    height: 35rem;
+    width: 90rem;
+    display: flex;
+    margin-inline: 175px;
+}
+
+#container {
+    margin-top: 100px;
+}
+
+#myMap {
+    border: 2px solid;
+    position: absolute;
+    width: 70%;
+    height: 118%;
+    box-shadow: 0px 8px 16px 0px rgb(0 0 0 / 20%);
+}
+
+#MicrosoftNav {
+    inset: 20px 59rem auto auto !important;
+}
+
+#mybarChart {
+    margin-top: 200px;
+}
+
+.csharpcode, .csharpcode pre {
+    font-size: small;
+    color: black;
+    font-family: consolas, “Courier New”, courier, monospace;
+    background-color: #ffffff;
+    white-space: pre;
+}
+
+#p_list {
+    margin-bottom: 35px;
+    font-family: 'Amatic SC', cursive;
+    font-size: 36px;
+    color: #939090;
+}
+
+#list > li {
+    font-family: 'Amatic SC', cursive;
+    font-size: 32px;
+    color: #939090;
+}
+
+#p2_list {
+    font-family: 'Amatic SC', cursive;
+    font-size: 36px;
+    color: #939090;
+}
+
+@media only screen and (max-width: 1370px) {
+
+    .row {
+        height: 60rem;
+        width: 72rem;
+    }
+
+}
+

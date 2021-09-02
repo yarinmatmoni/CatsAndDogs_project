@@ -19,6 +19,9 @@
     outline:none;
     margin:5px;
 }
+.crt-btns {
+    display:flex;
+}
 
 #sub_search {
     width: 95px;
@@ -73,6 +76,7 @@ h5 {
     border-radius: 8px;
     font-family: 'Amatic SC', cursive;
     color: dimgray;
+    margin-right: 5px;
 }
 
 p {
@@ -158,6 +162,9 @@ P > a:hover {
         display: block;
         position: inherit !important;
         color:white !important;
+    }
+    .crt-btns {
+        justify-content:center;
     }
 
     .search {

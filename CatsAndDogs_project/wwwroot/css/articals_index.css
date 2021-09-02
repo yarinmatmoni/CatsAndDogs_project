@@ -1,130 +1,37 @@
 ﻿body{
     margin-top:120px;
 }
-.row {
-    justify-content: space-between;
-    grid-row-gap: 3em;
-}
-#img-guide {
-    border-radius: 100px;
-    border-style: solid;
-    border-color: burlywood;
-    height: 140px;
-    width: 140px;
-}
-h1 {
-    font-size: 100px;
-    margin-bottom: 15px;
-    color: black;
-    font-family: 'Amatic SC', cursive;
-    
-}
-.card {
-    position: inherit;
-    border-radius: 123px;
-    background: none;
-    border: none;
-    width: auto;
-    position: inherit
-}
-.dog-name {
-    text-align: center;
-    font-family: 'Amatic SC', cursive;
-    font-size:x-large;
-}
-.guide-head {
-    margin-bottom: 3rem;
-    background-size: 75%;
-    background-position: left;
-    background-color: lightblue !important;
-    padding: 17px;
-    border-radius: 25px;
-    display: flex;
-    justify-content: space-between;
-    /* background: url(https://static.wixstatic.com/media/11062b_3b0b289dbe5448a088a870b81290b4fc~mv2.jpg/v1/fill/w_640,h_452,al_c,q_80,usm_0.66_1.00_0.01/11062b_3b0b289dbe5448a088a870b81290b4fc~mv2.webp) no-repeat;*/
-}
-.guide-right {
-    margin:auto;
-}
-#img-head {
-    opacity: 0.8;
-    border-radius: 25px;
-    width: 100%;
-    height: 100%;
-}
-.sub-guide {
-    width: 29rem;
-    
-}
-.crt_btn {
-    font-size: 25px;
-    text-decoration: none;
-    background-color: #ffe4c1;
-    padding: 7px;
-    border: 2.5px solid dimgray;
-    border-radius: 8px;
-    font-family: 'Amatic SC', cursive;
-    color: dimgray;
-}
-a:hover {
-    color:burlywood;
-}
+
 .search {
-    margin-bottom: 17px;
+    margin-bottom: 50px;
     display: flex;
-    /*justify-content: center;*/
+    justify-content: center;
 }
 
 .search > input {
     width: 18rem;
     padding: 8px;
     border-radius: 8px;
-    border: 2.5px solid dimgray;
+    border: 2.5px solid #e0b97f;
     font-family: 'Amatic SC', cursive;
     font-size: 22px;
-    background-color:#ffe4c1;
+    background-color: #ffe4c1a3;
     outline: none;
-    margin:2px;
-    
+    margin: 5px;
 }
 
 #sub_search {
     width: 95px;
-    color: dimgray;
-    background-color: #ffe4c1;
+    color: white;
+    background-color: #e0b97f;
 }
 
 #sub_search:hover {
-    color:burlywood;
-}
-#remove_btn {
-    text-align: center;
-    text-decoration: none;
-    margin-top: -13px;
-    color: black;
-}
-#remove_btn :hover{
-    color:red !important;
+    color: #e0b97f;
+    background-color: white;
 }
 
-
-@media only screen and (max-width: 1200px) {
-    .guide-head {
-        display:block;
-    }
-    .guide-right {
-        text-align:center;
-    }
-    .sub-guide {
-        width:100%;
-    }
-    .search {
-        justify-content: center;
-    }
-}
-
-
-/*.top_options > p {
+.top_options > p {
     margin-inline: 30px;
 }
 
@@ -139,7 +46,7 @@ a:hover {
 
 .card-img-top {
     padding-top: 10px;
-    height: 185px;
+    height: auto;
 }
 
 h1 {
@@ -148,7 +55,7 @@ h1 {
     margin-bottom: 65px;
     color: burlywood;
     font-family: 'Amatic SC', cursive;
-    text-decoration-line: underline;
+    
 }
 
 h5 {
@@ -274,4 +181,3 @@ p {
     }
    
 }
-*/

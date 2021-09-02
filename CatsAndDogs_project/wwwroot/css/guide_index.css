@@ -1,37 +1,130 @@
 ﻿body{
     margin-top:120px;
 }
-
-.search {
-    margin-bottom: 50px;
+.row {
+    justify-content: space-between;
+    grid-row-gap: 3em;
+}
+#img-guide {
+    border-radius: 100px;
+    border-style: solid;
+    border-color: burlywood;
+    height: 140px;
+    width: 140px;
+}
+h1 {
+    font-size: 100px;
+    margin-bottom: 15px;
+    color: black;
+    font-family: 'Amatic SC', cursive;
+    
+}
+.card {
+    position: inherit;
+    border-radius: 123px;
+    background: none;
+    border: none;
+    width: auto;
+    position: inherit
+}
+.dog-name {
+    text-align: center;
+    font-family: 'Amatic SC', cursive;
+    font-size:x-large;
+}
+.guide-head {
+    margin-bottom: 3rem;
+    background-size: 75%;
+    background-position: left;
+    border: 3px solid;
+    padding: 17px;
+    border-radius: 25px;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+   
+}
+.guide-right {
+    margin:auto;
+}
+#img-head {
+    opacity: 0.8;
+    border-radius: 25px;
+    width: 100%;
+    height: 100%;
+}
+.sub-guide {
+    width: 29rem;
+    
+}
+.crt_btn {
+    font-size: 25px;
+    text-decoration: none;
+    background-color: #ffe4c1;
+    padding: 7px;
+    border: 2.5px solid dimgray;
+    border-radius: 8px;
+    font-family: 'Amatic SC', cursive;
+    color: dimgray;
+}
+a:hover {
+    color:burlywood;
+}
+.search {
+    margin-bottom: 17px;
+    display: flex;
+    /*justify-content: center;*/
 }
 
 .search > input {
     width: 18rem;
     padding: 8px;
     border-radius: 8px;
-    border: 2.5px solid #e0b97f;
+    border: 2.5px solid dimgray;
     font-family: 'Amatic SC', cursive;
     font-size: 22px;
-    background-color: #ffe4c1a3;
+    background-color:#ffe4c1;
     outline: none;
-    margin: 5px;
+    margin:2px;
+    
 }
 
 #sub_search {
     width: 95px;
-    color: white;
-    background-color: #e0b97f;
+    color: dimgray;
+    background-color: #ffe4c1;
 }
 
 #sub_search:hover {
-    color: #e0b97f;
-    background-color: white;
+    color:burlywood;
+}
+#remove_btn {
+    text-align: center;
+    text-decoration: none;
+    margin-top: -13px;
+    color: black;
+}
+#remove_btn :hover{
+    color:red !important;
 }
 
-.top_options > p {
+
+@media only screen and (max-width: 1200px) {
+    .guide-head {
+        display:block;
+    }
+    .guide-right {
+        text-align:center;
+    }
+    .sub-guide {
+        width:100%;
+    }
+    .search {
+        justify-content: center;
+    }
+}
+
+
+/*.top_options > p {
     margin-inline: 30px;
 }
 
@@ -46,7 +139,7 @@
 
 .card-img-top {
     padding-top: 10px;
-    height: auto;
+    height: 185px;
 }
 
 h1 {
@@ -181,3 +274,4 @@ p {
     }
    
 }
+*/

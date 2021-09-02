@@ -1,0 +1,84 @@
+﻿body {
+    margin-top: 100px;
+}
+
+
+h1 {
+    text-align: center;
+    font-size: 65px;
+    margin-bottom: 35px;
+    color: burlywood;
+    font-family: 'Amatic SC', cursive;
+    
+}
+
+.card {
+    width: 86rem !important;
+    position: inherit;
+    height:auto;
+    border: 2px solid;
+    border-radius: 10px;
+    border-color: dimgrey;
+    box-shadow: 0px 8px 16px 0px rgb(0 0 0 / 20%);
+}
+
+.card-body {
+    display: flex;
+    justify-content: space-between;
+}
+
+h3 {
+    font-family: 'Amatic SC', cursive;
+    font-size: 40px;
+}
+
+.contact-title {
+    font-size: 30px;
+    color: dimgray;
+    font-family: 'Amatic SC', cursive;
+    -webkit-text-stroke: thistle;
+}
+#phone-icon {
+    color: dimgray;
+}
+
+span {
+    padding-right: 25px;
+    font-size: 24px;
+    font-family: 'Amatic SC', cursive;
+}
+
+
+@media only screen and (max-width: 1400px) {
+
+    .card {
+        width: 77rem !important;
+        margin: auto;
+    }
+}
+
+@media only screen and (max-width: 1260px) {
+
+    .card-body {
+        display: list-item;
+        list-style: none;
+    }
+
+    .card {
+        width: 29rem !important;
+        height: 60rem;
+        margin: auto;
+        height: auto;
+    }
+
+    .options {
+        margin-top: 60px;
+    }
+
+    .feture-description > span {
+        width: 325px;
+        margin-bottom: 10px;
+        height: auto;
+    }
+
+}

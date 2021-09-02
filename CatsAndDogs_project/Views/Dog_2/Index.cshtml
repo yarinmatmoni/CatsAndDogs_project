@@ -6,19 +6,22 @@
 
 
 <head>
-    <link href="~/css/index_1.css" rel="stylesheet" />
+    <link href="~/css/index.css" rel="stylesheet" />
 </head>
 
 <h1>אימוץ כלבים</h1>
 
 @if (ViewContext.HttpContext.User.IsInRole("Admin") || ViewContext.HttpContext.User.IsInRole("Editor"))
 {
-    <p>
-        <a class="create_btn" asp-action="Create">הוספת כלב לאימוץ</a>
-    </p>
-    <p>
-        <a class="create_btn" asp-action="index" asp-controller="Breed_2">גזעי כלבים</a>
-    </p>
+    <div class="crt-btns">
+        <p>
+            <a class="create_btn" asp-action="Create">הוספת כלב לאימוץ</a>
+        </p>
+        <p>
+            <a class="create_btn" asp-action="index" asp-controller="Breed_2">גזעי כלבים</a>
+       </p>
+    </div>
+
 }
 
 <form asp-action="Search" class="search">

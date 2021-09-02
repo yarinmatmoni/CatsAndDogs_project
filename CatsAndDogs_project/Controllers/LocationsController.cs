@@ -27,6 +27,17 @@ namespace CatsAndDogs_project.Controllers
             return View(await _context.Location.ToListAsync());
         }
 
+        public JsonResult GetPlacesList() // return list of all places in the map to Json
+        {
+            List<string> listPlaces = new List<string>();
+
+            foreach (var i in _context.Location)
+            {
+                listPlaces.Add(i.Discription);
+            }
+            return Json(listPlaces);
+        }
+
 
         // GET: Locations/Details/5
         public async Task<IActionResult> Details(int? id)
@@ -45,6 +56,37 @@ namespace CatsAndDogs_project.Controllers
 
             return View(location);
         }
+
+
+        
+
+        //public async Task<IActionResult> ListCitiesByX()
+        //{
+        //    var cordX = from x in _context.Location
+        //                 select x.CordX;
+           
+            
+        //    if (cordX == null)
+        //    {
+        //        return (null);
+        //    }
+        //    return View(await cordX.ToListAsync());
+        //}
+
+        //public async Task<IActionResult> ListCitiesByY()
+        //{
+        //    var cordY = from y in _context.Location
+        //                select y.CordY;
+
+
+        //    if (cordY == null)
+        //    {
+        //        return (null);
+        //    }
+        //    return View(await cordY.ToListAsync());
+        //}
+
+        
 
         // GET: Locations/Create
         public IActionResult Create()

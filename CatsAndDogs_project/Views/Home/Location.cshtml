@@ -18,15 +18,110 @@
     </ul>
 
 
-    <div class="map">        
-        @*<iframe width="640" height="543" src="https://maps.google.com/maps?q=israel%20rishon%20le%20zion%20ben%20gurion%204&t=&z=17&ie=UTF8&iwloc=&output=embed" style="border:0" allowfullscreen> </iframe>*@
-        <div id="map">
 
+
+    <h1 style="text-align:center;"><br /><br /> מפת סניפים </h1>
+    @*<div id="myMap">
+            <script type='text/javascript' src='https://www.bing.com/api/maps/mapcontrol?key=AmL7oLu1IcsqMguBIRNjYrN138xH3FEbqiQEGwIKoq3ti1EaaBU4eSJ6nxgXS0gv&callback=GetMap' async defer></script>
+
+        </div>*@
+
+    <div id="container" position: absolute>
+        <div class="row">
+            <div class="col-sm">
+                <div id="myMap"></div>
+                <script type='text/javascript' src='https://www.bing.com/api/maps/mapcontrol?key=AmL7oLu1IcsqMguBIRNjYrN138xH3FEbqiQEGwIKoq3ti1EaaBU4eSJ6nxgXS0gv&callback=GetMap' async defer width="400px" height="400"></script>
+
+            </div>
+            <div class="col-sm">
+                <canvas id="mypieChart"></canvas>
+            </div>
+            <div class="row">
+                <canvas id="mybarChart"></canvas>
+            </div>
         </div>
     </div>
+    <style>
+        #container {
+            margin-top: 100px;
+        }
+
+        #myMap {
+            border: 0px;
+            position: absolute;
+            width: 70%;
+            height: 118%;
+            left: 128px;
+            top: 650px;
+        }
+
+        }
+
+        #mybarChart {
+            margin-top: 200px;
+        }
+
+        .csharpcode, .csharpcode pre {
+            font-size: small;
+            color: black;
+            font-family: consolas, “Courier New”, courier, monospace;
+            background-color: #ffffff;
+            white-space: pre;
+        }
+
+            .csharpcode pre {
+                margin: 0em;
+            }
+
+            .csharpcode .rem {
+                color: #008000;
+            }
+
+            .csharpcode .kwrd {
+                color: #0000ff;
+            }
+
+            .csharpcode .str {
+                color: #006080;
+            }
+
+            .csharpcode .op {
+                color: #0000c0;
+            }
+
+            .csharpcode .preproc {
+                color: #cc6633;
+            }
+
+            .csharpcode .asp {
+                background-color: #ffff00;
+            }
+
+            .csharpcode .html {
+                color: #800000;
+            }
+
+            .csharpcode .attr {
+                color: #ff0000;
+            }
+
+            .csharpcode .alt {
+                background-color: #f4f4f4;
+                width: 100%;
+                margin: 0em;
+            }
+
+            .csharpcode .lnum {
+                color: #606060;
+            }
+    </style>
+
 
 </body>
 
+
 @section Scripts {
-    <script src="~/js/location.js"></script>
+    @*<script src="~/js/site.js"></script>*@
+    <script src="~/js/siteformap.js" asp-append-version="true"></script>
+
 }

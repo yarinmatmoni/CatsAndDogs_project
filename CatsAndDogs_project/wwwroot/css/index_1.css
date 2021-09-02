@@ -135,6 +135,11 @@ P > a:hover {
     grid-row-gap: 3em;
 }
 
+.myMap {
+    position: relative;
+    border: 0px
+}
+
 #price {
     color: #16c634 !important;
     font-size: 27px;

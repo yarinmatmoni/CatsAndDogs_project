@@ -4,10 +4,19 @@
     ViewData["Title"] = "Index";
 }
 
-
-
 <head>
     <link href="~/css/adaption_date_2.css" rel="stylesheet" />
+
+
+    <style>
+        #myMap {
+            position: absolute;
+            width: 70%;
+            height: 118%;
+            margin-right: auto;
+            margin-left: auto;
+        }
+    </style>
 </head>
 
 <h1>הסניפים שלנו</h1>
@@ -20,7 +29,7 @@
 }
 
 
-<table class="table">
+<table class="table" style="margin-bottom: 50px">
     <thead>
         <tr>
             <th>
@@ -62,6 +71,17 @@
         }
     </tbody>
 </table>
+
+<h1 style="text-align:center;"><br /><br /> מפת סניפים </h1>
+
+<div id="myMap"></div>
+<script type='text/javascript' src='https://www.bing.com/api/maps/mapcontrol?key=AmL7oLu1IcsqMguBIRNjYrN138xH3FEbqiQEGwIKoq3ti1EaaBU4eSJ6nxgXS0gv&callback=GetMap' async defer></script>
+
+
+@section Scripts {
+    <script src="~/js/siteformap.js" asp-append-version="true"></script>
+
+}
 
 
 

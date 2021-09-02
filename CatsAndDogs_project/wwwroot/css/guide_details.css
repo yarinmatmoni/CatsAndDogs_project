@@ -55,6 +55,9 @@ h1 {
 .body-guide {
     margin-top: 42px;
 }
+.body-guide-cat{
+    margin-top:7rem;
+}
 .description {
     display: inline-flex;
     margin-bottom: 33px;

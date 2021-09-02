@@ -4,10 +4,10 @@
     ViewData["Title"] = "Delete";
 }
 <head>
-    <link href="~/css/guide_cat_delete.css" rel="stylesheet" />
+    <link href="~/css/guide_delete2.css" rel="stylesheet" />
 </head>
 
-<img src=@Html.DisplayFor(model => model.Image) class="card-img">
+<img src=@Html.DisplayFor(model => model.Image) class="card-img-cat">
 <div class="titel">
     <h1>@Html.DisplayFor(model => model.BreedCat.Name)</h1>
 </div>
@@ -19,7 +19,7 @@
     <a id="back-btn" asp-action="Index"><i class="material-icons">keyboard_backspace</i></a>
 </form>
 
-<div class="body-guide">
+<div class="body-guide-cat">
     <div class="description">
         <h3 class="description-title">תיאור כללי</h3>
         <p class="description-guide" style="white-space:pre-line">@Html.DisplayFor(model => model.Description)</p>

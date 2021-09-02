@@ -6,17 +6,6 @@
 
 <head>
     <link href="~/css/adaption_date_2.css" rel="stylesheet" />
-
-
-    <style>
-        #myMap {
-            position: absolute;
-            width: 70%;
-            height: 118%;
-            margin-right: auto;
-            margin-left: auto;
-        }
-    </style>
 </head>
 
 <h1>הסניפים שלנו</h1>
@@ -35,12 +24,15 @@
             <th>
                 @Html.DisplayNameFor(model => model.Discription)
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.CordX)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.CordY)
-            </th>
+            @if (ViewContext.HttpContext.User.IsInRole("Admin") || ViewContext.HttpContext.User.IsInRole("Editor"))
+            {
+                <th>
+                    @Html.DisplayNameFor(model => model.CordX)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CordY)
+                </th>
+            }
             <th>
             </th>
         </tr>
@@ -52,12 +44,15 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.Discription)
                 </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.CordX)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.CordY)
-                </td>
+                @if (ViewContext.HttpContext.User.IsInRole("Admin") || ViewContext.HttpContext.User.IsInRole("Editor"))
+                {
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CordX)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CordY)
+                    </td>
+                }
                 <td>
                     @if (ViewContext.HttpContext.User.IsInRole("Admin") || ViewContext.HttpContext.User.IsInRole("Editor"))
                     {

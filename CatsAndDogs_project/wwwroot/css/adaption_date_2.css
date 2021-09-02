@@ -116,6 +116,14 @@ tr {
     color: tomato;
 }
 
+#myMap {
+    position: absolute;
+    width: 70%;
+    height: 118%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
 @media only screen and (max-width: 760px) {
     .search {
         display: grid;

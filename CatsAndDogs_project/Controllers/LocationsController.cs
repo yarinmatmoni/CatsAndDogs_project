@@ -11,7 +11,6 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace CatsAndDogs_project.Controllers
 {
-    [Authorize(Roles = "Admin")]
     public class LocationsController : Controller
     {
         private readonly CatsAndDogs_projectContext _context;
@@ -38,6 +37,7 @@ namespace CatsAndDogs_project.Controllers
             return Json(listPlaces);
         }
 
+        [Authorize(Roles = "Admin, Editor")]
 
         // GET: Locations/Details/5
         public async Task<IActionResult> Details(int? id)
@@ -57,36 +57,7 @@ namespace CatsAndDogs_project.Controllers
             return View(location);
         }
 
-
-        
-
-        //public async Task<IActionResult> ListCitiesByX()
-        //{
-        //    var cordX = from x in _context.Location
-        //                 select x.CordX;
-           
-            
-        //    if (cordX == null)
-        //    {
-        //        return (null);
-        //    }
-        //    return View(await cordX.ToListAsync());
-        //}
-
-        //public async Task<IActionResult> ListCitiesByY()
-        //{
-        //    var cordY = from y in _context.Location
-        //                select y.CordY;
-
-
-        //    if (cordY == null)
-        //    {
-        //        return (null);
-        //    }
-        //    return View(await cordY.ToListAsync());
-        //}
-
-        
+        [Authorize(Roles = "Admin, Editor")]
 
         // GET: Locations/Create
         public IActionResult Create()
@@ -97,8 +68,10 @@ namespace CatsAndDogs_project.Controllers
         // POST: Locations/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [Authorize(Roles = "Admin, Editor")]
         [HttpPost]
         [ValidateAntiForgeryToken]
+       
         public async Task<IActionResult> Create([Bind("Id,Discription,CordX,CordY")] Location location)
         {
             if (ModelState.IsValid)
@@ -111,6 +84,7 @@ namespace CatsAndDogs_project.Controllers
         }
 
         // GET: Locations/Edit/5
+        [Authorize(Roles = "Admin, Editor")]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -129,6 +103,7 @@ namespace CatsAndDogs_project.Controllers
         // POST: Locations/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [Authorize(Roles = "Admin, Editor")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("Id,Discription,CordX,CordY")] Location location)
@@ -162,6 +137,7 @@ namespace CatsAndDogs_project.Controllers
         }
 
         // GET: Locations/Delete/5
+        [Authorize(Roles = "Admin, Editor")]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -180,6 +156,7 @@ namespace CatsAndDogs_project.Controllers
         }
 
         // POST: Locations/Delete/5
+        [Authorize(Roles = "Admin, Editor")]
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)

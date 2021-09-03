@@ -5,16 +5,17 @@
 }
 
 <head>
-    <link rel="stylesheet" href="~/css/create_2.css" />
+    <link rel="stylesheet" href="~/css/create_forstore.css" />
 </head>
+
 <h1>יצירת מוצר בריאות</h1>
+
 <div class="row">
     <div class="card col-3" style="width: 18rem; position:inherit">
         <div class="card-body">
             <form asp-action="Create">
                 <div class="Create">
                     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-                    @*<div> <a asp-action="Create" asp-controller="HealthCategories"> הוסף קטגוריה לבריאות </a></div>*@
                     <div class="feture">
                         <h5 class="card-title"><label asp-for="Name" class="control-label"></label>:</h5>
                         <span> <input asp-for="Name" class="form-control" autocomplete="off" /></span>

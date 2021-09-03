@@ -389,6 +389,10 @@ P > a:hover {
         color:white !important;
     }
 
+    .topB {
+        display: block;
+    }
+
     .search {
         display: grid;
     }

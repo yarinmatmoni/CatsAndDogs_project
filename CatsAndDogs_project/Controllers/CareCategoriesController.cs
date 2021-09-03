@@ -27,6 +27,17 @@ namespace CatsAndDogs_project.Controllers
             return View(await _context.CareCategory.ToListAsync());
         }
 
+        public async Task<IActionResult> Search(string query)  
+        {
+            var q = from c in _context.CareCategory
+                    where (c.Name.Contains(query)) || (query == null)
+                    orderby c.Name
+                    select c;
+
+            return View("Index", await q.ToListAsync());
+        }
+
+
         // GET: CareCategories/Details/5
         public async Task<IActionResult> Details(int? id)
         {

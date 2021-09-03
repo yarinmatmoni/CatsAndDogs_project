@@ -66,6 +66,15 @@ namespace CatsAndDogs_project.Controllers
                 }
             }
 
+            foreach(var c in categories)
+            {
+               var cname = c.Name;
+                if (!(dictionary.ContainsKey(cname)))
+                {
+                    dictionary.Add(cname, 0);
+                }
+            }
+
             var productCategory = dictionary.Keys.ToList();
 
             var query = from db in productCategory select new { label = db, y = dictionary[db] };

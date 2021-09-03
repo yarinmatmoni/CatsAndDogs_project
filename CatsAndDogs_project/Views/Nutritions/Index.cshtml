@@ -9,95 +9,75 @@
 </head>
 
 <div class="toppageNutrition">
-        <img class="card-img" src="https://images1.ynet.co.il/PicServer5/2018/09/07/8761568/876156001000100980653no.jpg" />
-        <div class="titel">
-            <h1>תזונה</h1>
-            <p class="sub-title">מגוון מזונות ומאכלים שיתאימו לבעל החיים באופן הטוב ביותר ומחירים הטובים ביותר הקיימים בשוק! </p>
-        </div>
-        @*<h1 class="title1">תזונה</h1>
+    <img class="card-img" src="https://images1.ynet.co.il/PicServer5/2018/09/07/8761568/876156001000100980653no.jpg" />
+    <div class="titel">
+        <h1>תזונה</h1>
+        <p class="sub-title">מגוון מזונות ומאכלים שיתאימו לבעל החיים באופן הטוב ביותר ומחירים הטובים ביותר הקיימים בשוק! </p>
+    </div>
+    @*<h1 class="title1">תזונה</h1>
         <br />
         <br />
         <h2 class="title2"> מגוון מזונות ומאכלים שיתאימו לבעל החיים באופן הטוב ביותר ומחירים הטובים ביותר הקיימים בשוק! </h2>*@
 </div>
 
 
-    @*<h1>תזונה</h1>*@
+@*<h1>תזונה</h1>*@
 @if (ViewContext.HttpContext.User.IsInRole("Admin") || ViewContext.HttpContext.User.IsInRole("Editor"))
- {
-    <p>
-        <a class="create_btn" asp-action="Create">הוספת מוצר תזונה חדש</a>
-        <a class="create_btn" asp-action="Create" asp-controller="NutritionCategories"> הוסף קטגוריה לתזונה </a>
-    </p>
- }
+{
+    <div class="crt-btns">
 
-    <form asp-action="Search" class="search">
+        <p class="topButtons">
+            <a class="topB" asp-action="Create">הוספת מוצר תזונה חדש</a>
+        </p>
+        <p class="topButtons">
+            <a class="topB" asp-action="Create" asp-controller="NutritionCategories"> הוסף קטגוריה לתזונה </a>
+        </p>
+        <p class="topButtons">
+            <a class="topB" asp-action="Statistics">הצגת סטטיסטיקה</a>
+        </p>
 
-        <div class="search1">
+    </div>
 
-            @*<input name="animal" placeholder="הקלד את סוג החיה (כלב/חתול)" autocomplete="off" />
-                <input name="price" placeholder="מחיר עד" autocomplete="off" />*@
-            <input name="query" placeholder="הקלד מילת חיפוש" autocomplete="off" />
-            <input id="sub_search" type="submit" value="חיפוש" />
+}
 
-        </div>
+<form asp-action="Search" class="search">
+
+    <div class="search1">
 
         @*<input name="animal" placeholder="הקלד את סוג החיה (כלב/חתול)" autocomplete="off" />
-            <input name="categoryname" placeholder="הקלד את סוג הפריט הרצוי (מזון/חטיפים/מעדנים/מזון טיפולי)" autocomplete="off" />
-            <input name="pricestart" placeholder="מחיר החל מ" autocomplete="off" />
-            <input name="priceend" placeholder="מחיר עד" autocomplete="off" />*@
+            <input name="price" placeholder="מחיר עד" autocomplete="off" />*@
+        <input name="query" placeholder="הקלד מילת חיפוש" autocomplete="off" />
+        <input id="sub_search" type="submit" value="חיפוש" />
+
+    </div>
+
+    @*<input name="animal" placeholder="הקלד את סוג החיה (כלב/חתול)" autocomplete="off" />
+        <input name="categoryname" placeholder="הקלד את סוג הפריט הרצוי (מזון/חטיפים/מעדנים/מזון טיפולי)" autocomplete="off" />
+        <input name="pricestart" placeholder="מחיר החל מ" autocomplete="off" />
+        <input name="priceend" placeholder="מחיר עד" autocomplete="off" />*@
 
 
-    </form>
+</form>
 
-    @*<div class="sidenav">
-            <h4> קטגוריות לתזונה</h4>
-            <hr />
-            <a href="#">מזון</a>
-            <a href="#">חטיפים</a>
-            <a href="#">מעדנים</a>
-            <a href="#">מזון טיפולי</a>
-        </div>*@
+@*<div class="sidenav">
+        <h4> קטגוריות לתזונה</h4>
+        <hr />
+        <a href="#">מזון</a>
+        <a href="#">חטיפים</a>
+        <a href="#">מעדנים</a>
+        <a href="#">מזון טיפולי</a>
+    </div>*@
 
-    <div class="container">
-        <div class="row">
+<div class="container">
+    <div class="row">
 
-            @foreach (var group in Model.GroupBy(a => a.Type))
+        @foreach (var group in Model.GroupBy(a => a.Type))
+        {
+            <h3> סוג החיה: @group.Key</h3>
+            @foreach (var category in group.GroupBy(x => x.Category))
             {
-                <h3> סוג החיה: @group.Key</h3>
-                @foreach (var category in group.GroupBy(x => x.Category))
-                {
-                    <h4> @category.Key.Name </h4>
-                    foreach (var item in category)
-                    {
-                        <div class="card col-3" style="width: 18rem; position:inherit">
-                            <img src="@item.Image" class="card-img-top" alt="@item.Name">
-                            <div class="card-body">
-                                <h5 class="card-title"> @item.Name</h5>
-                                <p class="card-text" style="overflow: hidden; margin-bottom: -19px; text-overflow: ellipsis;white-space: nowrap;">@item.Description</p>
-                                <p> <h5> @Html.DisplayNameFor(model => model.Advantages) </h5> @item.Advantages </p>
-                                <p> <h5> @Html.DisplayNameFor(model => model.matching) </h5> @item.matching </p>
-                                <p id="price"> @Html.DisplayNameFor(model => model.Price): @item.Price ₪ </p>
-
-                            </div>
-                            <div class="option">
-                                <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-primary">לפרטים נוספים</a>
-                                @*<a class="btn btn-primary"> הוסף לסל </a>*@
-                                @if (ViewContext.HttpContext.User.IsInRole("Admin") || ViewContext.HttpContext.User.IsInRole("Editor"))
-                                {
-                                    <a class="editOption" asp-action="Edit" asp-route-id="@item.Id">עריכה</a>
-                                    <a class="removeOption" asp-action="Delete" asp-route-id="@item.Id">מחיקה</a>
-                                }
-                            </div>
-                        </div>
-
-                    }
-                    @*<h4>  @group.Key </h4>*@
-
-
-                }
-
-            }
-            @*@foreach (var item in Model)
+                <h4> @category.Key.Name </h4>
+                foreach (var item in category)
                 {
                     <div class="card col-3" style="width: 18rem; position:inherit">
                         <img src="@item.Image" class="card-img-top" alt="@item.Name">
@@ -111,6 +91,7 @@
                         </div>
                         <div class="option">
                             <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-primary">לפרטים נוספים</a>
+                            @*<a class="btn btn-primary"> הוסף לסל </a>*@
                             @if (ViewContext.HttpContext.User.IsInRole("Admin") || ViewContext.HttpContext.User.IsInRole("Editor"))
                             {
                                 <a class="editOption" asp-action="Edit" asp-route-id="@item.Id">עריכה</a>
@@ -119,89 +100,118 @@
                         </div>
                     </div>
 
-                }*@
+                }
+                @*<h4>  @group.Key </h4>*@
 
 
-        </div>
-    </div>
+            }
 
-
-
-    @*@section Scripts {
-            @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-            <link href="~/css/index_1.css" rel="stylesheet" />
-        }*@
-
-
-
-    @*<h1>Index</h1>
-
-        <p>
-            <a asp-action="Create">Create New</a>
-        </p>
-        <table class="table">
-            <thead>
-                <tr>
-                    <th>
-                        @Html.DisplayNameFor(model => model.Name)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.Description)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.Advantages)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.matching)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.Price)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.Image)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.Type)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.Category)
-                    </th>
-                    <th></th>
-                </tr>
-            </thead>
-            <tbody>
-        @foreach (var item in Model) {
-                <tr>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Name)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Description)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Advantages)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.matching)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Price)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Image)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Type)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Category.Name)
-                    </td>
-                    <td>
-                        <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                        <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                        <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-                    </td>
-                </tr>
         }
-            </tbody>
-        </table>*@
+        @*@foreach (var item in Model)
+            {
+                <div class="card col-3" style="width: 18rem; position:inherit">
+                    <img src="@item.Image" class="card-img-top" alt="@item.Name">
+                    <div class="card-body">
+                        <h5 class="card-title"> @item.Name</h5>
+                        <p class="card-text" style="overflow: hidden; margin-bottom: -19px; text-overflow: ellipsis;white-space: nowrap;">@item.Description</p>
+                        <p> <h5> @Html.DisplayNameFor(model => model.Advantages) </h5> @item.Advantages </p>
+                        <p> <h5> @Html.DisplayNameFor(model => model.matching) </h5> @item.matching </p>
+                        <p id="price"> @Html.DisplayNameFor(model => model.Price): @item.Price ₪ </p>
+
+                    </div>
+                    <div class="option">
+                        <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-primary">לפרטים נוספים</a>
+                        @if (ViewContext.HttpContext.User.IsInRole("Admin") || ViewContext.HttpContext.User.IsInRole("Editor"))
+                        {
+                            <a class="editOption" asp-action="Edit" asp-route-id="@item.Id">עריכה</a>
+                            <a class="removeOption" asp-action="Delete" asp-route-id="@item.Id">מחיקה</a>
+                        }
+                    </div>
+                </div>
+
+            }*@
+
+
+    </div>
+</div>
+
+
+
+@*@section Scripts {
+        @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+        <link href="~/css/index_1.css" rel="stylesheet" />
+    }*@
+
+
+
+@*<h1>Index</h1>
+
+    <p>
+        <a asp-action="Create">Create New</a>
+    </p>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Name)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Description)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Advantages)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.matching)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Price)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Image)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Type)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Category)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+    @foreach (var item in Model) {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Advantages)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.matching)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Price)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Image)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Type)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Category.Name)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                </td>
+            </tr>
+    }
+        </tbody>
+    </table>*@

@@ -61,7 +61,7 @@ namespace CatsAndDogs_project.Controllers
                                           // shows only the breeds out dogs have.
         {
             var cats = _context.Cat_2.Include(d => d.BreedCatList).ToList();
-            var breeds = _context.BreedCat_2.ToList();
+            //var breeds = _context.BreedCat_2.ToList();
 
             Dictionary<string, int> dictionary = new Dictionary<string, int>();
 

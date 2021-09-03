@@ -24,10 +24,16 @@ h3 > span {
     color:tomato;
 }
 
+.notice {
+    text-align: right;
+    font-size: x-large;
+    color: #cc0000;
+    font-weight: bold;
+}
 .card {
     width: 86rem !important;
     position: inherit;
-    height:auto;
+    height: auto;
     border: 2px solid;
     border-radius: 10px;
     border-color: dimgrey;

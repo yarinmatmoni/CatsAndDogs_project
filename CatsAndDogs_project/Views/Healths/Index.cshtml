@@ -5,7 +5,7 @@
 }
 
 <head>
-    <link href="~/css/index_forstore1.css" rel="stylesheet" />
+    <link href="~/css/index_forstore.css" rel="stylesheet" />
 </head>
 
 <div class="toppageHealth">
@@ -15,19 +15,26 @@
         <p class="sub-title">כל מוצרי הבריאות שיהפכו את חיית המחמד שלכם לבריאה וחזקה יותר </p>
     </div>
     @*<h1 class="title1"> בריאות </h1>
-    <br />
-    <br />
-    <br />
-    <h2 class="title2"> כל מוצרי הבריאות שיהפכו את חיית המחמד שלכם לבריאה וחזקה יותר</h2>*@
+        <br />
+        <br />
+        <br />
+        <h2 class="title2"> כל מוצרי הבריאות שיהפכו את חיית המחמד שלכם לבריאה וחזקה יותר</h2>*@
 </div>
 
 
 @if (ViewContext.HttpContext.User.IsInRole("Admin") || ViewContext.HttpContext.User.IsInRole("Editor"))
 {
-    <p>
-        <a class="create_btn" asp-action="Create">הוספת מוצר בריאות חדש</a>
-        <a class="create_btn" asp-action="Create" asp-controller="HealthCategories"> הוסף קטגוריה לבריאות </a>
+<div class="crt-btns">
+    <p class="topButtons">
+        <a class="topB" asp-action="Create">הוספת מוצר בריאות חדש</a>
     </p>
+    <p class="topButtons">
+        <a class="topB" asp-action="Create" asp-controller="HealthCategories"> הוסף קטגוריה לבריאות </a>
+    </p>
+    <p class="topButtons">
+        <a class="topB" asp-action="Statistics">הצגת סטטיסטיקה</a>
+    </p>
+</div>
 }
 
 <form asp-action="Search" class="search">
@@ -44,7 +51,7 @@
         <input name="categoryname" placeholder="הקלד את סוג הפריט הרצוי (תוספי תזונה/טיפול בפרעושים/בריאות העור/הריאות הפה)" autocomplete="off" />
         <input name="pricestart" placeholder="מחיר החל מ" autocomplete="off" />
         <input name="priceend" placeholder="מחיר עד" autocomplete="off" />*@
-   
+
 
 </form>
 
@@ -92,7 +99,7 @@
             }
 
         }
-     
+
 
     </div>
 </div>

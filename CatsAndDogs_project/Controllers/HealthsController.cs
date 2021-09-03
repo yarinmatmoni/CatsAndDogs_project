@@ -8,6 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using CatsAndDogs_project.Data;
 using CatsAndDogs_project.Models;
 using Microsoft.AspNetCore.Authorization;
+using Newtonsoft.Json;
 
 namespace CatsAndDogs_project.Controllers
 {
@@ -45,6 +46,45 @@ namespace CatsAndDogs_project.Controllers
 
             return View("Index", await q.ToListAsync());
         }
+
+        public IActionResult Statistics() // map of number of dogs that have the same breed
+                                          // shows only the breeds out dogs have.
+        {
+            var products = _context.Health.Include(a => a.Category).ToList();
+            var categories = _context.HealthCategory.ToList();
+
+            Dictionary<string, int> dictionary = new Dictionary<string, int>();
+
+            foreach (var product in products)
+            {
+                string pname = product.Category.Name;
+                if (dictionary.ContainsKey(pname))
+                {
+                    dictionary[pname]++;
+                }
+                else
+                {
+                    dictionary.Add(pname, 1);
+                }
+            }
+            foreach (var c in categories)
+            {
+                var cname = c.Name;
+                if (!(dictionary.ContainsKey(cname)))
+                {
+                    dictionary.Add(cname, 0);
+                }
+            }
+
+            var productCategory = dictionary.Keys.ToList();
+
+            var query = from db in productCategory select new { label = db, y = dictionary[db] };
+
+            ViewData["Graph"] = JsonConvert.SerializeObject(query); // Serializes the specified object to a JSON string.
+
+            return View();
+        }
+
 
         // GET: Healths/Details/5
         public async Task<IActionResult> Details(int? id)

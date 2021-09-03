@@ -1,4 +1,4 @@
-﻿.sidenav {
+﻿. /*sidenav {
     height: 100%;
     width: 199px;
     position: fixed;
@@ -12,46 +12,41 @@
     margin-right: -62px;
     position: initial;
     border-style: ridge;
-}
-
-.toppageSleep {
-    background: url(https://cdn.pixabay.com/photo/2016/03/27/20/51/bed-1284238_1280.jpg) no-repeat;
-    background-position: center;
-    min-height: 324px;
-    background-size: 100%;
-    opacity: 0.6;
-    margin-bottom: 15px;
-}
-
-/*.headsleep {
-    text-align: right;
-    font-size: 60px;
-    margin-bottom: 65px;
-    color: #ca780b;
-    font-family: 'bootstrap-icons';
-    font-weight: bold;
 }*/
 
-.toppageNutrition {
-  
-    background: url(https://cdn.pixabay.com/photo/2020/05/13/21/03/dog-food-5168940_1280.jpg) no-repeat;
-    background-position: center;
-    min-height: 324px;
-    background-size: 100%;
-    opacity: 0.6;
-    margin-bottom: 15px;
-}
 
+
+
+.topButtons > p{
+    margin: 5px !important;
+}
+/*css for all head store*/
 .card-img {
     width: 100%;
-    height: 300px;
+    height: 330px;
     border: 2px solid;
     border-color: #343a3e;
     padding: 2px;
     border-radius: 10px;
     box-shadow: 0px 8px 16px 0px rgb(0 0 0 / 20%);
-    opacity: 0.7;
+    opacity: 0.8;
     /*box-shadow: -0.1px -1px 8px rgb(0 0 0 / 34%);*/
+}
+
+.topB {
+    font-size: 25px;
+    margin: 5px;
+    text-decoration: none;
+    background-color: #ffe4c1;
+    padding: 7px;
+    border: 2px solid;
+    border-radius: 8px;
+    font-family: 'Amatic SC', cursive;
+    color: dimgray;
+}
+
+.crt-btns {
+    display: flex;
 }
 
 .titel {
@@ -71,49 +66,15 @@ h1 {
     width: 28rem;
     background-color: dimgray;
 }
-.sub-title {
 
+.sub-title {
     width: 27rem;
     text-align: center;
     margin-right: 18rem;
     background-color: dimgray;
     color: white;
 }
-/*.toppageHealth {
-    background: url(https://cdn.pixabay.com/photo/2018/09/21/23/28/dog-3694266_1280.jpg) no-repeat;
-    background-position: center;
-    min-height: 324px;
-    background-size: 100%;
-    opacity: 0.6;
-    margin-bottom: 15px;
-}*/
 
-.toppageCare {
-    background: url(https://cdn.pixabay.com/photo/2020/01/19/16/44/cat-4778387_1280.jpg) no-repeat;
-    background-position: center;
-    min-height: 324px;
-    background-size: 100%;
-    opacity: 0.6;
-    margin-bottom: 15px;
-}
-
-.toppageAccessories {
-    background: url(https://cdn.pixabay.com/photo/2020/04/02/08/53/cat-4994140_1280.jpg) no-repeat;
-    background-position: center;
-    min-height: 324px;
-    background-size: 100%;
-    opacity: 0.6;
-    margin-bottom: 15px;
-}
-/*
-.heasnutrition {
-    text-align: right;
-    font-size: 81px;
-    margin-bottom: 65px;
-    color: #ca780b;
-    font-family: 'bootstrap-icons';
-    font-weight: bold;
-}*/
 .title1 {
     text-align: right;
     font-size: 81px;
@@ -312,12 +273,12 @@ body {
 }
 
 h1 {
-    text-align: center;
+    /*text-align: center;
     font-size: 60px;
     margin-bottom: 65px;
     color: burlywood;
     font-family: 'bootstrap-icons';
-    text-decoration-line: underline;
+    text-decoration-line: underline;*/
 }
 
 h5 {
@@ -411,14 +372,13 @@ P > a:hover {
     margin-bottom: auto;
 }
 
-/*@media only screen and (max-width: 750px) {
+@media only screen and (max-width: 750px) {
 
     .sub-title {
         margin: auto;
+        margin-bottom: 20px;
     }
-}*/
-
-
+}
 @media only screen and (max-width: 760px) {
     .row {
         justify-content: center;

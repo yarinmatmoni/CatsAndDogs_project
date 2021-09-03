@@ -8,6 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using CatsAndDogs_project.Data;
 using CatsAndDogs_project.Models;
 using Microsoft.AspNetCore.Authorization;
+using Newtonsoft.Json;
 
 namespace CatsAndDogs_project.Controllers
 {
@@ -45,21 +46,46 @@ namespace CatsAndDogs_project.Controllers
 
             return View("Index", await q.ToListAsync());
 
-            //var catsAndDogs_projectContext = _context.Nutrition.Include(n => n.Category);
-            //return View(await catsAndDogs_projectContext.ToListAsync());
+           
         }
 
-        //public Task<IActionResult> AddToCart(int? id)
-        //{
-        //    var q = from a in _context.Nutrition.Include(b => b.Category)
-        //            where (a.Id.Equals(id)) 
-        //            select a;
+        public IActionResult Statistics() // map of number of dogs that have the same breed
+                                          // shows only the breeds out dogs have.
+        {
+            var products = _context.Nutrition.Include(a => a.Category).ToList();
+            var categories = _context.NutritionCategory.ToList();
 
+            Dictionary<string, int> dictionary = new Dictionary<string, int>();
 
-        //    CartItem c = new CartItem();
- 
-        //}
+            foreach (var product in products)
+            {
+                string pname = product.Category.Name;
+                if (dictionary.ContainsKey(pname))
+                {
+                    dictionary[pname]++;
+                }
+                else
+                {
+                    dictionary.Add(pname, 1);
+                }
+            }
+            foreach (var c in categories)
+            {
+                var cname = c.Name;
+                if (!(dictionary.ContainsKey(cname)))
+                {
+                    dictionary.Add(cname, 0);
+                }
+            }
 
+            var productCategory = dictionary.Keys.ToList();
+
+            var query = from db in productCategory select new { label = db, y = dictionary[db] };
+
+            ViewData["Graph"] = JsonConvert.SerializeObject(query); // Serializes the specified object to a JSON string.
+
+            return View();
+        }
 
 
         // GET: Nutritions/Details/5

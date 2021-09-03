@@ -9,6 +9,12 @@
 </head>
 
 <h1>קטגוריות טיפוח</h1>
+
+<form asp-action="Search" class="search">
+    <input name="query" placeholder="הקלד שם לחיפוש..." autocomplete="off" />
+    <input id="sub_search" type="submit" value="חיפוש" />
+</form>
+
 <p class="top">
     <a class="create_btn" asp-action="Create">צור קטגוריה חדשה</a>
     <a class="create_btn" asp-action="Index" asp-controller="Cares"><i class="material-icons">keyboard_backspace</i></a>

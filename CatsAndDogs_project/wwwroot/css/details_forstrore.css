@@ -132,6 +132,8 @@ span {
 }
 .buttolocation {
     font-size: 20px;
+    text-align: inherit;
+    margin: 12px;
 }
 .spanlocation {
     color: black;

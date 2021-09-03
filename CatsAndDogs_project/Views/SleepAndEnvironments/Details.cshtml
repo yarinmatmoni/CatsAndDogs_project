@@ -4,64 +4,6 @@
     ViewData["Title"] = "Details";
 }
 
-@*<h1>Details</h1>
-
-    <div>
-        <h4>SleepAndEnvironment</h4>
-        <hr />
-        <dl class="row">
-            <dt class = "col-sm-2">
-                @Html.DisplayNameFor(model => model.Name)
-            </dt>
-            <dd class = "col-sm-10">
-                @Html.DisplayFor(model => model.Name)
-            </dd>
-            <dt class = "col-sm-2">
-                @Html.DisplayNameFor(model => model.Description)
-            </dt>
-            <dd class = "col-sm-10">
-                @Html.DisplayFor(model => model.Description)
-            </dd>
-            <dt class = "col-sm-2">
-                @Html.DisplayNameFor(model => model.Recommendation)
-            </dt>
-            <dd class = "col-sm-10">
-                @Html.DisplayFor(model => model.Recommendation)
-            </dd>
-            <dt class = "col-sm-2">
-                @Html.DisplayNameFor(model => model.Price)
-            </dt>
-            <dd class = "col-sm-10">
-                @Html.DisplayFor(model => model.Price)
-            </dd>
-            <dt class = "col-sm-2">
-                @Html.DisplayNameFor(model => model.Image)
-            </dt>
-            <dd class = "col-sm-10">
-                @Html.DisplayFor(model => model.Image)
-            </dd>
-            <dt class = "col-sm-2">
-                @Html.DisplayNameFor(model => model.Type)
-            </dt>
-            <dd class = "col-sm-10">
-                @Html.DisplayFor(model => model.Type)
-            </dd>
-            <dt class = "col-sm-2">
-                @Html.DisplayNameFor(model => model.Category)
-            </dt>
-            <dd class = "col-sm-10">
-                @Html.DisplayFor(model => model.Category.Name)
-            </dd>
-        </dl>
-    </div>
-    <div>
-        <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
-        <a asp-action="Index">Back to List</a>
-    </div>*@
-
-
-
-@*<h1> מוצר: @Html.DisplayFor(model => model.Name)</h1>*@
 <h1> שינה וסביבה </h1>
 <h2> מוצרים נוחים ונעימים שיתאימו בדיוק לחיית המחמד שלכם, ובמחירים הזולים בארץ!</h2>
 <div class="card col-3" style="width: 18rem; position:inherit">
@@ -93,27 +35,10 @@
 
     <div>
 
-        <h2 class="findProduct"> היכן ניתן למצוא את המוצר </h2>
+        <h2 class="findProduct">   לקניית המוצר אנא בקרו באחד הסניפים שלנו: </h2>
 
-        <ul class="list">
-            <li>
-                <h4> <i class="material-icons" style="font-size:20px">place</i> סניף ראשון לציון-   <span class="spanlocation"> רחוב בן גוריון 4 - סניף ראשי</span></h4>
-            </li>
-            <li>
-                <h4><i class="material-icons" style="font-size:20px">place</i> סניף תל אביב- <span class="spanlocation"> רחוב דרך מנחם בגין 121 - מגדל עזריאלי שרונה</span></h4>
-            </li>
-            <li>
-                <h4> <i class="material-icons" style="font-size:20px">place</i> סניף חולון-  <span class="spanlocation"> רחוב גודלה מאיר 7 -קניון עזריאלי חולון</span></h4>
-            </li>
-
-        </ul>
         <div class="buttolocation">
-            <a asp-action="Index" asp-controller="Locations" class="storeslist"> לרשימת כל הסניפים שלנו </a>
-        </div>
-
-        <br />
-        <div class="map">
-            <iframe width="500" height="450" src="https://maps.google.com/maps?q=israel%20rishon%20le%20zion%20ben%20gurion%204&t=&z=17&ie=UTF8&iwloc=&output=embed" style="border:0" allowfullscreen> </iframe>
+            <a asp-action="Location" asp-controller="Home" class="storeslist"> לרשימת כל הסניפים שלנו </a>
         </div>
 
     </div>

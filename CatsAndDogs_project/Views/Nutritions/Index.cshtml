@@ -22,13 +22,13 @@
 
 
     @*<h1>תזונה</h1>*@
-
-    @if (ViewContext.HttpContext.User.IsInRole("Admin") || ViewContext.HttpContext.User.IsInRole("Editor"))
-    {
-        <p>
-            <a class="create_btn" asp-action="Create">הוספת מוצר תזונה חדש</a>
-        </p>
-    }
+@if (ViewContext.HttpContext.User.IsInRole("Admin") || ViewContext.HttpContext.User.IsInRole("Editor"))
+ {
+    <p>
+        <a class="create_btn" asp-action="Create">הוספת מוצר תזונה חדש</a>
+        <a class="create_btn" asp-action="Create" asp-controller="NutritionCategories"> הוסף קטגוריה לתזונה </a>
+    </p>
+ }
 
     <form asp-action="Search" class="search">
 

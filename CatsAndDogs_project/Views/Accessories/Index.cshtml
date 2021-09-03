@@ -23,9 +23,10 @@
 
 @if (ViewContext.HttpContext.User.IsInRole("Admin") || ViewContext.HttpContext.User.IsInRole("Editor"))
 {
-    <p>
-        <a class="create_btn" asp-action="Create">הוספת אקססוריז חדש</a>
-    </p>
+<p>
+    <a class="create_btn" asp-action="Create">הוספת אקססוריז חדש</a>
+   <a class="create_btn" asp-action="Create" asp-controller="NutritionCategories"> הוסף קטגוריה לאקססוריז </a>
+</p>
 
 }
 @*<a class="ShoppingBag">לסל הקניות</a>*@

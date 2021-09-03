@@ -1,0 +1,47 @@
+﻿@model IEnumerable<CatsAndDogs_project.Models.Dog_2>
+
+@{
+    ViewData["Title"] = "Statistics";
+}
+
+
+<body style="margin-top: 120px">
+
+
+
+    <h1> סטטיסטיקות </h1>
+
+
+
+    <div id="chartContainer" style="height: 300px; width: 100%;"></div>
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+
+    <script type="text/javascript">
+
+    const map = @Html.Raw(ViewData["Graph"]);
+
+    window.onload = function () {
+
+        var dataPoints = [];
+
+        var chart = new CanvasJS.Chart("chartContainer", {
+                theme: "light1",
+
+                animationEnabled: true,
+                title: {
+                    text: "הגזעים הכי פופולריים",              
+                    fontColor: "burlywood"
+                },
+                data: [
+                    {
+                        type: "column",
+                        dataPoints: map
+                    }
+                ]
+            });
+            chart.render();
+
+        }
+    </script>
+
+</body>

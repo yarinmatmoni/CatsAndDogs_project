@@ -72,7 +72,7 @@ namespace CatsAndDogs_project.Controllers
                 string bname = dog.ListBreed.First().Name;
                 if (dictionary.ContainsKey(bname))
                 {
-                    dictionary[dog.ListBreed.First().Name]++;
+                    dictionary[bname]++;
                 }
                 else
                 {

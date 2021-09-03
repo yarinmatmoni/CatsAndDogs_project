@@ -12,15 +12,18 @@
 
 @if (ViewContext.HttpContext.User.IsInRole("Admin") || ViewContext.HttpContext.User.IsInRole("Editor"))
 {
-     <div class="crt-btns">
-        <p>
-            <a class="create_btn" asp-action="Create">הוספת חתול לאימוץ</a>
-        </p>
-    
-        <p>
-            <a class="create_btn" asp-action="index" asp-controller="BreedCat_2">גזעי חתולים</a>
-        </p>
-     </div>
+<div class="crt-btns">
+    <p>
+        <a class="create_btn" asp-action="Create">הוספת חתול לאימוץ</a>
+    </p>
+
+    <p>
+        <a class="create_btn" asp-action="index" asp-controller="BreedCat_2">גזעי חתולים</a>
+    </p>
+    <p>
+        <a class="create_btn" asp-action="Statistics">הצגת סטטיסטיקה</a>
+    </p>
+</div>
 }
 
 <form asp-action="Search" class="search">

@@ -29,7 +29,7 @@
         <a class="topB" asp-action="Create">הוספת מוצר בריאות חדש</a>
     </p>
     <p class="topButtons">
-        <a class="topB" asp-action="Create" asp-controller="HealthCategories"> הוסף קטגוריה לבריאות </a>
+        <a class="topB" asp-action="Index" asp-controller="HealthCategories">  קטגוריות לבריאות </a>
     </p>
     <p class="topButtons">
         <a class="topB" asp-action="Statistics">הצגת סטטיסטיקה</a>
@@ -46,24 +46,7 @@
 
     </div>
 
-
-    @*<input name="animal" placeholder="הקלד את סוג החיה (כלב/חתול)" autocomplete="off" />
-        <input name="categoryname" placeholder="הקלד את סוג הפריט הרצוי (תוספי תזונה/טיפול בפרעושים/בריאות העור/הריאות הפה)" autocomplete="off" />
-        <input name="pricestart" placeholder="מחיר החל מ" autocomplete="off" />
-        <input name="priceend" placeholder="מחיר עד" autocomplete="off" />*@
-
-
 </form>
-
-@*<div class="sidenav">
-        <h4> קטגוריות לבריאות</h4>
-        <hr />
-        <a href="#">תוספי תזונה</a>
-        <a href="#">טיפול פרעושים</a>
-        <a href="#">בריאות העור</a>
-        <a href="#">בריאות הפה</a>
-
-    </div>*@
 
 <div class="container">
     <div class="row">
@@ -80,7 +63,6 @@
                         <div class="card-body">
                             <h5 class="card-title"> @item.Name</h5>
                             <p class="card-text" style="overflow: hidden; margin-bottom: -19px; text-overflow: ellipsis;white-space: nowrap;">@item.Description</p>
-                            @*<p> <h5> @Html.DisplayNameFor(model => model.Tip) </h5> @item.Tip </p>*@
                             <p id="price"> @Html.DisplayNameFor(model => model.Price): @item.Price ₪ </p>
 
                         </div>
@@ -103,71 +85,3 @@
 
     </div>
 </div>
-
-
-
-@*@section Scripts {
-        @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-        <link href="~/css/index_1.css" rel="stylesheet" />
-    }*@
-
-
-@*<h1>Index</h1>
-
-    <p>
-        <a asp-action="Create">Create New</a>
-    </p>
-    <table class="table">
-        <thead>
-            <tr>
-                <th>
-                    @Html.DisplayNameFor(model => model.Name)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Description)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Price)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Image)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Type)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Category)
-                </th>
-                <th></th>
-            </tr>
-        </thead>
-        <tbody>
-    @foreach (var item in Model) {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Name)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Description)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Price)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Image)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Type)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Category.Name)
-                </td>
-                <td>
-                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-                </td>
-            </tr>
-    }
-        </tbody>
-    </table>*@

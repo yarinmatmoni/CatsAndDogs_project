@@ -77,8 +77,16 @@ h1 {
     width: 50rem;
     margin-right: 23rem;
 }
+.guide-body-left > a:hover{
+   background-color:white;
+   color:dimgray;
+}
 .guide-body-right {
     width: 50rem;
+}
+.guide-body-right > a:hover {
+    background-color: white;
+    color: dimgray;
 }
 .guide-title {
     padding: 0;

@@ -13,7 +13,7 @@
             <div class="feture">
                 <h5 class="card-title">מתאים ל: </h5>
             </div>
-            <span>@Html.DisplayFor(modle => modle.Type)</span> 
+            <span>@Html.DisplayFor(modle => modle.Type)</span>
             <div class="feture">
                 <h5 class="card-title">תיאור: </h5>
             </div>
@@ -30,10 +30,11 @@
         <div class="img">
             <img src=@Html.DisplayFor(model => model.Image) class="card-img">
             <div class="options">
-                <a asp-action="Edit" asp-route-id="@Model.Id"><i class='far fa-edit'></i></a>
+                @if (ViewContext.HttpContext.User.IsInRole("Admin") || ViewContext.HttpContext.User.IsInRole("Editor"))
+                {
+                    <a asp-action="Edit" asp-route-id="@Model.Id"><i class='far fa-edit'></i></a>
+                }
                 <a asp-action="Index"><i class="material-icons">keyboard_backspace</i></a>
-
-
             </div>
         </div>
     </div>

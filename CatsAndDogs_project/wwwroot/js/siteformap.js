@@ -5,7 +5,7 @@ function GetMap() {
         credentials: 'AmL7oLu1IcsqMguBIRNjYrN138xH3FEbqiQEGwIKoq3ti1EaaBU4eSJ6nxgXS0gv',
         center: new Microsoft.Maps.Location(31.9700919, 34.77205380048267),
         mapTypeId: Microsoft.Maps.MapTypeId.road,
-        zoom: 14
+        zoom: 12
     });
 
     //console.log("ok1");

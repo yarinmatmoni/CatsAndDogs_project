@@ -66,3 +66,12 @@
 
 }
 
+
+@media only screen and (max-width: 1370px) {
+
+    .row {
+        height: 60rem;
+        width: 72rem;
+    }
+}
+

@@ -53,9 +53,13 @@ span {
     font-family: 'Amatic SC', cursive;
 }
 
+.link {
+    color: gray;
+    text-decoration: none;
+}
+
 
 @media only screen and (max-width: 1400px) {
-
     .card {
         width: 77rem !important;
         margin: auto;

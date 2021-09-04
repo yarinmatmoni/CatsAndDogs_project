@@ -83,7 +83,7 @@ namespace CatsAndDogs_project.Controllers
         {
             var date = DateTime.Now;
             var bol = false;
-            if ((articles.CreationDate.Date < date.Date)  || articles.CreationDate.Date > date.Date)
+            if (((articles.CreationDate.Date < date.Date)  || articles.CreationDate.Date > date.Date) && (articles.LastUpDate.Date < date.Date || articles.LastUpDate.Date > date.Date))
             {
                 bol = true;
                 return RedirectToAction("Create");

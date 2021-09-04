@@ -106,6 +106,14 @@ namespace CatsAndDogs_project.Controllers
                 return NotFound();
             }
 
+            var date = DateTime.Now;
+            var bol = false;
+            if (adoptionDays.DateandTime < date)
+            {
+                return RedirectToAction("Edit");
+            }
+
+
             if (ModelState.IsValid)
             {
                 try

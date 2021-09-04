@@ -115,6 +115,14 @@ namespace CatsAndDogs_project.Controllers
             {
                 return NotFound();
             }
+
+            //var date = DateTime.Now;
+            //if (((articles.LastUpDate.Date < date.Date) || articles.LastUpDate.Date > date.Date))
+            //{
+                
+            //    return RedirectToAction("Edit");
+            //}
+
             ViewData["categoryId"] = new SelectList(_context.Set<ArticalsCategory>(), nameof(ArticalsCategory.Id), nameof(ArticalsCategory.Name), articles.categoryId);
             return View(articles);
         }
@@ -130,6 +138,13 @@ namespace CatsAndDogs_project.Controllers
             if (id != articles.Id)
             {
                 return NotFound();
+            }
+
+            var date = DateTime.Now;
+            if (((articles.LastUpDate.Date < date.Date) || articles.LastUpDate.Date > date.Date))
+            {
+
+                return RedirectToAction("Edit");
             }
 
             if (ModelState.IsValid)

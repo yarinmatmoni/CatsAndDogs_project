@@ -33,13 +33,13 @@ namespace CatsAndDogs_project.Controllers
         public async Task<IActionResult> Search(string queryBreed, string querySize)  // add search 
         {
             var q = from d in _context.Dog_2.Include(b => b.ListBreed)
-                    where ((d.Size.Contains(querySize) && queryBreed==null) || (querySize==null && queryBreed==null)
-                    || d.ListBreed.Any(n=>n.Name.Contains(queryBreed) 
-                    || d.Size.Contains(querySize)&& d.ListBreed.Any(n => n.Name.Contains(queryBreed)))
-                    || querySize== null && d.ListBreed.Any(n => n.Name.Contains(queryBreed)))
+                    where ((d.Size.Contains(querySize) && queryBreed == null) || (querySize == null && queryBreed == null)
+                    || d.ListBreed.Any(n => n.Name.Contains(queryBreed)
+                    || d.Size.Contains(querySize) && d.ListBreed.Any(n => n.Name.Contains(queryBreed)))
+                    || querySize == null && d.ListBreed.Any(n => n.Name.Contains(queryBreed)))
                     select d;
-           
-            return View("Index",await q.ToListAsync());
+
+            return View("Index", await q.ToListAsync());
         }
 
         // GET: Dog_2/Details/5
@@ -50,7 +50,7 @@ namespace CatsAndDogs_project.Controllers
                 return NotFound();
             }
 
-            var dog_2 = await _context.Dog_2.Include(b=>b.ListBreed).FirstOrDefaultAsync(m => m.Id == id);
+            var dog_2 = await _context.Dog_2.Include(b => b.ListBreed).FirstOrDefaultAsync(m => m.Id == id);
             if (dog_2 == null)
             {
                 return NotFound();
@@ -60,7 +60,7 @@ namespace CatsAndDogs_project.Controllers
         }
 
         public IActionResult Statistics() // map of number of dogs that have the same breed
-                                                // shows only the breeds out dogs have.
+                                          // shows only the breeds out dogs have.
         {
             var dogs = _context.Dog_2.Include(d => d.ListBreed).ToList();
             //var breeds = _context.Breed_2.ToList();
@@ -92,8 +92,8 @@ namespace CatsAndDogs_project.Controllers
 
         public async Task<IActionResult> MoreDetails(int? id)
         {
-           
-            var dog = await _context.Dog_2.Include(b => b.ListBreed).Where(b => b.Id == id).ToListAsync(); 
+
+            var dog = await _context.Dog_2.Include(b => b.ListBreed).Where(b => b.Id == id).ToListAsync();
             var breed = await _context.Breed_2.ToListAsync();
 
             var output = from d in dog
@@ -103,10 +103,26 @@ namespace CatsAndDogs_project.Controllers
 
             var breedId = output.ElementAt(0).ElementAt(0).Id;
 
-            var guide = _context.GuideDog.Where(g => g.Breed_2Id == breedId).First();
+            var list = _context.GuideDog.ToList();
+
+            var ok = false;
+            foreach (var l in list)
+            {
+
+                if (l.Breed_2Id.Equals(breedId))
+                {
+                    ok = true;
+                }
+            }
 
 
-            return RedirectToAction("Details", "GuideDogs", new { id = guide.Id });
+            if (ok)
+            {
+                var guide = _context.GuideDog.Where(g => g.Breed_2Id == breedId).First();
+                return RedirectToAction("Details", "GuideDogs", new { id = guide.Id });
+            }
+
+            return RedirectToAction("Index", "GuideDogs");
 
         }
 
@@ -114,7 +130,7 @@ namespace CatsAndDogs_project.Controllers
         // GET: Dog_2/Create
         public IActionResult Create()
         {
-            ViewData["ListBreed"] = new SelectList(_context.Breed_2, nameof(Breed_2.Id), nameof(Breed_2.Name));
+            ViewData["ListBreed"] = new SelectList(_context.Set<Breed_2>(), nameof(Breed_2.Id), nameof(Breed_2.Name));
             return View();
         }
 
@@ -124,22 +140,20 @@ namespace CatsAndDogs_project.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Name,Age,Size,Gender,Color,LifeExpectancy,Match,Description,Image,ListBreed")] Dog_2 dog_2 ,int[] ListBreed) ////
+        public async Task<IActionResult> Create([Bind("Id,Name,Age,Size,Gender,Color,LifeExpectancy,Match,Description,Image,ListBreed")] Dog_2 dog_2, int[] ListBreed)
         {
-                dog_2.ListBreed = new List<Breed_2>();
-                dog_2.ListBreed.AddRange(_context.Breed_2.Where(x => ListBreed.Contains(x.Id)));
+            dog_2.ListBreed = new List<Breed_2>();
+            dog_2.ListBreed.AddRange(_context.Breed_2.Where(x => ListBreed.Contains(x.Id)));
 
             if (ModelState.IsValid)
             {
-
                 _context.Add(dog_2);
                 await _context.SaveChangesAsync();
                 PostTwitter(dog_2.Name).Wait();
                 return RedirectToAction(nameof(Index));
             }
 
-           
-           // ViewData["ListBreed"] = new SelectList(_context.Set<Breed_2>(), nameof(Breed_2.Id), nameof(Breed_2.Name), dog_2.ListBreed);
+            ViewData["ListBreed"] = new SelectList(_context.Set<Breed_2>(), nameof(Breed_2.Id), nameof(Breed_2.Name), dog_2.ListBreed);
             return View(dog_2);
         }
 
@@ -155,7 +169,7 @@ namespace CatsAndDogs_project.Controllers
             var twitter = new TwitterConnect(APIKey,
                 APIKeySecret, AccessToken, AccessTokenSecret);
 
-            string message = " היי, תכירו את-" + " " +  dogname + " " + "הוא מחפש בית חדש. אם אתם מחפשים חבר חדש למשפחה, לפרטים נוספים כנסו לאתר שלנו. " ;
+            string message = " היי, תכירו את-" + " " + dogname + " " + "הוא מחפש בית חדש. אם אתם מחפשים חבר חדש למשפחה, לפרטים נוספים כנסו לאתר שלנו. ";
             var response = await twitter.Tweet(message);
             Console.WriteLine(response);
 
@@ -189,7 +203,7 @@ namespace CatsAndDogs_project.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Age,Size,Gender,Color,LifeExpectancy,Match,Description,Image,ListBreed")] Dog_2 dog_2 , int[] ListBreed)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Age,Size,Gender,Color,LifeExpectancy,Match,Description,Image,ListBreed")] Dog_2 dog_2, int[] ListBreed)
         {
 
             if (id != dog_2.Id)
@@ -233,7 +247,7 @@ namespace CatsAndDogs_project.Controllers
                 return NotFound();
             }
 
-            var dog_2 = await _context.Dog_2.Include(b=>b.ListBreed).FirstOrDefaultAsync(m => m.Id == id);
+            var dog_2 = await _context.Dog_2.Include(b => b.ListBreed).FirstOrDefaultAsync(m => m.Id == id);
             if (dog_2 == null)
             {
                 return NotFound();

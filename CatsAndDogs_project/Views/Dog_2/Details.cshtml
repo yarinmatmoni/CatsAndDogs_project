@@ -40,7 +40,7 @@
             </div>
             <div class="feture-description">
                 <h5 class="card-title">תיאור:</h5><span>@Html.DisplayFor(modle => modle.Description)</span>
-            </div>
+            </div>      
             <div>
                 <a class="btn btn-primary" asp-action="MoreDetails" asp-route-Id="@Model.Id"> לפרטים כלליים על גזע "@Model.ListBreed.First().Name" לחץ כאן </a>
             </div>
@@ -55,15 +55,6 @@
         </div>
     </div>
 </div>
-
-
-@*<div class="moredetails">
-
-    <a id="moreinfo"> לחץ למידע נוסף על גזע הכלב </a>
-    <div id="result">
-
-    </div>
-</div>*@
 
 
 @section Scripts {

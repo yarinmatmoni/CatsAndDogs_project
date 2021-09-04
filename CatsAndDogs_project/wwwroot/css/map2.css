@@ -75,3 +75,32 @@
     }
 }
 
+@media only screen and (max-width: 1185px) {
+
+    .row {
+        width: 56rem;
+    }
+}
+
+@media only screen and (max-width: 980px) {
+
+    .row {
+        width: 56rem;
+        margin: auto;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+
+    .row {
+        width: 50rem;
+        margin: auto;
+    }
+}
+
+@media only screen and (max-width: 590px) {
+
+    .row {
+        width: 41rem;
+    }
+}

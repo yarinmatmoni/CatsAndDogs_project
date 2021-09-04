@@ -3,7 +3,6 @@
 function GetMap() {
     map = new Microsoft.Maps.Map('#myMap', {
         credentials: 'AmL7oLu1IcsqMguBIRNjYrN138xH3FEbqiQEGwIKoq3ti1EaaBU4eSJ6nxgXS0gv',
-        //No need to set credentials if already passed in URL 
         center: new Microsoft.Maps.Location(31.9700919, 34.77205380048267),
         mapTypeId: Microsoft.Maps.MapTypeId.road,
         zoom: 14
@@ -21,12 +20,9 @@ function GetMap() {
         //console.log("ok3"),
         url: 'https://' + new URL(window.location.host) + '/Locations/GetPlacesList',
         type: 'GET',
-        success: function (data) { // הדאטה קשור ל url משם הוא שואב את הנתונים
+        success: function (data) { 
             $.each(data, function (index) {
-                setTimeout(() => {
-                   
-                    //name = data[index].name;
-                   // console.log("ok");
+                setTimeout(() => { 
                     name = data[index];
                    // console.log(name);
 

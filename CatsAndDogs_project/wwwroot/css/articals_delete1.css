@@ -90,20 +90,13 @@ h3 > span {
 .art_body {
     margin-top : 10px;
 }
-/*.summar {
-    border: 1px solid !important;
-    width: 69rem !important;
-    height: auto !important;
-}*/
 
 .btn {
     display: block;
     width: 100%;
     font-size: 30px;
     font-family: 'Amatic SC', cursive;
-    /*width: 248px;*/
     margin-left: 7px;
-    /*margin-bottom: 9px;*/
 }
 
 #delete_btn {
@@ -123,28 +116,3 @@ h3 > span {
     }
 }
 
-@media only screen and (min-width: 1260px) {
-
-   /* .card-body {
-        display: list-item;
-        list-style: none;
-    }
-
-    .card {
-        width: 40rem !important;
-        height: 60rem;
-        margin: auto;
-        height: auto;
-    }
-
-    .options {
-        margin-top: 60px;
-    }
-
-    .feture-description > span {
-        width: 325px;
-        margin-bottom: 10px;
-        height: auto;
-    }*/
-
-}

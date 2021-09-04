@@ -34,16 +34,3 @@ $(function () {
 
 });
 
-//var str = "";
-
-//$('.texas > p.cn').each(function () {
-//    str += $(this).text() + "<br>";
-//})
-
-//$('#mysidebarID').html(str);
-
-
-
-    //var nameList = $('name').attr('class');
-
-    //$('#result').html(nameList[0]);

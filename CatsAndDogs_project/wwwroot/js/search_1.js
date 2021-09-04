@@ -4,8 +4,6 @@ $(function () {
     $('form').submit(function (e) {
         e.preventDefault();
         var query = $('#date_s').val();
-        
-        //$('tbody').load('/AdoptionDays/Search?queryDate=' + query);
 
         $.ajax({
             url: '/AdoptionDays/Search',

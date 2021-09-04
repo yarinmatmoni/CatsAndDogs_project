@@ -90,6 +90,12 @@ h3 > span {
 .art_body {
     margin-top : 10px;
 }
+/*.summar {
+    border: 1px solid !important;
+    width: 69rem !important;
+    height: auto !important;
+}*/
+
 .btn {
     display: block;
     width: 100%;

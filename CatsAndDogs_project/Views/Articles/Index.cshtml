@@ -4,48 +4,55 @@
     ViewData["Title"] = "Index";
 }
 <head>
-    <link href="~/css/articals_index1.css" rel="stylesheet" />
+    <link href="~/css/articals_index2.css" rel="stylesheet" />
 </head>
 
 <h1>כתבות</h1>
 
 @if (ViewContext.HttpContext.User.IsInRole("Admin") || ViewContext.HttpContext.User.IsInRole("Editor"))
 {
+<div class="crt-btns">
     <p>
         <a class="crt_btn" asp-action="Create">יצירת כתבה חדשה</a>
     </p>
-}
+    <p>
+        <a class="crt_btn" asp-action="index" asp-controller="ArticalsCategories">קטגוריות</a>
+    </p>
 
-<form asp-action="Search" class="search">
-    <input name="queryCategory" placeholder="הקלד קטגוריה לחיפוש..." autocomplete="off" />
-    <input id="sub_search" type="submit" value="חיפוש" />
-</form>
-
-<div class="container">
-    <div class="row">
-
-        @foreach (var item in Model)
-        {
-            <div class="card col-6" style="width: 43rem; position:inherit">
-                <img src="@item.Img" class="card-img-top" alt="@item.Titel">
-                <div class="card-body">
-                    <h5 class="card-title"> @item.Titel</h5>
-                    <p class="card-text">@item.Summary</p>
-
-                    <p id="category"> כתבה בנושא : @item.Category.Name </p>
-
-                </div>
-                <div class="option">
-                    <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-primary">המשך קריאה</a>
-                    @if (ViewContext.HttpContext.User.IsInRole("Admin") || ViewContext.HttpContext.User.IsInRole("Editor"))
-                    {
-                        <a class="editOption" asp-action="Edit" asp-route-id="@item.Id">עריכה</a>
-                        <a class="removeOption" asp-action="Delete" asp-route-id="@item.Id">מחיקה</a>
-                    }
-                </div>
-            </div>
-
-        }
-
-    </div>
 </div>
+ }
+        
+
+        <form asp-action="Search" class="search">
+            <input name="queryCategory" placeholder="הקלד קטגוריה לחיפוש..." autocomplete="off" />
+            <input id="sub_search" type="submit" value="חיפוש" />
+        </form>
+
+        <div class="container">
+            <div class="row">
+
+                @foreach (var item in Model)
+                {
+                    <div class="card col-6" style="width: 43rem; position:inherit">
+                        <img src="@item.Img" class="card-img-top" alt="@item.Titel">
+                        <div class="card-body">
+                            <h5 class="card-title"> @item.Titel</h5>
+                            <p class="card-text">@item.Summary</p>
+
+                            <p id="category"> כתבה בנושא : @item.Category.Name </p>
+
+                        </div>
+                        <div class="option">
+                            <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-primary">המשך קריאה</a>
+                            @if (ViewContext.HttpContext.User.IsInRole("Admin") || ViewContext.HttpContext.User.IsInRole("Editor"))
+                            {
+                                <a class="editOption" asp-action="Edit" asp-route-id="@item.Id">עריכה</a>
+                                <a class="removeOption" asp-action="Delete" asp-route-id="@item.Id">מחיקה</a>
+                            }
+                        </div>
+                    </div>
+
+                }
+
+            </div>
+        </div>

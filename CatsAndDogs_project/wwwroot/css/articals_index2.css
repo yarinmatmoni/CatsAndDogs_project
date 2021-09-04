@@ -34,7 +34,9 @@
 .top_options > p {
     margin-inline: 30px;
 }
-
+.crt-btns {
+    display: flex;
+}
 .card {
     width: 18rem;
     position: inherit;
@@ -73,6 +75,7 @@ h5 {
     border-radius: 8px;
     font-family: 'Amatic SC', cursive;
     color: dimgray;
+    margin-right: 5px;
 }
 
 p {
@@ -178,8 +181,8 @@ p {
     #sub_search{
         width:auto;
     }
-    .crt_btn {
+    /*.crt_btn {
         margin-right: 12rem;
-    }
+    }*/
    
 }

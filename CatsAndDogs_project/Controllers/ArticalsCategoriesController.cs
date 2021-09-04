@@ -24,7 +24,19 @@ namespace CatsAndDogs_project.Controllers
         // GET: ArticalsCategories
         public async Task<IActionResult> Index()
         {
-            return View(await _context.ArticalsCategory.ToListAsync());
+            var q = from c in _context.ArticalsCategory.OrderBy(x => x.Name)
+                    select c;
+            return View(await q.ToListAsync());
+        }
+
+        public async Task<IActionResult> Search(string queryName)  // add search 
+        {
+            var q = from c in _context.ArticalsCategory
+                    where (c.Name.Contains(queryName)) || (queryName == null)
+                    orderby c.Name
+                    select c;
+
+            return View("Index", await q.ToListAsync());
         }
 
         // GET: ArticalsCategories/Details/5

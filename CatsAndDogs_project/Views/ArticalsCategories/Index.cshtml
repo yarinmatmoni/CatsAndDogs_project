@@ -4,11 +4,23 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<head>
+    <link href="~/css/breed _1.css" rel="stylesheet" />
+</head>
 
-<p>
-    <a asp-action="Create">Create New</a>
+<h1>קטגוריות </h1>
+
+<form asp-action="Search" class="search">
+    <input name="queryName" placeholder="הקלד שם לחיפוש..." autocomplete="off" />
+    <input id="sub_search" type="submit" value="חיפוש" />
+</form>
+
+
+<p class="top">
+    <a class="create_btn" asp-action="Create">יצירת קטגוריה חדשה</a>
+    <a class="create_btn" asp-action="Index" asp-controller="Articles"><i class="material-icons">keyboard_backspace</i></a>
 </p>
+
 <table class="table">
     <thead>
         <tr>
@@ -19,17 +31,21 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Name)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    <div class="options">
+                        <a id="edit_btn" asp-action="Edit" asp-route-id="@item.Id"><i class="material-icons">edit</i></a>
+                        <a id="delete_btn" asp-action="Delete" asp-route-id="@item.Id"><i class="material-icons">close</i></a>
+                    </div>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>
+
+

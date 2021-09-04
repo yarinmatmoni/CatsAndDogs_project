@@ -32,6 +32,7 @@ namespace CatsAndDogs_project.Models
         [DataType(DataType.Currency)]
         public float Price { get; set; }
 
+        [RegularExpression(@"(https?:\/\/)?(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#()?&//=]*)", ErrorMessage = "ניתן לשים אך ורק קישור")]
         [Required(ErrorMessage = "זהו שדה חובה")]
         [Display(Name = "צרף קישור לתמונה")]
         public String Image { get; set; }

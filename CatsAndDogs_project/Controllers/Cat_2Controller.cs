@@ -102,11 +102,24 @@ namespace CatsAndDogs_project.Controllers
 
             var breedId = output.ElementAt(0).ElementAt(0).Id;
 
-            var guide = _context.GuideCat.Where(g => g.BreedCat_2Id == breedId).First();
+            var list = _context.GuideCat.ToList();
 
+            var ok = false;
+            foreach (var l in list)
+            {
 
-            return RedirectToAction("Details", "GuideCats", new { id = guide.Id });
+                if (l.BreedCat_2Id.Equals(breedId))
+                {
+                    ok = true;
+                }
+            }
+            if (ok)
+            {
+                var guide = _context.GuideCat.Where(g => g.BreedCat_2Id == breedId).First();
+                return RedirectToAction("Details", "GuideCats", new { id = guide.Id });
+            }
 
+            return RedirectToAction("Index", "GuideCats");
         }
 
 
@@ -135,6 +148,8 @@ namespace CatsAndDogs_project.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
+
+            ViewData["BreedCatList"] = new SelectList(_context.Set<BreedCat_2>(), nameof(BreedCat_2.Id), nameof(BreedCat_2.Name), cat_2.BreedCatList);
             return View(cat_2);
         }
 

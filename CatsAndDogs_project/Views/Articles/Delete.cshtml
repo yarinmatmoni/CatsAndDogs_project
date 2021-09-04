@@ -6,7 +6,7 @@
 
 
 <head>
-    <link href="~/css/articals_delete2.css" rel="stylesheet" />
+    <link href="~/css/articals_delete.css" rel="stylesheet" />
     <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
 </head>
 
@@ -53,7 +53,7 @@
     <div class="options">
         <form asp-action="Delete">
             <input type="hidden" asp-for="Id" />
-            <input type="submit" value="מחיקה" class="btn btn-danger" />
+            <input id="delete_btn" type="submit" value="מחיקה" class="btn btn-danger" />
         </form>
         <div id="back">
             <a asp-action="Index"><i class="material-icons">keyboard_backspace</i></a>

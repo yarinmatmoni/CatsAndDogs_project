@@ -134,11 +134,36 @@ namespace CatsAndDogs_project.Controllers
 
                 _context.Add(dog_2);
                 await _context.SaveChangesAsync();
+                PostTwitter(dog_2.Name).Wait();
                 return RedirectToAction(nameof(Index));
             }
+
+           
            // ViewData["ListBreed"] = new SelectList(_context.Set<Breed_2>(), nameof(Breed_2.Id), nameof(Breed_2.Name), dog_2.ListBreed);
             return View(dog_2);
         }
+
+
+
+        public static async Task<String> PostTwitter(string dogname)
+        {
+            string APIKey = "eMZ7NuEQK39AeyAll1GWaYPdP";
+            string APIKeySecret = "GmAZlADUMCdPUZt7OskRbxDSvDzbVDrbD8P1pKp7bPrutFAoKK";
+            string AccessToken = "1433763379492053037-NC7khJkSsb2Cdm4hPXQCbDHPKAVJxB";
+            string AccessTokenSecret = "Ja2G1U5f4TPc2H6KTIxgyilA4IPjwIxHcNe67F2EmeHmv";
+
+            var twitter = new TwitterConnect(APIKey,
+                APIKeySecret, AccessToken, AccessTokenSecret);
+
+            string message = " היי, תכירו את-" + " " +  dogname + " " + "הוא מחפש בית חדש. אם אתם מחפשים חבר חדש למשפחה, לפרטים נוספים כנסו לאתר שלנו. " ;
+            var response = await twitter.Tweet(message);
+            Console.WriteLine(response);
+
+            return response;
+        }
+
+
+
 
         [Authorize(Roles = "Admin , Editor")]
         // GET: Dog_2/Edit/5

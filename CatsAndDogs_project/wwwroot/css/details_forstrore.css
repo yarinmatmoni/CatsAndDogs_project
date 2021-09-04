@@ -88,17 +88,11 @@ span {
     font-family: 'Amatic SC', cursive;
 }
 
-.options {
-    /*  margin-top: 170px;
-    text-align-last: right;
-    justify-content: space-between;
-    display: flex;*/
-
+.options { 
     margin-top: 58px;
     text-align-last: center;
     justify-content: flex-start;
     display: flex;
-  /*  border-bottom: double;*/
     padding: 20px;
     border-bottom-color: burlywood;
 }
@@ -189,7 +183,5 @@ span {
         margin-bottom: 10px;
         height: auto;
     }
-
-
 
 }

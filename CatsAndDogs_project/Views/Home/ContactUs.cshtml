@@ -2,21 +2,7 @@
     ViewData["Title"] = "ContactUs";
 }
 
-
-@*<head>
-    <link href="~/css/index_1.css" rel="stylesheet" />
-</head>*@
-
 <h1>דברו איתנו</h1>
-
-    @*<p>תוכלו ליצור עמנו קשר בכל הפלטפורמות הבאות: </p>
-    <ul>
-        <li> <i style='font-size:24px' class='fas'>&#xf095;</i>  טלפון: 052-6983798   </li>
-        <li>אימייל: CatsAndDogs@gmail.com</li>
-        <li> <i class="material-icons">&#xe0c8;</i>  כתובת: בן גוריון 4, ראשון לציון (קניון בן גוריון)</li>
-        <li><i style='font-size:24px' class='fab'>&#xf082;</i> פייסבוק </li>
-    </ul>*@
-
 
 <div class="card col-3" style="width: 18rem; position:inherit">
     <div class="card-body">
@@ -27,13 +13,15 @@
                 <h5 class="contact-title"><i id="phone-icon" style="font-size:24px" class="fa">&#xf098;</i>   03-6983798   </h5>
             </div>
             <div class="feture">
-                <h5 class="contact-title">@*<i class="material-icons">&#xe0be;</i>*@ <i style='font-size:24px' class='fas'>&#xf674;</i>  CatsAndDogs@gmail.com   </h5>
+                <h5 class="contact-title"> <i style='font-size:24px' class='fas'>&#xf674;</i>  CatsAndDogs@gmail.com   </h5>
             </div>
             <div class="feture">
-                <h5 class="contact-title">@*<i class="material-icons">&#xe0c8;</i>*@  <i style='font-size:24px' class='fas'>&#xf124;</i>   בן גוריון 4, ראשון לציון (קניון בן גוריון)   </h5>
+                <h5 class="contact-title"> <i style='font-size:24px' class='fas'>&#xf124;</i>   בן גוריון 4, ראשון לציון (קניון בן גוריון)   </h5>
             </div>
             <div class="feture">
-                <h5 class="contact-title"><i style='font-size:24px' class='fab'>&#xf09a;</i>   פייסבוק   </h5>
+                <h5 class="contact-title">
+                    <i class="fab fa-twitter"></i>     טוויטר- dogs and cats
+                </h5>
             </div>
         </div>
     </div>
@@ -43,5 +31,6 @@
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
     <link href="~/css/contact.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
 }

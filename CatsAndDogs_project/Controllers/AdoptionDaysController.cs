@@ -29,19 +29,6 @@ namespace CatsAndDogs_project.Controllers
             return View(await q.ToListAsync());
         }
 
-        //public async Task<IActionResult> Search(string queryDate, string queryLocation)  // add search 
-        //{
-        //    var q = from d in _context.AdoptionDays
-        //            where ((d.DateandTime.Date.ToString().Contains(queryDate) && queryLocation == null) || (queryDate == null && queryLocation == null)
-        //            || d.Location.Contains(queryLocation)
-        //            || d.DateandTime.Date.ToString().Contains(queryDate) && d.Location.Contains(queryLocation)
-        //            || queryDate == null && d.Location.Contains(queryLocation)) && d.DateandTime > DateTime.Today
-        //            orderby d.DateandTime
-        //            select d;
-
-        //    return View("Index", await q.ToListAsync());
-        //}
-
         public async Task<IActionResult> Search(string queryDate)  // add search 
         {
             
@@ -56,23 +43,6 @@ namespace CatsAndDogs_project.Controllers
             return Json(await q.ToListAsync());
         }
 
-        // GET: AdoptionDays/Details/5
-        //public async Task<IActionResult> Details(int? id)
-        //{
-        //    if (id == null)
-        //    {
-        //        return NotFound();
-        //    }
-
-        //    var adoptionDays = await _context.AdoptionDays
-        //        .FirstOrDefaultAsync(m => m.Id == id);
-        //    if (adoptionDays == null)
-        //    {
-        //        return NotFound();
-        //    }
-
-        //    return View(adoptionDays);
-        //}
 
         [Authorize(Roles = "Admin , Editor")]
         // GET: AdoptionDays/Create
@@ -89,7 +59,15 @@ namespace CatsAndDogs_project.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,DateandTime,Location,Discription")] AdoptionDays adoptionDays)
         {
-            if (ModelState.IsValid)
+
+            var date = DateTime.Now;
+            var bol = false;
+            if (adoptionDays.DateandTime < date )
+            {
+                bol = true;
+                return RedirectToAction("Create");
+            }
+            if (ModelState.IsValid && bol == false)
             {
                 _context.Add(adoptionDays);
                 await _context.SaveChangesAsync();

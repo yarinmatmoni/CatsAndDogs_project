@@ -22,6 +22,11 @@ h1 {
     box-shadow: 0px 8px 16px 0px rgb(0 0 0 / 20%);
 }
 
+@font-face {
+    font-family: contactFont;
+    src: url(sansation_light.woff);
+}
+
 .card-body {
     display: flex;
     justify-content: space-between;
@@ -79,6 +84,7 @@ span {
         width: 325px;
         margin-bottom: 10px;
         height: auto;
+        font-family: contactFont;
     }
 
 }

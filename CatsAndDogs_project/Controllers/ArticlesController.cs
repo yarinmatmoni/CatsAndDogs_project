@@ -81,12 +81,22 @@ namespace CatsAndDogs_project.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,Titel,Author,CreationDate,LastUpDate,Summary,Body,Img,categoryId")] Articles articles)
         {
-            if (ModelState.IsValid)
+            var date = DateTime.Now;
+            var bol = false;
+            if (((articles.CreationDate.Date < date.Date)  || articles.CreationDate.Date > date.Date) && (articles.LastUpDate.Date < date.Date || articles.LastUpDate.Date > date.Date))
             {
+                bol = true;
+                return RedirectToAction("Create");
+            }
+
+            if (ModelState.IsValid && bol == false)
+            {
+
                 _context.Add(articles);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
+
             ViewData["categoryId"] = new SelectList(_context.Set<ArticalsCategory>(), nameof(ArticalsCategory.Id), nameof(ArticalsCategory.Name), articles.categoryId);
             return View(articles);
         }

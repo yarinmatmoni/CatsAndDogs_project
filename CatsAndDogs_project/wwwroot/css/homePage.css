@@ -7,7 +7,6 @@ h1 {
     font-size: 60px;
     color: rgb(210 153 69 / 72%);
     font-family: 'Amatic SC', cursive;
-    /*text-decoration: underline;*/
     margin-bottom: 60px;
 }
 
@@ -32,6 +31,7 @@ P > a:hover {
     display: flex;
     justify-content: space-around;
     margin-bottom: 15px;
+    text-shadow: 2px 2px #afa7a7;
 }
 
 .small-tiitles > h2 {
